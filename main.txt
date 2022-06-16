@@ -12,7 +12,7 @@ proengineer.internous.co.jp##.post-bottom-info
 ! 右サイドバー
 proengineer.internous.co.jp##.wd_Rnavi
 
-! 再度部分
+!右サイド部分
 web-camp.io###side
 ! 文章中プロモーション
 web-camp.io##.mv_slider
