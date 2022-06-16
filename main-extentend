@@ -1,0 +1,37 @@
+! Title: ublockfilter-extentend
+! Version: 20220616
+
+! プログラミングサイト
+! 上の固定
+proengineer.internous.co.jp##header:style(position: static!important)
+! 文章中プロモーション
+proengineer.internous.co.jp##.textwidget
+proengineer.internous.co.jp###BREADCRUMB:style(padding: 16px 16px 16px !important)
+proengineer.internous.co.jp##.rec_box.free_area
+proengineer.internous.co.jp##.post-bottom-info
+! 右サイドバー
+proengineer.internous.co.jp##.wd_Rnavi
+
+! 再度部分
+web-camp.io###side
+! 文章中プロモーション
+web-camp.io##.mv_slider
+web-camp.io##.sponsored
+web-camp.io##.wp-block-image.size-full
+web-camp.io##.wp-block-separator.is-style-default
+web-camp.io##p:has-text(「HTML・CSS」をマスターして、自分でホームページやWEBアプリを作成できるようになりたい方へ！)
+web-camp.io##.wp-block-buttons
+web-camp.io##p:has-text(経済産業省認定の圧倒的カリキュラム)
+web-camp.io##p:has-text(」をもっと詳しく学習したい方へ！ )
+! 上の進行具合
+web-camp.io##.readingProgressbar
+! paddingとmarginを消す
+web-camp.io##main:style(padding: 0!important; margin-right: 0!important)
+
+! 目次の上固定
+saruwakakun.com##.title.floating[style^="width: 701px"]
+
+! 上固定
+blog.codecamp.jp###js-fixedHeader
+! 文章中プロモーション
+blog.codecamp.jp##.p-article_introduction
