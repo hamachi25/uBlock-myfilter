@@ -1,5 +1,148 @@
-! Title: ublockfilter-myfilter
+! Title: ublock-myfilter
 ! Version: 20220618
+
+! ツイートNG
+!twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
+! リストではNGなし
+!twitter.com##[aria-label="タイムライン: リスト"] article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"]):style(display: revert !important)
+! リストでのみNG
+!twitter.com##[aria-label="タイムライン: リスト"] article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
+! 検索結果のアカウント
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(アカウント))
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(アカウント)) ~ div:not(:has(article))
+! トレンドを一回消して表示させ直す
+twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div
+twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div:has(div[data-testid="eventHero"]):style(display: revert !important)
+!twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div:has(div[data-testid="trend"]):not(:has-text(/(あ|い)/)):style(display: revert !important)
+! ホーム右のいまどうしてるなどを消して表示させ直す
+twitter.com##div[aria-label="トレンド"] > div > div
+twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]):style(display: revert !important; display: flex !important)
+twitter.com##div[aria-label="トレンド"] > div > div:has(span:has-text(検索フィルター)):style(display: revert !important)
+! コロナのタブなどを消して表示させ直す
+twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div
+twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href="/explore/tabs/for-you"]):style(display: revert !important)
+twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href="/explore/tabs/trending"]):style(display: revert !important)
+! 検索結果の誤爆
+twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href^="/search?q="]):style(display: revert !important)
+! リストの誤爆
+twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href^="/i/lists"]):style(display: revert !important)
+! アカウントの誤爆
+twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(span:has-text(/(ツイート|メディア|いいね)/)):style(display: revert !important)
+! 通知の誤爆
+twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has([href^="/notifications"]):style(display: revert !important)
+twitter.com##div[data-testid="ScrollSnap-nextButtonWrapper"]
+twitter.com##div[data-testid="ScrollSnap-prevButtonWrapper"]
+! URLから開いたときのその他のツイート
+||twitter.com^$removeparam=/^(?:ref_src|s)=.*$/ 
+twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"])
+twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"]) ~ [data-testid="cellInnerDiv"]
+! センシティブ警告
+twitter.com##[data-testid="tweet"] [aria-labelledby] div:style(filter: none !important)
+twitter.com##[data-testid="tweet"] [aria-labelledby] span:has-text(ツイートの作成者が、このツイートをセンシティブな内容として設定しました。):upward(4)
+! [誤作動]右下のDM(動画を再生すると一回止まってしまう)
+!twitter.com##div[data-testid="DMDrawer"]
+! トレンドやおすすめなどのタブ透過をやめる
+twitter.com##[aria-label="ホームタイムライン"] > div:has([role="tablist"]):style(background-color: rgba(255, 255, 255, 1) !important)
+! おすすめ一番上の広告右上メニューボタン
+twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
+! 例外ルール雪フィルタとかぶる
+twitter.com#@#aside[aria-label=おすすめユーザー]:upward(1)
+twitter.com#@#div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
+twitter.com#@#div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] div[aria-label^=フォロー][role=button] > div > span > span:upward(div[style^=transform])
+twitter.com#@#div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
+
+nicovideo.jp##.SeekBarStoryboardPremiumLink-content
+nicovideo.jp##.MainContainer-marquee
+! 上のタブ
+nicovideo.jp##a[href^="https://account.nicovideo.jp/premium/register?site=niconico&next_url"]
+nicovideo.jp##a[class^="common-header"][href^="https://ch.nicovideo.jp"]
+nicovideo.jp##a[class^="common-header"][href^="https://game.nicovideo.jp/atsumaru/"]
+nicovideo.jp##a[class^="common-header"][href^="http://app.nicovideo.jp"]
+nicovideo.jp##a[class^="common-header"][href^="https://seiga.nicovideo.jp"]
+! ランキングの提供
+nicovideo.jp##.RankingVideoListContainer > div.RankingMainNicoad[data-frame-id^="2"]
+!コメント下のギフト
+nicovideo.jp##div.GiftSubEffectContainer
+! コメント上
+nicovideo.jp##.PlayerPanelContainer:style(top: 0px !important)
+
+! ホームのミックスリスト
+youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
+! 動画最後の関連動画のミックスリスト
+youtube.com##a.ytp-videowall-still.ytp-suggestion-set[data-is-mix="true"]
+youtube.com##ytd-compact-radio-renderer
+! 必要ないかも
+!youtube.com##ytd-compact-playlist-renderer.ytd-item-section-renderer.style-scope
+! 検索結果のミックスリスト
+!youtube.com##ytd-radio-renderer
+! Removes "YouTube" (Music) playlists from the right side panel
+youtube.com##ytd-compact-playlist-renderer .ytd-channel-name:has-text(/^YouTube/):upward(ytd-compact-playlist-renderer)
+! 動画最後の関連動画
+youtube.com##.ytp-ce-element
+! 動画下の説明欄
+youtube.com###clarify-box
+! ショート下説明欄(ショート見ないからいらないか)
+!youtube.com##ytd-shorts .disclaimer-container:upward(#info-panel)
+! 動画下ミニプレイヤー
+youtube.com##.ytp-button.ytp-miniplayer-button
+! 動画下シアターモード
+youtube.com##.ytp-button.ytp-size-button
+! 動画右上のジャンル選択
+youtube.com##yt-related-chip-cloud-renderer
+! ホーム上のジャンル選択
+youtube.com###header> .ytd-rich-grid-renderer.style-scope
+! 左の探索とショート
+youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.1.guideEntryRenderer)
+youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.2.guideEntryRenderer)
+! 検索結果の他の人はこちらも視聴しています,ミックスリストも消える
+youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer),ytd-secondary-search-container-renderer
+!youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer,ytd-channel-renderer),ytd-secondary-search-container-renderer
+! 音声検索
+youtube.com###voice-search-button
+! ホーム左下の他のサービス
+youtube.com##tp-yt-app-drawer ytd-guide-section-renderer[guide-persistent-and-visible] > h3:has-text(YouTube の他のサービス):upward(ytd-guide-section-renderer[guide-persistent-and-visible])
+youtube.com##tp-yt-app-drawer ytd-guide-section-renderer[guide-persistent-and-visible] a[title="設定"][href="/account"]:upward(ytd-guide-section-renderer[guide-persistent-and-visible])
+! ホーム左下の概要
+youtube.com##tp-yt-app-drawer div[id="footer"] a:has-text(概要):upward(div[id="footer"])
+! チャンネル登録NG
+!youtube.com##ytd-browse ytd-grid-video-renderer:has-text(/(あ|い)/)
+! ホームNG
+!youtube.com##ytd-browse ytd-rich-item-renderer:has-text(/(あ|い)/)
+! 動画右NG
+!youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has-text(/(あ|い)/)
+! 検索結果NG
+!youtube.com##ytd-search ytd-video-renderer:has-text(/(あ|い)/)
+! コメント欄NG リプライも含めて全部消される
+!youtube.com##ytd-comments[id="comments"] ytd-comment-thread-renderer.ytd-item-section-renderer > ytd-comment-renderer[style^="--ytd-comment-paid-background-color"]:has-text(/あ|い)/):upward(ytd-comment-thread-renderer.ytd-item-section-renderer)
+! コメント欄NG リプライだけ選択
+!youtube.com##ytd-comments[id="comments"] #replies ytd-comment-renderer.ytd-comment-replies-renderer:has-text(/(あ|い)/)
+! 履歴のショート
+!www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
+! ホームのトップニュースとおすすめ映画
+!www.youtube.com##ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope > .ytd-rich-section-renderer.style-scope
+! 動画下クリップとか
+youtube.com##ytd-menu-renderer ytd-button-renderer:has-text(/(クリップ|Thanks)/)
+! ホーム動画横のスクロールバー
+youtube.com##div.ytd-rich-grid-media[id="meta"]:style(scrollbar-width: none !important)
+youtube.com##div.ytd-video-preview[id="meta"]:style(scrollbar-width: none !important)
+! ホームの動画評価
+youtube.com##ytd-inline-survey-renderer:upward(2)
+! チャンネル登録shorts
+youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
+! ホームshorts
+youtube.com##ytd-browse[page-subtype="home"] a#video-title-link[title*=shorts]:upward(ytd-rich-item-renderer)
+! 検索結果shorts
+youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
+! チャンネル動画shorts
+www.youtube.com##ytd-browse[page-subtype="channels"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
+! 動画最後の関連動画のショート
+youtube.com##a.ytp-videowall-still.ytp-suggestion-set:has-text(Shorts)
+! 一度見た動画の下の赤線
+youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
+! ホームに出てくる急上昇
+youtube.com##[id="contents"] a.yt-simple-endpoint:has-text(急上昇):upward(ytd-rich-section-renderer.ytd-rich-grid-renderer)
+! ホームの最新のYouTube投稿
+youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(最新の YouTube 投稿))
 
 
 ! プログラミングサイト
