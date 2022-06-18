@@ -1,5 +1,6 @@
-! Title: ublockfilter-extentend
-! Version: 20220616
+! Title: ublockfilter-myfilter
+! Version: 20220618
+
 
 ! プログラミングサイト
 ! 上の固定
