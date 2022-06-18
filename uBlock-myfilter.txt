@@ -1,4 +1,4 @@
-! Title: ublock-myfilter
+! Title: uBlock-myfilter
 ! Version: 20220618
 
 ! ツイートNG
