@@ -65,6 +65,7 @@ nicovideo.jp##.RankingVideoListContainer > div.RankingMainNicoad[data-frame-id^=
 nicovideo.jp##div.GiftSubEffectContainer
 ! コメント上
 nicovideo.jp##.PlayerPanelContainer:style(top: 0px !important)
+nicovideo.jp##.MylistButton:style(bottom: 45px!important)
 
 ! ホームのミックスリスト
 youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
@@ -179,3 +180,6 @@ saruwakakun.com##.title.floating[style^="width: 701px"]
 blog.codecamp.jp###js-fixedHeader
 ! 文章中プロモーション
 blog.codecamp.jp##.p-article_introduction
+
+!文章中プロモ
+techacademy.jp##.code-block
