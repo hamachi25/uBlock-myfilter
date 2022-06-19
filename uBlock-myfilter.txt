@@ -145,6 +145,9 @@ youtube.com##[id="contents"] a.yt-simple-endpoint:has-text(急上昇):upward(ytd
 ! ホームの最新のYouTube投稿
 youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(最新の YouTube 投稿))
 
+! reddit
+reddit.com##[data-testid="join-heroes"]:upward(3)
+
 
 ! プログラミングサイト
 ! 上の固定
