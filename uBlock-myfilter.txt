@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220618
+! Version: 20220623
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -131,7 +131,8 @@ youtube.com##ytd-inline-survey-renderer:upward(2)
 ! チャンネル登録shorts
 youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
 ! ホームshorts
-youtube.com##ytd-browse[page-subtype="home"] a#video-title-link[title*=shorts]:upward(ytd-rich-item-renderer)
+!youtube.com##ytd-browse[page-subtype="home"] a#video-title-link[title*=shorts]:upward(ytd-rich-item-renderer)
+youtube.com##ytd-browse[page-subtype="home"] a#video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
 ! 検索結果shorts
 youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
 ! チャンネル動画shorts
