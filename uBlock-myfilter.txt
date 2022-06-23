@@ -118,9 +118,9 @@ youtube.com##tp-yt-app-drawer div[id="footer"] a:has-text(概要):upward(div[id=
 ! コメント欄NG リプライだけ選択
 !youtube.com##ytd-comments[id="comments"] #replies ytd-comment-renderer.ytd-comment-replies-renderer:has-text(/(あ|い)/)
 ! 履歴のショート
-!www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
+!youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
 ! ホームのトップニュースとおすすめ映画
-!www.youtube.com##ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope > .ytd-rich-section-renderer.style-scope
+!youtube.com##ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope > .ytd-rich-section-renderer.style-scope
 ! 動画下クリップとか
 youtube.com##ytd-menu-renderer ytd-button-renderer:has-text(/(クリップ|Thanks)/)
 ! ホーム動画横のスクロールバー
@@ -136,7 +136,7 @@ youtube.com##ytd-browse[page-subtype="home"] a#video-title-link:has-text(/shorts
 ! 検索結果shorts
 youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
 ! チャンネル動画shorts
-www.youtube.com##ytd-browse[page-subtype="channels"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
+youtube.com##ytd-browse[page-subtype="channels"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
 ! 動画最後の関連動画のショート
 youtube.com##a.ytp-videowall-still.ytp-suggestion-set:has-text(Shorts)
 ! 一度見た動画の下の赤線
