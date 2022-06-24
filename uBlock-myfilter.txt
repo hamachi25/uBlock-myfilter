@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220623
+! Version: 20220624
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -150,7 +150,7 @@ youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(�
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
 
-! 記事左下コメントポップアップ
+! ヤフーニュース記事左下コメントポップアップ
 news.yahoo.co.jp##div[class^="ArticleCommentFloating__ComponentBalloon"]
 !記事下リアクション
 news.yahoo.co.jp##div[class^="ArticleReaction__Wrapper"]
@@ -159,6 +159,8 @@ news.yahoo.co.jp##aside[class^="CommentShort__Wrapper"]
 news.yahoo.co.jp###articleCommentModule
 news.yahoo.co.jp##a:has-text(おすすめの有料記事):upward(2)
 
+! 読売新聞画面下
+yomiuri.co.jp##.p-footer-subscribe
 
 ! プログラミングサイト
 ! 上の固定
