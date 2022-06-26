@@ -162,7 +162,7 @@ news.yahoo.co.jp##a:has-text(おすすめの有料記事):upward(2)
 ! 読売新聞画面下
 yomiuri.co.jp##.p-footer-subscribe
 
-! URLをきれいに (chromeではtwitterのremoveが動作しないらしい)
+! URLをきれいにchromeではtwitterのremoveが動作しないらしい
 ! https://www.reddit.com/r/uBlockOrigin/comments/sa3ewm/im_unable_to_remove_this_parameter_from_twitter/htr4jyn
 ||amazon.$removeparam=psc
 ||amazon.$removeparam=m
