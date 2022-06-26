@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220624
+! Version: 20220626
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -33,9 +33,9 @@ twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has([href^=
 twitter.com##div[data-testid="ScrollSnap-nextButtonWrapper"]
 twitter.com##div[data-testid="ScrollSnap-prevButtonWrapper"]
 ! URLから開いたときのその他のツイート
-||twitter.com^$removeparam=/^(?:ref_src|s)=.*$/ 
-twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"])
-twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"]) ~ [data-testid="cellInnerDiv"]
+!||twitter.com^$removeparam=/^(?:ref_src|s)=.*$/ 
+twitter.com##[aria-label="Timeline: Conversation"] h2>div>span:has-text(/^(?:More Tweets|その他のツイート)$/):upward([style^="transform"])
+twitter.com##[aria-label="Timeline: Conversation"] h2>div>span:has-text(/^(?:More Tweets|その他のツイート)$/):upward([style^="transform"])~div
 ! センシティブ警告
 twitter.com##[data-testid="tweet"] [aria-labelledby] div:style(filter: none !important)
 twitter.com##[data-testid="tweet"] [aria-labelledby] span:has-text(ツイートの作成者が、このツイートをセンシティブな内容として設定しました。):upward(4)
