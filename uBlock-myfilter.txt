@@ -33,9 +33,9 @@ twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has([href^=
 twitter.com##div[data-testid="ScrollSnap-nextButtonWrapper"]
 twitter.com##div[data-testid="ScrollSnap-prevButtonWrapper"]
 ! URLから開いたときのその他のツイート
-||twitter.com^$removeparam=/^(?:ref_src|s)=.*$/ 
-twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"])
-twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"]) ~ [data-testid="cellInnerDiv"] 
+!||twitter.com^$removeparam=/^(?:ref_src|s)=.*$/ 
+!twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"])
+!twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"]) ~ [data-testid="cellInnerDiv"] 
 ! センシティブ警告
 twitter.com##[data-testid="tweet"] [aria-labelledby] div:style(filter: none !important)
 twitter.com##[data-testid="tweet"] [aria-labelledby] span:has-text(ツイートの作成者が、このツイートをセンシティブな内容として設定しました。):upward(4)
@@ -161,6 +161,16 @@ news.yahoo.co.jp##a:has-text(おすすめの有料記事):upward(2)
 
 ! 読売新聞画面下
 yomiuri.co.jp##.p-footer-subscribe
+
+! URLをきれいに
+||amazon.$removeparam=psc
+||amazon.$removeparam=m
+||amazon.$removeparam=linkId
+||amazon.$removeparam=AssociateTag
+||twitter.$removeparam=t
+||twitter.$removeparam=s
+
+
 
 ! プログラミングサイト
 ! 上の固定
