@@ -176,6 +176,9 @@ fandom.com###WikiaBar
 fandom.com###WikiaRail
 fandom.com##.fandom-sticky-header
 fandom.com##.community-header-wrapper:style(height: 100px!important)
+fandom.com##.page-side-tools__wrapper
+fandom.com##.page-header__actions
+
 
 
 ! プログラミングサイト
