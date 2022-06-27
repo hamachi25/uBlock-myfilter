@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220626
+! Version: 20220627
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -175,6 +175,7 @@ yomiuri.co.jp##.p-footer-subscribe
 fandom.com###WikiaBar
 fandom.com###WikiaRail
 fandom.com##.fandom-sticky-header
+fandom.com##.community-header-wrapper:style(height: 100px!important)
 
 
 ! プログラミングサイト
