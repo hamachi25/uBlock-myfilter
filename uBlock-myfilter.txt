@@ -134,8 +134,10 @@ youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title[href*=shorts
 ! ホームshorts
 !youtube.com##ytd-browse[page-subtype="home"] a#video-title-link[title*=shorts]:upward(ytd-rich-item-renderer)
 youtube.com##ytd-browse[page-subtype="home"] a#video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
+! 動画右shorts
+youtube.com##.ytd-watch-next-secondary-results-renderer span#video-title:has-text(/shorts/i):upward(ytd-compact-video-renderer)
 ! 検索結果shorts
-!youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
+youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
 ! チャンネル動画shorts
 youtube.com##ytd-browse[page-subtype="channels"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
 ! 動画最後の関連動画のショート
