@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220627
+! Version: 20220628
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -178,6 +178,8 @@ fandom.com##.fandom-sticky-header
 fandom.com##.community-header-wrapper:style(height: 100px!important)
 fandom.com##.page-side-tools__wrapper
 fandom.com##.page-header__actions
+fandom.com##.notifications-placeholder
+fandom.com##ruby > rt
 
 
 
