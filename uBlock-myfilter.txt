@@ -10,6 +10,8 @@
 ! 検索結果のユーザー
 twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(ユーザー))
 twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(ユーザー)) ~ div:not(:has(article))
+! リプ欄のその他の返信
+twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
 ! トレンドを一回消して表示させ直す
 twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div
 twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div:has(div[data-testid="eventHero"]):style(display: revert !important)
