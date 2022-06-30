@@ -157,6 +157,8 @@ youtube.com###content ytd-badge-supported-renderer > div > span:has-text(ライ�
 youtube.com##[page-subtype="subscriptions"] ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-grid-video-renderer)
 ! チャンネル一覧今後のライブ
 youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(ytd-grid-video-renderer)
+! 動画右youtube movie
+youtube.com##ytd-compact-movie-renderer
 
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
