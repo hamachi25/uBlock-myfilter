@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220628
+! Version: 20220630
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -7,9 +7,9 @@
 !twitter.com##[aria-label="タイムライン: リスト"] article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"]):style(display: revert !important)
 ! リストでのみNG
 !twitter.com##[aria-label="タイムライン: リスト"] article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
-! 検索結果のアカウント
-twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(アカウント))
-twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(アカウント)) ~ div:not(:has(article))
+! 検索結果のユーザー
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(ユーザー))
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(ユーザー)) ~ div:not(:has(article))
 ! トレンドを一回消して表示させ直す
 twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div
 twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div:has(div[data-testid="eventHero"]):style(display: revert !important)
