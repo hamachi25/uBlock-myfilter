@@ -131,16 +131,15 @@ youtube.com##div.ytd-rich-grid-media[id="meta"]:style(scrollbar-width: none !imp
 youtube.com##div.ytd-video-preview[id="meta"]:style(scrollbar-width: none !important)
 ! ホームの動画評価
 youtube.com##ytd-inline-survey-renderer:upward(2)
-! チャンネル登録shorts
-youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
 ! ホームshorts
-!youtube.com##ytd-browse[page-subtype="home"] a#video-title-link[title*=shorts]:upward(ytd-rich-item-renderer)
 youtube.com##ytd-browse[page-subtype="home"] a#video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
 ! 動画右shorts
 youtube.com##.ytd-watch-next-secondary-results-renderer span#video-title:has-text(/shorts/i):upward(ytd-compact-video-renderer)
+! チャンネル一覧shorts
+youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
 ! 検索結果shorts
 youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
-! チャンネル動画shorts
+! チャンネルshorts
 youtube.com##ytd-browse[page-subtype="channels"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
 ! 動画最後の関連動画のショート
 youtube.com##a.ytp-videowall-still.ytp-suggestion-set:has-text(Shorts)
@@ -155,7 +154,9 @@ youtube.com##ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer
 ! ホームライブ
 youtube.com###content ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-rich-item-renderer)
 ! チャンネル一覧ライブ
-youtube.com###content ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="subscriptions"] ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-grid-video-renderer)
+! チャンネル一覧今後のライブ
+youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(ytd-grid-video-renderer)
 
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
