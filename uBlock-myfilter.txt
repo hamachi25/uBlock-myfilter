@@ -150,6 +150,12 @@ youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
 youtube.com##[id="contents"] a.yt-simple-endpoint:has-text(急上昇):upward(ytd-rich-section-renderer.ytd-rich-grid-renderer)
 ! ホームの最新のYouTube投稿
 youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(最新の YouTube 投稿))
+! 動画横ライブ
+youtube.com##ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer span:has-text(ライブ):upward(ytd-compact-video-renderer)
+! ホームライブ
+youtube.com###content ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-rich-item-renderer)
+! チャンネル一覧ライブ
+youtube.com###content ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-grid-video-renderer)
 
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
