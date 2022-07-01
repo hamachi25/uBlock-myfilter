@@ -42,12 +42,25 @@ twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([d
 ! センシティブ警告
 twitter.com##[data-testid="tweet"] [aria-labelledby] div:style(filter: none !important)
 twitter.com##[data-testid="tweet"] [aria-labelledby] span:has-text(ツイートの作成者が、このツイートをセンシティブな内容として設定しました。):upward(4)
-! [誤作動]右下のDM(動画を再生すると一回止まってしまう)
-!twitter.com##div[data-testid="DMDrawer"]
 ! トレンドやおすすめなどのタブ透過をやめる
 twitter.com##[aria-label="ホームタイムライン"] > div:has([role="tablist"]):style(background-color: rgba(255, 255, 255, 1) !important)
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
+! もっと見るの設定意外を消す
+twitter.com###layers div[role="menu"][style^="max-height:"] [href="https://ads.twitter.com/?ref=gl-tw-tw-twitter-ads-rweb"]
+twitter.com###layers div[role="menu"][style^="max-height:"] [href="/i/flow/convert_to_professional"]
+twitter.com###layers div[role="menu"][style^="max-height:"] [href="/i/newsletters"]
+twitter.com###layers div[role="menu"][style^="max-height:"] [href="/i/moment_maker"]
+twitter.com###layers div[role="menu"][style^="max-height:"] [href="https://support.twitter.com/"]
+twitter.com###layers div[role="menu"][style^="max-height:"] [href="/i/display"]
+twitter.com###layers div[role="menu"][style^="max-height:"] [href="https://analytics.twitter.com/"]
+twitter.com###layers div[role="menu"][style^="max-height:"] [href$="/topics"]
+twitter.com###layers div[role="menu"][style^="max-height:"] [href="/i/keyboard_shortcuts"]
+twitter.com###layers div[role="menu"][style^="max-height:"] div[role="separator"]
+twitter.com###layers div[role="menu"][style^="max-height:"]:style(border-radius: 30px!important)
+twitter.com###layers div[role="menu"][style^="max-height:"] [href="/settings"] > div > div > span:style(font-size: 18px!important)
+!右下DM
+twitter.com##[data-testid="DMDrawer"] > div
 ! 例外ルール雪フィルタとかぶる
 twitter.com#@#aside[aria-label=おすすめユーザー]:upward(1)
 twitter.com#@#div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
