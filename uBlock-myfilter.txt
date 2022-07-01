@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220630
+! Version: 20220701
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -142,7 +142,7 @@ youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
 ! チャンネルshorts
 youtube.com##ytd-browse[page-subtype="channels"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
 ! 動画最後の関連動画のショート
-youtube.com##a.ytp-videowall-still.ytp-suggestion-set:has-text(Shorts)
+youtube.com##a.ytp-videowall-still.ytp-suggestion-set:has-text(/shorts/i)
 ! 一度見た動画の下の赤線
 youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
 ! ホームに出てくる急上昇
