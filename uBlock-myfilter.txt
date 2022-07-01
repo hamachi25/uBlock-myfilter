@@ -8,9 +8,8 @@
 ! リストでのみNG
 !twitter.com##[aria-label="タイムライン: リスト"] article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
 ! 検索結果のユーザー
-twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div[style^=transform] > div a[href^="/search?"] > div > span:has-text(すべてを表示):upward(2)
-twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div[style^=transform] div[aria-label^=フォロー][role=button] > div > span > span:upward(div[style^=transform])
-twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(ユーザー):upward(div[style^=transform])
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(アカウント))
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(アカウント)) ~ div:not(:has(article))
 ! リプ欄のその他の返信
 twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
 ! トレンドを一回消して表示させ直す
