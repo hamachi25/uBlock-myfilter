@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220701
+! Version: 20220702
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -171,6 +171,8 @@ youtube.com##[page-subtype="subscriptions"] ytd-badge-supported-renderer > div >
 youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(ytd-grid-video-renderer)
 ! 動画右youtube movie
 youtube.com##ytd-compact-movie-renderer
+! ホームで動画にカーソルを当てた時の字幕
+youtube.com###ytp-caption-window-container
 
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
