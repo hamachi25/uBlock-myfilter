@@ -64,6 +64,9 @@ twitter.com##[data-testid="DMDrawer"] > div
 twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"]:upward(8):style(position: static!important)
 ! ホーム上いまどうしてる
 twitter.com##[aria-label="ホームタイムライン"] .DraftEditor-root:upward(23)
+! リツイートといいね数を隠す
+twitter.com##article [data-testid="retweet"] > div > div:nth-of-type(2)
+twitter.com##article [data-testid="like"] > div > div:nth-of-type(2)
 ! 例外ルール雪フィルタとかぶる
 twitter.com#@#aside[aria-label=おすすめユーザー]:upward(1)
 twitter.com#@#div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
