@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220703
+! Version: 20220704
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -62,6 +62,8 @@ twitter.com###layers div[role="menu"][style^="max-height:"] [href="/settings"] >
 twitter.com##[data-testid="DMDrawer"] > div
 ! ホームの上最新を固定
 twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"]:upward(8):style(position: static!important)
+! ホーム上いまどうしてる
+twitter.com##[aria-label="ホームタイムライン"] .DraftEditor-root:upward(23)
 ! 例外ルール雪フィルタとかぶる
 twitter.com#@#aside[aria-label=おすすめユーザー]:upward(1)
 twitter.com#@#div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
@@ -120,8 +122,8 @@ youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-rende
 ! 音声検索
 youtube.com###voice-search-button
 ! ホーム左下の他のサービス
-youtube.com##tp-yt-app-drawer ytd-guide-section-renderer[guide-persistent-and-visible] > h3:has-text(YouTube の他のサービス):upward(ytd-guide-section-renderer[guide-persistent-and-visible])
-youtube.com##tp-yt-app-drawer ytd-guide-section-renderer[guide-persistent-and-visible] a[title="設定"][href="/account"]:upward(ytd-guide-section-renderer[guide-persistent-and-visible])
+youtube.com###contentContainer ytd-guide-section-renderer > h3:has-text(YouTube の他のサービス):upward(ytd-guide-section-renderer)
+youtube.com###contentContainer ytd-guide-section-renderer a[title="設定"][href="/account"]:upward(ytd-guide-section-renderer)
 ! ホーム左下の概要
 youtube.com##tp-yt-app-drawer div[id="footer"] a:has-text(概要):upward(div[id="footer"])
 ! チャンネル登録NG
