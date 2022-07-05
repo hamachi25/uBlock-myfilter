@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220704
+! Version: 20220705
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -67,11 +67,9 @@ twitter.com##[aria-label="ホームタイムライン"] .DraftEditor-root:upward
 ! リツイートといいね数を隠す
 twitter.com##article [data-testid="retweet"] > div > div:nth-of-type(2)
 twitter.com##article [data-testid="like"] > div > div:nth-of-type(2)
-! 例外ルール雪フィルタとかぶる
-twitter.com#@#aside[aria-label=おすすめユーザー]:upward(1)
-twitter.com#@#div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
-twitter.com#@#div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] div[aria-label^=フォロー][role=button] > div > span > span:upward(div[style^=transform])
-twitter.com#@#div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
+! 左下自分のアカウント名だけ隠す
+twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
+
 
 nicovideo.jp##.SeekBarStoryboardPremiumLink-content
 nicovideo.jp##.MainContainer-marquee
