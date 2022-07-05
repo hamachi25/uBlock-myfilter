@@ -92,7 +92,7 @@ nicovideo.jp##.MylistButton.VideoMenuContainer-button:style(top: 36px!important;
 ! ホームのミックスリスト
 youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
 ! 動画最後の関連動画のミックスリスト
-youtube.com##a.ytp-videowall-still.ytp-suggestion-set[data-is-mix="true"]
+!youtube.com##a.ytp-videowall-still.ytp-suggestion-set[data-is-mix="true"]
 youtube.com##ytd-compact-radio-renderer
 ! 必要ないかも
 !youtube.com##ytd-compact-playlist-renderer.ytd-item-section-renderer.style-scope
