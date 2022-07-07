@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220705
+! Version: 20220707
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -143,8 +143,8 @@ youtube.com##tp-yt-app-drawer div[id="footer"] a:has-text(概要):upward(div[id=
 !youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
 ! ホームのトップニュースとおすすめ映画
 !youtube.com##ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope > .ytd-rich-section-renderer.style-scope
-! 動画下クリップとか
-youtube.com##ytd-menu-renderer ytd-button-renderer.force-icon-button:has-text(/(クリップ|Thanks)/)
+! 動画下クリップ、Thanks、オフライン
+youtube.com##ytd-menu-renderer ytd-button-renderer.force-icon-button:has-text(/(クリップ|Thanks|オフライン)/)
 ! ホーム動画横のスクロールバー
 youtube.com##div.ytd-rich-grid-media[id="meta"]:style(scrollbar-width: none !important)
 youtube.com##div.ytd-video-preview[id="meta"]:style(scrollbar-width: none !important)
