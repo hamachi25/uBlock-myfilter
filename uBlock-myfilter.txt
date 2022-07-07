@@ -144,7 +144,7 @@ youtube.com##tp-yt-app-drawer div[id="footer"] a:has-text(概要):upward(div[id=
 ! ホームのトップニュースとおすすめ映画
 !youtube.com##ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope > .ytd-rich-section-renderer.style-scope
 ! 動画下クリップとか
-youtube.com##ytd-menu-renderer ytd-button-renderer:has-text(/(クリップ|Thanks)/)
+youtube.com##ytd-menu-renderer ytd-button-renderer.force-icon-button:has-text(/(クリップ|Thanks)/)
 ! ホーム動画横のスクロールバー
 youtube.com##div.ytd-rich-grid-media[id="meta"]:style(scrollbar-width: none !important)
 youtube.com##div.ytd-video-preview[id="meta"]:style(scrollbar-width: none !important)
