@@ -143,8 +143,8 @@ youtube.com##tp-yt-app-drawer div[id="footer"] a:has-text(概要):upward(div[id=
 !youtube.com##ytd-comments[id="comments"] #replies ytd-comment-renderer.ytd-comment-replies-renderer:has-text(/(あ|い)/)
 ! 履歴のショート
 !youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
-! ホームのトップニュースとおすすめ映画
-!youtube.com##ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope > .ytd-rich-section-renderer.style-scope
+! ホーム 最新ニュース
+www.youtube.com##[page-subtype="home"] span.ytd-rich-shelf-renderer#title:has-text(最新ニュース):upward(#contents > ytd-rich-section-renderer)
 ! 動画下クリップ、Thanks、オフライン
 youtube.com##ytd-menu-renderer ytd-button-renderer.force-icon-button:has-text(/(クリップ|Thanks|オフライン)/)
 ! ホーム動画横のスクロールバー
