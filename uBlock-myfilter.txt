@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220707
+! Version: 20220709
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -62,8 +62,9 @@ twitter.com###layers div[role="menu"][style^="max-height:"] [href="/settings"] >
 twitter.com##[data-testid="DMDrawer"] > div
 ! ホームの上最新を固定
 twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"]:upward(8):style(position: static!important)
-! ホーム上いまどうしてる
-twitter.com##[aria-label="ホームタイムライン"] .DraftEditor-root:upward(23)
+! ホーム上ツイート欄
+twitter.com##[aria-label="ホームタイムライン"] > div:nth-of-type(2)
+twitter.com##[aria-label="ホームタイムライン"] > div:nth-of-type(3)
 ! リツイートといいね数を隠す
 twitter.com##article [data-testid="retweet"] > div > div:nth-of-type(2)
 twitter.com##article [data-testid="like"] > div > div:nth-of-type(2)
