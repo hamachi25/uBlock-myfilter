@@ -63,8 +63,8 @@ twitter.com##[data-testid="DMDrawer"] > div
 ! ホームの上最新を固定
 twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"]:upward(8):style(position: static!important)
 ! ホーム上ツイート欄
-twitter.com##[aria-label="ホームタイムライン"] > div:nth-of-type(2)
-twitter.com##[aria-label="ホームタイムライン"] > div:nth-of-type(3)
+!twitter.com##[aria-label="ホームタイムライン"] > div:nth-of-type(2)
+!twitter.com##[aria-label="ホームタイムライン"] > div:nth-of-type(3)
 ! リツイートといいね数を隠す
 twitter.com##article [data-testid="retweet"] > div > div:nth-of-type(2)
 twitter.com##article [data-testid="like"] > div > div:nth-of-type(2)
