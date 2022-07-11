@@ -187,7 +187,7 @@ youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(yt
 ! 動画右youtube movie
 youtube.com##ytd-compact-movie-renderer
 ! ホームで動画にカーソルを当てた時の字幕
-youtube.com##.ytd-video-preview[id="meta"] #ytp-caption-window-container
+youtube.com##.ytp-progress-bar-container #ytp-caption-window-container
 ! youtubeチャンネル自動再生
 youtube.com###player-container.ytd-channel-video-player-renderer
 ! メンバーになる
