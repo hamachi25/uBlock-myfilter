@@ -189,13 +189,14 @@ youtube.com##ytd-compact-movie-renderer
 ! ホームで動画にカーソルを当てた時の字幕
 youtube.com##.ytp-progress-bar-container #ytp-caption-window-container
 ! youtubeチャンネル自動再生
+youtube.com##[page-subtype="channels"] #c4-player > .html5-video-container > video:remove()
 youtube.com###player-container.ytd-channel-video-player-renderer
 ! メンバーになる
-www.youtube.com###sponsor-button
+youtube.com###sponsor-button
 ! チャンネルメンバー一覧
-www.youtube.com##ytd-browse yt-formatted-string.title:has-text(メンバー):upward(ytd-item-section-renderer.ytd-section-list-renderer)
+youtube.com##ytd-browse yt-formatted-string.title:has-text(メンバー):upward(ytd-item-section-renderer.ytd-section-list-renderer)
 ! チャンネルコミュニティ
-www.youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(tp-yt-paper-tab[role="tab"])
+youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(tp-yt-paper-tab[role="tab"])
 
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
