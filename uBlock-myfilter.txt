@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220709
+! Version: 20220711
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -72,7 +72,12 @@ twitter.com##article [data-testid="like"] > div > div:nth-of-type(2)
 twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 ! アカウント画像を暗く
 twitter.com##[aria-label="アカウントメニュー"] [data-testid^="UserAvatar-Container"] > div > div > div > div > div > div:style(background-color: rgba(0, 0, 0, 0.5)!important)
-
+! ホーム上ツイート欄
+twitter.com##[aria-label="ホームタイムライン"] [data-testid="tweetTextarea_0_label"]:upward(18)
+twitter.com##[aria-label="ホームタイムライン"] [data-testid="tweetTextarea_0_label"]:upward(18) + div
+! いいねとリツイート
+twitter.com##article [href$="/retweets"]:upward(2)
+twitter.com##article [href$="/likes"]:upward(2)
 
 nicovideo.jp##.SeekBarStoryboardPremiumLink-content
 nicovideo.jp##.MainContainer-marquee
@@ -182,7 +187,15 @@ youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(yt
 ! 動画右youtube movie
 youtube.com##ytd-compact-movie-renderer
 ! ホームで動画にカーソルを当てた時の字幕
-youtube.com###ytp-caption-window-container
+youtube.com##.ytd-video-preview[id="meta"] #ytp-caption-window-container
+! youtubeチャンネル自動再生
+youtube.com###player-container.ytd-channel-video-player-renderer
+! メンバーになる
+www.youtube.com###sponsor-button
+! チャンネルメンバー一覧
+www.youtube.com##ytd-browse yt-formatted-string.title:has-text(メンバー):upward(ytd-item-section-renderer.ytd-section-list-renderer)
+! チャンネルコミュニティ
+www.youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(tp-yt-paper-tab[role="tab"])
 
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
@@ -218,6 +231,8 @@ fandom.com##.page-header__actions
 fandom.com##.notifications-placeholder
 fandom.com##ruby > rt
 
+! 楽天PR商品
+search.rakuten.co.jp##.searchresults [href^="https://grp07.ias.rakuten.co.jp/redirect_rpp/"]:upward(.searchresultitem)
 
 
 ! プログラミングサイト
