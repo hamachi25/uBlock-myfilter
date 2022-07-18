@@ -79,6 +79,8 @@ twitter.com##[aria-label="ホームタイムライン"] [data-testid="tweetTexta
 ! いいねとリツイート
 twitter.com##article [href$="/retweets"]:upward(2)
 twitter.com##article [href$="/likes"]:upward(2)
+! 検索結果の関連していますか
+twitter.com##[aria-label="タイムライン: タイムラインを検索"] span:has-text(このツイートは検索内容に関連していますか？):upward(div[style^="transform"])
 
 nicovideo.jp##.SeekBarStoryboardPremiumLink-content
 nicovideo.jp##.MainContainer-marquee
