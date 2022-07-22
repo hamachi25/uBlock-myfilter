@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220720
+! Version: 20220722
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -85,11 +85,13 @@ twitter.com##[aria-label="タイムライン: タイムラインを検索"] span
 nicovideo.jp##.SeekBarStoryboardPremiumLink-content
 nicovideo.jp##.MainContainer-marquee
 ! 上のタブ
-nicovideo.jp##a[href^="https://account.nicovideo.jp/premium/register?site=niconico&next_url"]
+nicovideo.jp##a[href^="https://account.nicovideo.jp/premium/register?site=nico"]
 nicovideo.jp##a[class^="common-header"][href^="https://ch.nicovideo.jp"]
 nicovideo.jp##a[class^="common-header"][href^="https://game.nicovideo.jp/atsumaru/"]
 nicovideo.jp##a[class^="common-header"][href^="http://app.nicovideo.jp"]
 nicovideo.jp##a[class^="common-header"][href^="https://seiga.nicovideo.jp"]
+! 上のタブその他
+nicovideo.jp##.nico-CommonHeaderRoot > div > div > div:nth-of-type(1) > div
 ! ランキングの提供
 nicovideo.jp##.RankingVideoListContainer > div.RankingMainNicoad[data-frame-id^="2"]
 !コメント下のギフト
@@ -97,6 +99,19 @@ nicovideo.jp##div.GiftSubEffectContainer
 ! コメント上
 nicovideo.jp##.PlayerPanelContainer:style(top: 0px !important;z-index: 0!important)
 nicovideo.jp##.MylistButton.VideoMenuContainer-button:style(top: 36px!important;left: 87px!important;z-index: 1!important;transform: scale(0.7);fill: #b2bac2!important)
+! 動画右有料動画
+nicovideo.jp##.MainContainer-playerPanel .VideoLabel:has-text(有料):upward(.WatchRecommendation-video)
+! 動画上お知らせ
+nicovideo.jp##.WakutkoolNoticeContainer
+! 動画下
+nicovideo.jp##.BottomContainer
+!動画設定プレミアム機能
+nicovideo.jp##.PlaybackRateMenu .PremiumIcon:upward(2)
+nicovideo.jp##.PlayerOptionContainer .PremiumIcon:upward(3)
+nicovideo.jp##.PlayerOptionMenuGroup:nth-of-type(3)
+nicovideo.jp##.PlayerOptionContainer:style(max-height:488px!important)
+!フッター
+nicovideo.jp##footer
 ! @Jumpの無効化
 !||nvapi.nicovideo.jp/v1/videos?watchIds^
 
