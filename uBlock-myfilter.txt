@@ -136,6 +136,11 @@ nicovideo.jp##.VideoTopGenreListContainer > .VideoTopGenreListContainer-item:not
 nicovideo.jp##.VideoTopGenreListContainer:style(background-color:transparent!important)
 ! 検索結果コミュニティ
 nicovideo.jp##.column.sub > section.relatedInfo.community
+! トップページ自動再生
+nicovideo.jp##.AuroraVisionContainer
+! ロゴ下の情報
+nicovideo.jp##.TopPage .HeaderContainer_Re-mainLower
+nicovideo.jp##.TopPage .PersonalFrameContainer
 
 ! ホームのミックスリスト
 youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
