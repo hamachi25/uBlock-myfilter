@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220725
+! Version: 20220801
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -85,13 +85,26 @@ twitter.com##[aria-label="タイムライン: タイムラインを検索"] span
 nicovideo.jp##.SeekBarStoryboardPremiumLink-content
 nicovideo.jp##.MainContainer-marquee
 ! 上のタブ
-nicovideo.jp##a[href^="https://account.nicovideo.jp/premium/register?site=nico"]
-nicovideo.jp##a[class^="common-header"][href^="https://ch.nicovideo.jp"]
-nicovideo.jp##a[class^="common-header"][href^="https://game.nicovideo.jp/atsumaru/"]
-nicovideo.jp##a[class^="common-header"][href^="http://app.nicovideo.jp"]
-nicovideo.jp##a[class^="common-header"][href^="https://seiga.nicovideo.jp"]
+nicovideo.jp##a[href^="https://account.nicovideo.jp/premium/register?site="]
+nicovideo.jp###CommonHeader [href^="https://ch.nicovideo.jp"]
+nicovideo.jp###CommonHeader [href^="https://game.nicovideo.jp/atsumaru/"]
+nicovideo.jp###CommonHeader [href^="http://app.nicovideo.jp"]
+nicovideo.jp###CommonHeader [href^="https://seiga.nicovideo.jp"]
 ! 上のタブその他
-nicovideo.jp##.nico-CommonHeaderRoot > div > div > div:nth-of-type(1) > div
+nicovideo.jp###CommonHeader .nico-CommonHeaderRoot > div > div > div:nth-of-type(1) > div
+! 上のタブ通知
+nicovideo.jp###CommonHeader .nico-CommonHeaderRoot > div > div > div:nth-of-type(2) > div:nth-of-type(2)
+! 上のタブ　アカウントいらないもの
+nicovideo.jp###CommonHeader [href^="https://blog.nicovideo.jp/niconews/category/videotop"]
+nicovideo.jp###CommonHeader [href^="https://www.upload.nicovideo.jp/garage"]
+nicovideo.jp###CommonHeader [href^="https://point.nicovideo.jp/index/bank"]:upward(1)
+nicovideo.jp###CommonHeader [href^="https://qa.nicovideo.jp"]
+nicovideo.jp###CommonHeader [href^="https://live.nicovideo.jp/create"]
+nicovideo.jp###CommonHeader [href^="https://www.nicovideo.jp/my/history/purchased-serials"]
+nicovideo.jp###CommonHeader [href^="https://live.nicovideo.jp/my"]
+nicovideo.jp###CommonHeader [href^="https://site.live.nicovideo.jp/watch.html"]
+nicovideo.jp###CommonHeader [href^="https://site.live.nicovideo.jp/broadcast.html"]
+nicovideo.jp###CommonHeader [href^="https://site.nicovideo.jp/premium_contents"]
 ! ランキングの提供
 nicovideo.jp##.RankingVideoListContainer > div.RankingMainNicoad[data-frame-id^="2"]
 !コメント下のギフト
@@ -101,6 +114,10 @@ nicovideo.jp##.PlayerPanelContainer:style(top: 0px !important;z-index: 0!importa
 nicovideo.jp##.MylistButton.VideoMenuContainer-button:style(top: 36px!important;left: 87px!important;z-index: 1!important;transform: scale(0.7);fill: #b2bac2!important)
 ! 動画右有料動画
 nicovideo.jp##.MainContainer-playerPanel .VideoLabel:has-text(有料):upward(.WatchRecommendation-video)
+! 動画右有料次の動画
+nicovideo.jp##.MainContainer-playerPanel .VideoLabel:has-text(有料):upward(.NextPlayVideoContainer)
+! 検索結果有料動画
+nicovideo.jp##.iconPayment:has-text(有料):upward(li.item[data-video-id])
 ! 動画上お知らせ
 nicovideo.jp##.WakutkoolNoticeContainer
 ! 動画下
@@ -114,6 +131,11 @@ nicovideo.jp##.PlayerOptionContainer:style(max-height:488px!important)
 nicovideo.jp##footer
 ! @Jumpの無効化
 !||nvapi.nicovideo.jp/v1/videos?watchIds^
+! ジャンル選択アニメ以外なくす
+nicovideo.jp##.VideoTopGenreListContainer > .VideoTopGenreListContainer-item:not(:has([href="/video_top/genre/anime"]))
+nicovideo.jp##.VideoTopGenreListContainer:style(background-color:transparent!important)
+! 検索結果コミュニティ
+nicovideo.jp##.column.sub > section.relatedInfo.community
 
 ! ホームのミックスリスト
 youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
@@ -253,6 +275,8 @@ fandom.com##ruby > rt
 ! 楽天PR商品
 search.rakuten.co.jp##.searchresults [href^="https://grp07.ias.rakuten.co.jp/redirect_rpp/"]:upward(.searchresultitem)
 
+! google検索歌詞コピペ
+www.google.*##[data-attrid="kc:/music/recording_cluster:lyrics"] [data-lyricid]:style(user-select: auto !important;)
 
 ! プログラミングサイト
 ! 上の固定
