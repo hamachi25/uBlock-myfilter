@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220801
+! Version: 20220804
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -82,7 +82,7 @@ twitter.com##article [href$="/likes"]:upward(2)
 ! 検索結果の関連していますか
 twitter.com##[aria-label="タイムライン: タイムラインを検索"] span:has-text(このツイートは検索内容に関連していますか？):upward(div[style^="transform"])
 
-nicovideo.jp##.SeekBarStoryboardPremiumLink-content
+nicovideo.jp##.SeekBarStoryboardPremiumLink
 nicovideo.jp##.MainContainer-marquee
 ! 上のタブ
 nicovideo.jp##a[href^="https://account.nicovideo.jp/premium/register?site="]
@@ -105,13 +105,13 @@ nicovideo.jp###CommonHeader [href^="https://live.nicovideo.jp/my"]
 nicovideo.jp###CommonHeader [href^="https://site.live.nicovideo.jp/watch.html"]
 nicovideo.jp###CommonHeader [href^="https://site.live.nicovideo.jp/broadcast.html"]
 nicovideo.jp###CommonHeader [href^="https://site.nicovideo.jp/premium_contents"]
-! ランキングの提供
-nicovideo.jp##.RankingVideoListContainer > div.RankingMainNicoad[data-frame-id^="2"]
+! ランキングの提供、ニコニ広告、動画サムネのラッパマーク
+||nicoad.nicovideo.jp^$domain=www.nicovideo.jp
 !コメント下のギフト
 nicovideo.jp##div.GiftSubEffectContainer
 ! コメント上
 nicovideo.jp##.PlayerPanelContainer:style(top: 0px !important;z-index: 0!important)
-nicovideo.jp##.MylistButton.VideoMenuContainer-button:style(top: 36px!important;left: 87px!important;z-index: 1!important;transform: scale(0.7);fill: #b2bac2!important)
+nicovideo.jp##.MylistButton.VideoMenuContainer-button:style(top: 36px!important;left: 55px!important;z-index: 1!important;transform: scale(0.7);fill: #b2bac2!important)
 ! 動画右有料動画
 nicovideo.jp##.MainContainer-playerPanel .VideoLabel:has-text(有料):upward(.WatchRecommendation-video)
 ! 動画右有料次の動画
@@ -141,14 +141,16 @@ nicovideo.jp##.AuroraVisionContainer
 ! ロゴ下の情報
 nicovideo.jp##.TopPage .HeaderContainer_Re-mainLower
 nicovideo.jp##.TopPage .PersonalFrameContainer
+! 動画上タグ編集
+nicovideo.jp##.TagContainer-area.TagContainer-TagEditButtonArea
+! 一度見た動画の下の赤線
+nicovideo.jp##.NC-VideoPlaybackIndicator
 
 ! ホームのミックスリスト
 youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
 ! 動画最後の関連動画のミックスリスト
 !youtube.com##a.ytp-videowall-still.ytp-suggestion-set[data-is-mix="true"]
-youtube.com##ytd-compact-radio-renderer
-! 必要ないかも
-!youtube.com##ytd-compact-playlist-renderer.ytd-item-section-renderer.style-scope
+!youtube.com##ytd-compact-radio-renderer
 ! 検索結果のミックスリスト
 !youtube.com##ytd-radio-renderer
 ! Removes "YouTube" (Music) playlists from the right side panel
@@ -192,10 +194,8 @@ youtube.com##tp-yt-app-drawer div[id="footer"] a:has-text(概要):upward(div[id=
 !youtube.com##ytd-comments[id="comments"] ytd-comment-thread-renderer.ytd-item-section-renderer > ytd-comment-renderer[style^="--ytd-comment-paid-background-color"]:has-text(/あ|い)/):upward(ytd-comment-thread-renderer.ytd-item-section-renderer)
 ! コメント欄NG リプライだけ選択
 !youtube.com##ytd-comments[id="comments"] #replies ytd-comment-renderer.ytd-comment-replies-renderer:has-text(/(あ|い)/)
-! 履歴のショート
-!youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
 ! ホーム 最新ニュース
-www.youtube.com##[page-subtype="home"] span.ytd-rich-shelf-renderer#title:has-text(最新ニュース):upward(#contents > ytd-rich-section-renderer)
+youtube.com##[page-subtype="home"] span.ytd-rich-shelf-renderer#title:has-text(最新ニュース):upward(#contents > ytd-rich-section-renderer)
 ! 動画下クリップ、Thanks、オフライン
 youtube.com##ytd-menu-renderer ytd-button-renderer.force-icon-button:has-text(/(クリップ|Thanks|オフライン)/)
 ! ホーム動画横のスクロールバー
@@ -213,8 +213,8 @@ youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title[href*=shorts
 youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
 ! チャンネルshorts
 youtube.com##ytd-browse[page-subtype="channels"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
-! 動画最後の関連動画のショート
-!youtube.com##a.ytp-videowall-still.ytp-suggestion-set:has-text(/shorts/i)
+! 履歴shorts
+youtube.com##[page-subtype="history"] ytd-reel-shelf-renderer
 ! 一度見た動画の下の赤線
 youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
 ! ホームに出てくる急上昇
@@ -282,6 +282,20 @@ search.rakuten.co.jp##.searchresults [href^="https://grp07.ias.rakuten.co.jp/red
 
 ! google検索歌詞コピペ
 www.google.*##[data-attrid="kc:/music/recording_cluster:lyrics"] [data-lyricid]:style(user-select: auto !important;)
+
+!コメント非表示
+nhentai.net###comment-post-container
+nhentai.net###comment-container
+
+! 一番下の寄付
+hitomi.la##.donate
+
+! トップページお知らせ
+kemono.party##.jumbo[style="background-color: #f2723c"]
+
+! カーソルで画像拡大
+gigafree.net###preview
+
 
 ! プログラミングサイト
 ! 上の固定
