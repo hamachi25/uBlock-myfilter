@@ -150,7 +150,8 @@ nicovideo.jp##.NC-VideoPlaybackIndicator
 youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
 ! 動画最後の関連動画のミックスリスト
 !youtube.com##a.ytp-videowall-still.ytp-suggestion-set[data-is-mix="true"]
-!youtube.com##ytd-compact-radio-renderer
+! 動画右のミックスリスト
+youtube.com##ytd-compact-radio-renderer
 ! 検索結果のミックスリスト
 !youtube.com##ytd-radio-renderer
 ! Removes "YouTube" (Music) playlists from the right side panel
