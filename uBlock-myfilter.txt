@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220804
+! Version: 20220806
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -63,12 +63,11 @@ twitter.com###layers div[role="menu"][style^="max-height:"] [href="/settings"] >
 twitter.com##[data-testid="DMDrawer"] > div
 ! ホームの上最新を固定
 twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"]:upward(8):style(position: static!important)
-! ホーム上ツイート欄
-!twitter.com##[aria-label="ホームタイムライン"] > div:nth-of-type(2)
-!twitter.com##[aria-label="ホームタイムライン"] > div:nth-of-type(3)
 ! リツイートといいね数を隠す
 twitter.com##article [data-testid="retweet"] > div > div:nth-of-type(2)
+twitter.com##article [data-testid="unretweet"] > div > div:nth-of-type(2)
 twitter.com##article [data-testid="like"] > div > div:nth-of-type(2)
+twitter.com##article [data-testid="unlike"] > div > div:nth-of-type(2)
 ! 左下自分のアカウント名だけ隠す
 twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 ! アカウント画像を暗く
@@ -234,9 +233,6 @@ youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(yt
 youtube.com##ytd-compact-movie-renderer
 ! ホームで動画にカーソルを当てた時の字幕
 youtube.com##.ytp-progress-bar-container #ytp-caption-window-container
-! youtubeチャンネル自動再生
-youtube.com##[page-subtype="channels"] #c4-player > .html5-video-container > video:remove()
-youtube.com###player-container.ytd-channel-video-player-renderer
 ! メンバーになる
 youtube.com###sponsor-button
 ! チャンネルメンバー一覧
@@ -296,6 +292,9 @@ kemono.party##.jumbo[style="background-color: #f2723c"]
 
 ! カーソルで画像拡大
 gigafree.net###preview
+
+! hide adsを非表示
+beta.sankakucomplex.com##a:has-text(Hide ads):upward(4)
 
 
 ! プログラミングサイト
