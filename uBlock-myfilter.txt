@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220806
+! Version: 20220807
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -80,6 +80,8 @@ twitter.com##article [href$="/retweets"]:upward(2)
 twitter.com##article [href$="/likes"]:upward(2)
 ! 検索結果の関連していますか
 twitter.com##[aria-label="タイムライン: タイムラインを検索"] span:has-text(このツイートは検索内容に関連していますか？):upward(div[style^="transform"])
+! タイムラインのユーザー下の要素
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div
 
 nicovideo.jp##.SeekBarStoryboardPremiumLink
 nicovideo.jp##.MainContainer-marquee
@@ -239,6 +241,8 @@ youtube.com###sponsor-button
 youtube.com##ytd-browse yt-formatted-string.title:has-text(メンバー):upward(ytd-item-section-renderer.ytd-section-list-renderer)
 ! チャンネルコミュニティ
 youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(tp-yt-paper-tab[role="tab"])
+! ホーム動画プレビューの字幕
+youtube.com###inline-preview-player > #ytp-caption-window-container
 
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
@@ -279,6 +283,7 @@ search.rakuten.co.jp##.searchresults [href^="https://grp07.ias.rakuten.co.jp/red
 
 ! google検索歌詞コピペ
 www.google.*##[data-attrid="kc:/music/recording_cluster:lyrics"] [data-lyricid]:style(user-select: auto !important;)
+www.google.*##div[data-attrid="kc:/music/recording_cluster:lyrics"] > div > div:style(user-select: auto !important;)
 
 !コメント非表示
 nhentai.net###comment-post-container
@@ -286,9 +291,6 @@ nhentai.net###comment-container
 
 ! 一番下の寄付
 hitomi.la##.donate
-
-! トップページお知らせ
-kemono.party##.jumbo[style="background-color: #f2723c"]
 
 ! カーソルで画像拡大
 gigafree.net###preview
