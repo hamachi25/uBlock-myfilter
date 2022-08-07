@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220807
+! Version: 20220808
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -147,6 +147,18 @@ nicovideo.jp##.TagContainer-area.TagContainer-TagEditButtonArea
 ! 一度見た動画の下の赤線
 nicovideo.jp##.NC-VideoPlaybackIndicator
 
+! チャンネル登録NG
+!youtube.com##ytd-browse ytd-grid-video-renderer:has-text(/(あ|い)/)
+! ホームNG
+!youtube.com##ytd-browse ytd-rich-item-renderer:has-text(/(あ|い)/)
+! 動画右NG
+!youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has-text(/(あ|い)/)
+! 検索結果NG
+!youtube.com##ytd-search ytd-video-renderer:has-text(/(あ|い)/)
+! コメント欄NG リプライも含めて全部消される
+!youtube.com##ytd-comments[id="comments"] ytd-comment-thread-renderer.ytd-item-section-renderer > ytd-comment-renderer[style^="--ytd-comment-paid-background-color"]:has-text(/あ|い)/):upward(ytd-comment-thread-renderer.ytd-item-section-renderer)
+! コメント欄NG リプライだけ選択
+!youtube.com##ytd-comments[id="comments"] #replies ytd-comment-renderer.ytd-comment-replies-renderer:has-text(/(あ|い)/)
 ! ホームのミックスリスト
 youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
 ! 動画最後の関連動画のミックスリスト
@@ -157,20 +169,50 @@ youtube.com##ytd-compact-radio-renderer
 !youtube.com##ytd-radio-renderer
 ! Removes "YouTube" (Music) playlists from the right side panel
 youtube.com##ytd-compact-playlist-renderer .ytd-channel-name:has-text(/^YouTube/):upward(ytd-compact-playlist-renderer)
-! 動画最後の関連動画
-youtube.com##.ytp-ce-element
+! ホームshorts
+youtube.com##ytd-browse[page-subtype="home"] a#video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
+! 動画右shorts
+youtube.com##.ytd-watch-next-secondary-results-renderer span#video-title:has-text(/shorts/i):upward(ytd-compact-video-renderer)
+! チャンネル一覧shorts
+youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
+! 検索結果shorts
+youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
+! チャンネルshorts
+youtube.com##ytd-browse[page-subtype="channels"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
+! ホームライブ
+youtube.com###content ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-rich-item-renderer)
+! 履歴shorts
+youtube.com##[page-subtype="history"] ytd-reel-shelf-renderer
+! 動画横ライブ
+youtube.com##ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer span:has-text(ライブ):upward(ytd-compact-video-renderer)
+! チャンネル一覧ライブ
+youtube.com##[page-subtype="subscriptions"] ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-grid-video-renderer)
+! チャンネル一覧今後のライブ
+youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(ytd-grid-video-renderer)
 ! 動画下の説明欄
 youtube.com###clarify-box
-! ショート下説明欄(ショート見ないからいらないか)
-!youtube.com##ytd-shorts .disclaimer-container:upward(#info-panel)
 ! 動画下ミニプレイヤー
 youtube.com##.ytp-button.ytp-miniplayer-button
 ! 動画下シアターモード
 youtube.com##.ytp-button.ytp-size-button
 ! 動画右上のジャンル選択
 youtube.com##yt-related-chip-cloud-renderer
+! 動画下クリップ、Thanks、オフライン
+youtube.com##ytd-menu-renderer ytd-button-renderer.force-icon-button:has-text(/(クリップ|Thanks|オフライン)/)
+! 動画最後の関連動画
+youtube.com##.ytp-ce-element
+! 動画右youtube movie
+youtube.com##ytd-compact-movie-renderer
+! メンバーになる
+youtube.com###sponsor-button
+! チャンネルメンバー一覧
+youtube.com##ytd-browse yt-formatted-string.title:has-text(メンバー):upward(ytd-item-section-renderer.ytd-section-list-renderer)
+! チャンネルコミュニティ
+youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(tp-yt-paper-tab[role="tab"])
+!チャット見れない時は消す
+youtube.com##yt-formatted-string#message:has-text(/(この動画ではチャットのリプレイを利用できません|このプレミア公開では、チャットのリプレイは無効です)/):upward(ytd-live-chat-frame)
 ! ホーム上のジャンル選択
-youtube.com###header> .ytd-rich-grid-renderer.style-scope
+youtube.com###header
 ! 左の探索とショート
 youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.1.guideEntryRenderer)
 youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.2.guideEntryRenderer)
@@ -184,65 +226,36 @@ youtube.com###contentContainer ytd-guide-section-renderer > h3:has-text(/YouTube
 youtube.com###contentContainer ytd-guide-section-renderer a[title="設定"][href="/account"]:upward(ytd-guide-section-renderer)
 ! ホーム左下の概要
 youtube.com##tp-yt-app-drawer div[id="footer"] a:has-text(概要):upward(div[id="footer"])
-! チャンネル登録NG
-!youtube.com##ytd-browse ytd-grid-video-renderer:has-text(/(あ|い)/)
-! ホームNG
-!youtube.com##ytd-browse ytd-rich-item-renderer:has-text(/(あ|い)/)
-! 動画右NG
-!youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has-text(/(あ|い)/)
-! 検索結果NG
-!youtube.com##ytd-search ytd-video-renderer:has-text(/(あ|い)/)
-! コメント欄NG リプライも含めて全部消される
-!youtube.com##ytd-comments[id="comments"] ytd-comment-thread-renderer.ytd-item-section-renderer > ytd-comment-renderer[style^="--ytd-comment-paid-background-color"]:has-text(/あ|い)/):upward(ytd-comment-thread-renderer.ytd-item-section-renderer)
-! コメント欄NG リプライだけ選択
-!youtube.com##ytd-comments[id="comments"] #replies ytd-comment-renderer.ytd-comment-replies-renderer:has-text(/(あ|い)/)
 ! ホーム 最新ニュース
 youtube.com##[page-subtype="home"] span.ytd-rich-shelf-renderer#title:has-text(最新ニュース):upward(#contents > ytd-rich-section-renderer)
-! 動画下クリップ、Thanks、オフライン
-youtube.com##ytd-menu-renderer ytd-button-renderer.force-icon-button:has-text(/(クリップ|Thanks|オフライン)/)
 ! ホーム動画横のスクロールバー
 youtube.com##div.ytd-rich-grid-media[id="meta"]:style(scrollbar-width: none !important)
 youtube.com##div.ytd-video-preview[id="meta"]:style(scrollbar-width: none !important)
 ! ホームの動画評価
 youtube.com##ytd-inline-survey-renderer:upward(2)
-! ホームshorts
-youtube.com##ytd-browse[page-subtype="home"] a#video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
-! 動画右shorts
-youtube.com##.ytd-watch-next-secondary-results-renderer span#video-title:has-text(/shorts/i):upward(ytd-compact-video-renderer)
-! チャンネル一覧shorts
-youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
-! 検索結果shorts
-youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
-! チャンネルshorts
-youtube.com##ytd-browse[page-subtype="channels"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
-! 履歴shorts
-youtube.com##[page-subtype="history"] ytd-reel-shelf-renderer
 ! 一度見た動画の下の赤線
 youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
 ! ホームに出てくる急上昇
 youtube.com##[id="contents"] a.yt-simple-endpoint:has-text(急上昇):upward(ytd-rich-section-renderer.ytd-rich-grid-renderer)
 ! ホームの最新のYouTube投稿
 youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(最新の YouTube 投稿))
-! 動画横ライブ
-youtube.com##ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer span:has-text(ライブ):upward(ytd-compact-video-renderer)
-! ホームライブ
-youtube.com###content ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-rich-item-renderer)
-! チャンネル一覧ライブ
-youtube.com##[page-subtype="subscriptions"] ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-grid-video-renderer)
-! チャンネル一覧今後のライブ
-youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(ytd-grid-video-renderer)
-! 動画右youtube movie
-youtube.com##ytd-compact-movie-renderer
 ! ホームで動画にカーソルを当てた時の字幕
 youtube.com##.ytp-progress-bar-container #ytp-caption-window-container
-! メンバーになる
-youtube.com###sponsor-button
-! チャンネルメンバー一覧
-youtube.com##ytd-browse yt-formatted-string.title:has-text(メンバー):upward(ytd-item-section-renderer.ytd-section-list-renderer)
-! チャンネルコミュニティ
-youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(tp-yt-paper-tab[role="tab"])
 ! ホーム動画プレビューの字幕
 youtube.com###inline-preview-player > #ytp-caption-window-container
+! ログインしていない状態
+! ホームでショートなどの動画以外
+youtube.com##[page-subtype="home"] ytd-rich-section-renderer
+! コメント動画概要欄のコメント欄
+youtube.com###comment-teaser
+! UIをできるだけログイン時と似せる
+youtube.com##yt-formatted-string.ytd-watch-metadata:style(font-weight: 400;font-size: 1.8rem;)
+youtube.com##yt-formatted-string.ytd-watch-metadata > span:style(color: var(--yt-spec-text-secondary)!important;font-weight: inherit!important)
+youtube.com###bottom-row.ytd-watch-metadata:style(border-bottom: 1px solid var(--yt-spec-10-percent-layer)!important;padding-bottom: 16px!important)
+youtube.com###top-row.ytd-watch-metadata:style(padding-top: 16px!important)
+youtube.com###title.ytd-watch-metadata:style(border-bottom: 1px solid var(--yt-spec-10-percent-layer)!important;padding-bottom: 15px!important;padding-top: 4px!important)
+youtube.com###snippet-text .yt-formatted-string:style(color: inherit!important)
+youtube.com##tp-yt-paper-button.ytd-text-inline-expander:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
 
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
@@ -320,7 +333,7 @@ web-camp.io##.wp-block-separator.is-style-default
 web-camp.io##p:has-text(「HTML・CSS」をマスターして、自分でホームページやWEBアプリを作成できるようになりたい方へ！)
 web-camp.io##.wp-block-buttons
 web-camp.io##p:has-text(経済産業省認定の圧倒的カリキュラム)
-web-camp.io##p:has-text(」をもっと詳しく学習したい方へ！ )
+web-camp.io##p:has-text(」をもっと詳しく学習したい方へ！)
 ! 上の進行具合
 web-camp.io##.readingProgressbar
 ! paddingとmarginを消す
