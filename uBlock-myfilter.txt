@@ -212,7 +212,7 @@ youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(t
 !チャット見れない時は消す
 youtube.com##yt-formatted-string#message:has-text(/(この動画ではチャットのリプレイを利用できません|このプレミア公開では、チャットのリプレイは無効です)/):upward(ytd-live-chat-frame)
 ! ホーム上のジャンル選択
-youtube.com###header
+youtube.com##[page-subtype="home"] #header
 ! 左の探索とショート
 youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.1.guideEntryRenderer)
 youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.2.guideEntryRenderer)
