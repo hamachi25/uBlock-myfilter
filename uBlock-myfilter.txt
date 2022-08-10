@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220808
+! Version: 20220811
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -163,12 +163,11 @@ nicovideo.jp##.NC-VideoPlaybackIndicator
 youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
 ! 動画最後の関連動画のミックスリスト
 !youtube.com##a.ytp-videowall-still.ytp-suggestion-set[data-is-mix="true"]
-! 動画右のミックスリスト
+! 動画右のミックスリスト(2つとも必要)
 youtube.com##ytd-compact-radio-renderer
+youtube.com##ytd-compact-playlist-renderer
 ! 検索結果のミックスリスト
 !youtube.com##ytd-radio-renderer
-! Removes "YouTube" (Music) playlists from the right side panel
-youtube.com##ytd-compact-playlist-renderer .ytd-channel-name:has-text(/^YouTube/):upward(ytd-compact-playlist-renderer)
 ! ホームshorts
 youtube.com##ytd-browse[page-subtype="home"] a#video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
 ! 動画右shorts
