@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220811
+! Version: 20220814
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -163,9 +163,12 @@ nicovideo.jp##.NC-VideoPlaybackIndicator
 youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
 ! 動画最後の関連動画のミックスリスト
 !youtube.com##a.ytp-videowall-still.ytp-suggestion-set[data-is-mix="true"]
-! 動画右のミックスリスト(2つとも必要)
+! 動画右のミックスリスト
 youtube.com##ytd-compact-radio-renderer
+! 動画右の再生リスト
 youtube.com##ytd-compact-playlist-renderer
+! 動画最後ミックスリストの表示
+youtube.com##.ytp-endscreen-content > [aria-label^="ミックスリスト"] > span.ytp-videowall-still-listlabel-mix
 ! 検索結果のミックスリスト
 !youtube.com##ytd-radio-renderer
 ! ホームshorts
@@ -210,6 +213,8 @@ youtube.com##ytd-browse yt-formatted-string.title:has-text(メンバー):upward(
 youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(tp-yt-paper-tab[role="tab"])
 !チャット見れない時は消す
 youtube.com##yt-formatted-string#message:has-text(/(この動画ではチャットのリプレイを利用できません|このプレミア公開では、チャットのリプレイは無効です)/):upward(ytd-live-chat-frame)
+! 登録チャンネルプレミアム公開
+youtube.com##[page-subtype="subscriptions"] .badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
 ! ホーム上のジャンル選択
 youtube.com##[page-subtype="home"] #header
 ! 左の探索とショート
@@ -309,6 +314,9 @@ gigafree.net###preview
 
 ! hide adsを非表示
 beta.sankakucomplex.com##a:has-text(Hide ads):upward(4)
+
+! dlsiteタイトルコピー
+dlsite.com##h1#work_name:style(user-select: auto!important)
 
 
 ! プログラミングサイト
