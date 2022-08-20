@@ -183,6 +183,8 @@ youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
 youtube.com##ytd-browse[page-subtype="channels"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
 ! ホームライブ
 youtube.com###content ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-rich-item-renderer)
+! ホームのライブ予定動画
+youtube.com##yt-formatted-string:has-text(通知する):upward(ytd-rich-item-renderer)
 ! 履歴shorts
 youtube.com##[page-subtype="history"] ytd-reel-shelf-renderer
 ! 動画横ライブ
@@ -301,6 +303,8 @@ search.rakuten.co.jp##.searchresults [href^="https://grp07.ias.rakuten.co.jp/red
 ! google検索歌詞コピペ
 www.google.*##[data-attrid="kc:/music/recording_cluster:lyrics"] [data-lyricid]:style(user-select: auto !important;)
 www.google.*##div[data-attrid="kc:/music/recording_cluster:lyrics"] > div > div:style(user-select: auto !important;)
+! google検索
+google.com##[aria-labelledby="task-text"][role="dialog"] span:has-text(Google の機能改善にご協力をお願いします):upward(4)
 
 !コメント非表示
 nhentai.net###comment-post-container
@@ -317,6 +321,48 @@ beta.sankakucomplex.com##a:has-text(Hide ads):upward(4)
 
 ! dlsiteタイトルコピー
 dlsite.com##h1#work_name:style(user-select: auto!important)
+
+
+! dアニメストア お知らせ
+animestore.docomo.ne.jp##.informationWrapper
+
+! コメントtwitter投稿
+abema.tv##.com-o-CommentForm__twitter-wrapper
+! 右サイドバー
+abema.tv##[href="/mylist"]
+abema.tv##[href="/viewing-history"]
+abema.tv##[href="/purchased/payperview"]
+abema.tv##.com-application-SideNavigationGenreHeading
+abema.tv##.com-application-SideNavigationMainList__genre-wrapper
+abema.tv##.c-application-SideNavigation__footer
+! cmのリスト追加
+abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
+! アニメ以外を消す
+abema.tv##[href="/now-on-air/asia-drama-2"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/asia-drama"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/k-world"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/commercial"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/hiphop"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/abema-radio"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/fighting-sports"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/world-sports"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/world-sports-1"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/world-sports-2"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/abema-news"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/abema-special"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/special-plus"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/drama"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/drama-2"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/premierleague"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/boatrace"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/keirin-auto"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/fishing"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/shogi"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/mahjong"]:upward(.com-tv-LinearChannelList__item)
+! 番組情報
+abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
+abema.tv##.com-tv-LinearFooterChasePlayButton
+abema.tv##.com-tv-FeedProgramDetailContainerView__line
 
 
 ! プログラミングサイト
