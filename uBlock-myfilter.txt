@@ -359,6 +359,7 @@ abema.tv##[href="/now-on-air/keirin-auto"]:upward(.com-tv-LinearChannelList__ite
 abema.tv##[href="/now-on-air/fishing"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/shogi"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/mahjong"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/special-plus-2"]:upward(.com-tv-LinearChannelList__item)
 ! 番組情報
 abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 abema.tv##.com-tv-LinearFooterChasePlayButton
