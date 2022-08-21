@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220820
+! Version: 20220821
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -321,7 +321,6 @@ beta.sankakucomplex.com##a:has-text(Hide ads):upward(4)
 
 ! dlsiteタイトルコピー
 dlsite.com##h1#work_name:style(user-select: auto!important)
-
 
 ! dアニメストア お知らせ
 animestore.docomo.ne.jp##.informationWrapper
