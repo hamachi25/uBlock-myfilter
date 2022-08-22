@@ -119,9 +119,10 @@ nicovideo.jp##.MainContainer-playerPanel .VideoLabel:has-text(有料):upward(.Wa
 nicovideo.jp##.MainContainer-playerPanel .VideoLabel:has-text(有料):upward(.NextPlayVideoContainer)
 ! 検索結果有料動画
 nicovideo.jp##.iconPayment:has-text(有料):upward(li.item[data-video-id])
-! 動画上お知らせ
+! 動画上下お知らせ
 nicovideo.jp##.WakutkoolNoticeContainer
 nicovideo.jp##.WakutkoolHeaderContainer
+nicovideo.jp##.WakutkoolFooterContainer
 ! 動画下
 nicovideo.jp##.BottomContainer
 !動画設定プレミアム機能
