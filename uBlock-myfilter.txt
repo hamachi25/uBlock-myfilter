@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220821
+! Version: 20220822
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -121,6 +121,7 @@ nicovideo.jp##.MainContainer-playerPanel .VideoLabel:has-text(有料):upward(.Ne
 nicovideo.jp##.iconPayment:has-text(有料):upward(li.item[data-video-id])
 ! 動画上お知らせ
 nicovideo.jp##.WakutkoolNoticeContainer
+nicovideo.jp##.WakutkoolHeaderContainer
 ! 動画下
 nicovideo.jp##.BottomContainer
 !動画設定プレミアム機能
