@@ -54,6 +54,8 @@ twitter.com###layers div[role="menu"][style^="max-height:"] [href="/i/display"]
 twitter.com###layers div[role="menu"][style^="max-height:"] [href="https://analytics.twitter.com/"]
 twitter.com###layers div[role="menu"][style^="max-height:"] [href$="/topics"]
 twitter.com###layers div[role="menu"][style^="max-height:"] [href="/i/keyboard_shortcuts"]
+twitter.com###layers div[role="menu"][style^="max-height:"] [href="/i/circles"]
+twitter.com###layers div[role="menu"][style^="max-height:"] [href="https://studio.twitter.com/?ref=dotcom"]
 twitter.com###layers div[role="menu"][style^="max-height:"] div[role="separator"]
 twitter.com###layers div[role="menu"][style^="max-height:"]:style(border-radius: 30px!important)
 twitter.com###layers div[role="menu"][style^="max-height:"] [href="/settings"] > div > div > span:style(font-size: 18px!important)
