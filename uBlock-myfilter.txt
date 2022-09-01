@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220823
+! Version: 20220901
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -12,10 +12,9 @@
 !twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(/(アカウント|ユーザー)/)) ~ div:not(:has(article))
 ! リプ欄のその他の返信
 twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
-! トレンドを一回消して表示させ直す
-twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div
-twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div:has(div[data-testid="eventHero"]):style(display: revert !important)
-!twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div:has(div[data-testid="trend"]):not(:has-text(/(あ|い)/)):style(display: revert !important)
+! トレンドNG
+twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transform"]:not(:has([data-testid="trend"]))
+!twitter.com##[style^="transform"]:has([data-testid="trend"]:has-text(/(a|b)/i))
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
 twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]):style(display: revert !important; display: flex !important)
@@ -36,7 +35,6 @@ twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has([href^=
 twitter.com##div[data-testid="ScrollSnap-nextButtonWrapper"]
 twitter.com##div[data-testid="ScrollSnap-prevButtonWrapper"]
 ! URLから開いたときのその他のツイート
-!||twitter.com^$removeparam=/^(?:ref_src|s)=.*$/ 
 twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"])
 twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"]) ~ [data-testid="cellInnerDiv"] 
 ! センシティブ警告
@@ -339,8 +337,8 @@ abema.tv##.c-application-SideNavigation__footer
 ! cmのリスト追加
 abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 ! アニメ以外を消す
-abema.tv##[href="/now-on-air/asia-drama-2"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/asia-drama"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/asia-drama-2"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/k-world"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/commercial"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/hiphop"]:upward(.com-tv-LinearChannelList__item)
@@ -349,9 +347,12 @@ abema.tv##[href="/now-on-air/fighting-sports"]:upward(.com-tv-LinearChannelList_
 abema.tv##[href="/now-on-air/world-sports"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/world-sports-1"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/world-sports-2"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/world-sports-3"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/abema-news"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/news-plus"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/abema-special"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/special-plus"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/special-plus-2"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/drama"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/drama-2"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/premierleague"]:upward(.com-tv-LinearChannelList__item)
@@ -360,8 +361,7 @@ abema.tv##[href="/now-on-air/keirin-auto"]:upward(.com-tv-LinearChannelList__ite
 abema.tv##[href="/now-on-air/fishing"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/shogi"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/mahjong"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/special-plus-2"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/news-plus"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/mahjong-live"]:upward(.com-tv-LinearChannelList__item)
 ! 番組情報
 abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 abema.tv##.com-tv-LinearFooterChasePlayButton
