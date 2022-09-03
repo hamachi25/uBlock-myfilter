@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220901
+! Version: 20220904
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -13,7 +13,7 @@ twitter.com##div[aria-label="タイムライン: タイムラインを検索"] >
 ! リプ欄のその他の返信
 twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
 ! トレンドNG
-twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transform"]:not(:has([data-testid="trend"]))
+twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transform"]:not(:has([data-testid="trend"])):not(span:has-text(日本のトレンド))
 !twitter.com##[style^="transform"]:has([data-testid="trend"]:has-text(/(a|b)/i))
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -148,6 +148,18 @@ nicovideo.jp##.TopPage .PersonalFrameContainer
 nicovideo.jp##.TagContainer-area.TagContainer-TagEditButtonArea
 ! 一度見た動画の下の赤線
 nicovideo.jp##.NC-VideoPlaybackIndicator
+! 注目のタグ
+nicovideo.jp##.TrendyTagAreaContainer:upward(.BaseLayout-block)
+! 新着投稿動画
+nicovideo.jp##.NewArrivalVideosContainer:upward(.BaseLayout-block)
+! 注目タグの動画
+nicovideo.jp##.TrendyTagsWithVideosContainer:upward(.BaseLayout-block)
+! タグ
+nicovideo.jp##.RepresentedTagsContainer
+! 新着コメント動画
+nicovideo.jp##.NewCommentVideosContainer:upward(.BaseLayout-block)
+! おすすめ
+nicovideo.jp##.RecommendVideosContainer:upward(.BaseLayout-block)
 
 ! チャンネル登録NG
 !youtube.com##ytd-browse ytd-grid-video-renderer:has-text(/(あ|い)/)
@@ -369,6 +381,24 @@ abema.tv##[href="/now-on-air/mahjong-live"]:upward(.com-tv-LinearChannelList__it
 abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 abema.tv##.com-tv-LinearFooterChasePlayButton
 abema.tv##.com-tv-FeedProgramDetailContainerView__line
+
+!komiflo UI
+komiflo.com##.scrollbar.hor
+komiflo.com##.scrollbar.ver
+komiflo.com##.swipe.left.mouse.large
+komiflo.com##.swipe.right.mouse.large
+komiflo.com##.info.js-info
+komiflo.com##.ui.bar.top:style(background: none!important)
+!komiflo.com##[data-name="UI"]
+!komiflo.com##.ui.btm.bar.large.mouse
+! 左クリック
+komiflo.com##+js(aeld, contextmenu)
+! キーボード反応させない(次に行くことができないので)
+!komiflo.com##+js(aeld, keydown)
+! マウスポインタ制御(戻るも出なくなるので)
+!komiflo.com##+js(aeld, mousemove)
+! マウスクリックで次の画像へ
+!komiflo.com##+js(aeld, mousedown) 
 
 
 ! プログラミングサイト
