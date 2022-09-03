@@ -387,7 +387,7 @@ komiflo.com##.scrollbar.hor
 komiflo.com##.scrollbar.ver
 komiflo.com##.swipe.left.mouse.large
 komiflo.com##.swipe.right.mouse.large
-komiflo.com##.info.js-info
+komiflo.com##.ui.bar.top > .info.js-info
 komiflo.com##.ui.bar.top:style(background: none!important)
 !komiflo.com##[data-name="UI"]
 !komiflo.com##.ui.btm.bar.large.mouse
