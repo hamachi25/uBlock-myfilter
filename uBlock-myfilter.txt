@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220904
+! Version: 20220905
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -72,9 +72,8 @@ twitter.com##article [data-testid="unlike"] > div > div:nth-of-type(2)
 twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 ! アカウント画像を暗く
 twitter.com##[aria-label="アカウントメニュー"] [data-testid^="UserAvatar-Container"] > div > div > div > div > div > div:style(background-color: rgba(0, 0, 0, 0.5)!important)
-! ホーム上ツイート欄
-twitter.com##[aria-label="ホームタイムライン"] [data-testid="tweetTextarea_0_label"]:upward(18)
-twitter.com##[aria-label="ホームタイムライン"] [data-testid="tweetTextarea_0_label"]:upward(18) + div
+! ホーム上ツイート欄暗く
+twitter.com##[aria-label="ホームタイムライン"] > div:nth-child(2) [data-testid^="UserAvatar-Container"] > div > div > div > div > a > div:style(background-color: rgba(0, 0, 0, 0.5)!important)
 ! いいねとリツイート
 twitter.com##article [href$="/retweets"]:upward(2)
 twitter.com##article [href$="/likes"]:upward(2)
