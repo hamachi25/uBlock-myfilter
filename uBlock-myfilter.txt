@@ -73,13 +73,13 @@ twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 ! アカウント画像を暗く
 twitter.com##[aria-label="アカウントメニュー"] [data-testid^="UserAvatar-Container"] > div > div > div > div > div > div:style(background-color: rgba(0, 0, 0, 0.5)!important)
 ! ホーム上ツイート欄暗く
-twitter.com##[aria-label="ホームタイムライン"] > div:nth-child(2) [data-testid^="UserAvatar-Container"] > div > div > div > div > a > div:style(background-color: rgba(0, 0, 0, 0.5)!important)
+twitter.com##[aria-label="ホームタイムライン"] > div:nth-child(2) [data-testid^="UserAvatar-Container"] > div > div > div > div > a > div:style(background-color: rgba(0, 0, 0, 0.6)!important)
 ! いいねとリツイート
 twitter.com##article [href$="/retweets"]:upward(2)
 twitter.com##article [href$="/likes"]:upward(2)
 ! 検索結果の関連していますか
 twitter.com##[aria-label="タイムライン: タイムラインを検索"] span:has-text(このツイートは検索内容に関連していますか？):upward(div[style^="transform"])
-! タイムラインのユーザー下の要素
+! タイムラインのユーザー下の要素(雪フィルタの補完)
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div
 
 nicovideo.jp##.SeekBarStoryboardPremiumLink
