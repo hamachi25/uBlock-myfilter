@@ -71,7 +71,7 @@ twitter.com##article [data-testid="unlike"] > div > div:nth-of-type(2)
 ! 左下自分のアカウント名だけ隠す
 twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 ! 左下アカウント画像を暗く
-twitter.com##[aria-label="アカウントメニュー"] [data-testid^="UserAvatar-Container"] > div > div > div > div > div > div:style(background-color: rgba(0, 0, 0, 0.5)!important)
+twitter.com##[aria-label="アカウントメニュー"] [data-testid^="UserAvatar-Container"] > div > div > div > div > div > div:style(filter: blur(5px))
 ! いいねとリツイート
 twitter.com##article [href$="/retweets"]:upward(2)
 twitter.com##article [href$="/likes"]:upward(2)
