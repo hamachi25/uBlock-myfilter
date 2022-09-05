@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220905
+! Version: 20220906
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -291,14 +291,11 @@ yomiuri.co.jp##.p-footer-subscribe
 
 ! URLをきれいに(chromeではtwitterのremoveが動作しないらしい)
 ! https://www.reddit.com/r/uBlockOrigin/comments/sa3ewm/im_unable_to_remove_this_parameter_from_twitter/htr4jyn
-||amazon.$removeparam=psc
-||amazon.$removeparam=m
-||amazon.$removeparam=linkId
-||amazon.$removeparam=AssociateTag
-||amazon.$removeparam=language
-||twitter.$removeparam=t
-||twitter.$removeparam=s
-||twitter.$removeparam=cxt
+||amazon.*$removeparam=linkId
+||amazon.*$removeparam=AssociateTag
+||twitter.com^$removeparam=t
+||twitter.com^$removeparam=s
+||twitter.com^$removeparam=cxt
 
 fandom.com###WikiaBar
 fandom.com###WikiaRail
