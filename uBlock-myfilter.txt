@@ -289,10 +289,8 @@ news.yahoo.co.jp##a:has-text(おすすめの有料記事):upward(2)
 ! 読売新聞画面下
 yomiuri.co.jp##.p-footer-subscribe
 
-! URLをきれいに(chromeではtwitterのremoveが動作しないらしい)
+! URLをきれいに
 ! https://www.reddit.com/r/uBlockOrigin/comments/sa3ewm/im_unable_to_remove_this_parameter_from_twitter/htr4jyn
-||amazon.*$removeparam=linkId
-||amazon.*$removeparam=AssociateTag
 ||twitter.com^$removeparam=t
 ||twitter.com^$removeparam=s
 ||twitter.com^$removeparam=cxt
@@ -393,6 +391,10 @@ komiflo.com##+js(aeld, contextmenu)
 !komiflo.com##+js(aeld, mousemove)
 ! マウスクリックで次の画像へ
 !komiflo.com##+js(aeld, mousedown) 
+
+! ビリビリ邪魔なポップアップ隠蔽
+bilibili.com##.v-popover
+bilibili.com##.bpx-player-toast-wrap
 
 
 ! プログラミングサイト
