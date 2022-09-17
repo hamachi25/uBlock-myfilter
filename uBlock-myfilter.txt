@@ -186,8 +186,9 @@ youtube.com##.ytp-endscreen-content > [aria-label^="ミックスリスト"] > sp
 youtube.com##ytd-browse[page-subtype="home"] a#video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
 ! 動画右shorts
 youtube.com##.ytd-watch-next-secondary-results-renderer span#video-title:has-text(/shorts/i):upward(ytd-compact-video-renderer)
-! チャンネル一覧shorts
+! 登録チャンネルshorts
 youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
+youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
 ! 検索結果shorts
 youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
 ! チャンネルshorts
@@ -200,9 +201,9 @@ youtube.com##yt-formatted-string:has-text(通知する):upward(ytd-rich-item-ren
 youtube.com##[page-subtype="history"] ytd-reel-shelf-renderer
 ! 動画横ライブ
 youtube.com##ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer span:has-text(ライブ):upward(ytd-compact-video-renderer)
-! チャンネル一覧ライブ
+! 登録チャンネルライブ
 youtube.com##[page-subtype="subscriptions"] ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-grid-video-renderer)
-! チャンネル一覧今後のライブ
+! 登録チャンネル今後のライブ
 youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(ytd-grid-video-renderer)
 ! 動画下の説明欄
 youtube.com###clarify-box
