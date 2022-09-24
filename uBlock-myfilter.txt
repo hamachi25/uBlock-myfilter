@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220909
+! Version: 20220924
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -79,6 +79,8 @@ twitter.com##article [href$="/likes"]:upward(2)
 twitter.com##[aria-label="タイムライン: タイムラインを検索"] span:has-text(このツイートは検索内容に関連していますか？):upward(div[style^="transform"])
 ! タイムラインのユーザー下の要素(雪フィルタの補完)
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div
+! bnc.ltツイート
+twitter.com##[data-testid="card.layoutLarge.detail"]:has-text(bnc.lt):upward(div[style^="transform"])
 
 nicovideo.jp##.SeekBarStoryboardPremiumLink
 nicovideo.jp##.MainContainer-marquee
@@ -396,45 +398,3 @@ komiflo.com##+js(aeld, contextmenu)
 ! ビリビリ邪魔なポップアップ隠蔽
 bilibili.com##.v-popover
 bilibili.com##.bpx-player-toast-wrap
-
-
-! プログラミングサイト
-! 上の固定
-proengineer.internous.co.jp##header:style(position: static!important)
-! 文章中プロモーション
-proengineer.internous.co.jp##.textwidget
-proengineer.internous.co.jp###BREADCRUMB:style(padding: 16px 16px 16px !important)
-proengineer.internous.co.jp##.rec_box.free_area
-proengineer.internous.co.jp##.post-bottom-info
-! 右サイドバー
-proengineer.internous.co.jp##.wd_Rnavi
-
-!右サイド部分
-web-camp.io###side
-! 文章中プロモーション
-web-camp.io##.mv_slider
-web-camp.io##.sponsored
-web-camp.io##.wp-block-image.size-full
-web-camp.io##.wp-block-separator.is-style-default
-web-camp.io##p:has-text(「HTML・CSS」をマスターして、自分でホームページやWEBアプリを作成できるようになりたい方へ！)
-web-camp.io##.wp-block-buttons
-web-camp.io##p:has-text(経済産業省認定の圧倒的カリキュラム)
-web-camp.io##p:has-text(」をもっと詳しく学習したい方へ！)
-! 上の進行具合
-web-camp.io##.readingProgressbar
-! paddingとmarginを消す
-web-camp.io##main:style(padding: 0!important; margin-right: 0!important)
-
-! 目次の上固定
-saruwakakun.com##.title.floating[style^="width: 701px"]
-
-! 上固定
-blog.codecamp.jp###js-fixedHeader
-! 文章中プロモーション
-blog.codecamp.jp##.p-article_introduction
-
-!文章中プロモ
-techacademy.jp##.code-block
-
-!上固定
-web-dev.tech##.l-fixHeader:style(position: static!important)
