@@ -81,6 +81,9 @@ twitter.com##[aria-label="タイムライン: タイムラインを検索"] span
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div
 ! bnc.ltツイート
 twitter.com##[data-testid="card.layoutLarge.detail"]:has-text(bnc.lt):upward(div[style^="transform"])
+! twitterトレンド順位消す
+twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(1):not(:has-text(トレンド))
+twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(2)
 
 nicovideo.jp##.SeekBarStoryboardPremiumLink
 nicovideo.jp##.MainContainer-marquee
@@ -207,6 +210,8 @@ youtube.com##ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer
 youtube.com##[page-subtype="subscriptions"] ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-grid-video-renderer)
 ! 登録チャンネル今後のライブ
 youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(ytd-grid-video-renderer)
+! 動画下次へ
+youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
 ! 動画下の説明欄
 youtube.com###clarify-box
 ! 動画下ミニプレイヤー
@@ -241,6 +246,8 @@ youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-rende
 !youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer,ytd-channel-renderer),ytd-secondary-search-container-renderer
 ! 音声検索
 youtube.com###voice-search-button
+! 右上通知
+youtube.com##ytd-notification-topbar-button-renderer
 ! ホーム左下の他のサービス
 youtube.com###contentContainer ytd-guide-section-renderer > h3:has-text(/YouTube の他のサービス|探索/):upward(ytd-guide-section-renderer)
 youtube.com###contentContainer ytd-guide-section-renderer a[title="設定"][href="/account"]:upward(ytd-guide-section-renderer)
@@ -276,6 +283,13 @@ youtube.com###top-row.ytd-watch-metadata:style(padding-top: 16px!important)
 youtube.com###title.ytd-watch-metadata:style(border-bottom: 1px solid var(--yt-spec-10-percent-layer)!important;padding-bottom: 15px!important;padding-top: 4px!important)
 youtube.com###snippet-text .yt-formatted-string:style(color: inherit!important)
 youtube.com##tp-yt-paper-button.ytd-text-inline-expander:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
+! 高評価非表示
+youtube.com##yt-formatted-string[aria-label^="高評価 "]
+youtube.com##yt-formatted-string.ytd-toggle-button-renderer:has-text(低評価)
+youtube.com##yt-formatted-string.ytd-button-renderer:has-text(共有)
+youtube.com##yt-formatted-string.ytd-button-renderer:has-text(保存)
+youtube.com##ytd-menu-renderer ytd-toggle-button-renderer > a:style(padding-right: 0px!important)
+youtube.com##ytd-menu-renderer ytd-button-renderer > a:style(padding-right: 0px!important)
 
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
@@ -398,3 +412,9 @@ komiflo.com##+js(aeld, contextmenu)
 ! ビリビリ邪魔なポップアップ隠蔽
 bilibili.com##.v-popover
 bilibili.com##.bpx-player-toast-wrap
+
+! 雪フィルタhtbランキングを修正
+@@||speee-ad.akamaized.net^$domain=htb.co.jp
+@@||click.speee-ad.jp^$domain=htb.co.jp
+htb.co.jp##.ad_response
+
