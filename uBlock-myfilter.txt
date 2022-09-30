@@ -45,8 +45,8 @@ twitter.com##[aria-label="ホームタイムライン"] > div:has([role="tablist
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
 ! もっと見るの設定意外を消す
-twitter.com##[data-testid="Dropdown"] [href$="/topics"] > div
-twitter.com##[data-testid="Dropdown"] [href="/i/circles"] > div
+twitter.com##[data-testid="Dropdown"] [href$="/topics"]
+twitter.com##[data-testid="Dropdown"] [href="/i/circles"]
 twitter.com##[data-testid="Dropdown"] [id$="_0_header"]
 twitter.com##[data-testid="Dropdown"] [id$="_1_header"]
 twitter.com##[data-testid="Dropdown"] [href="https://support.twitter.com/"]
