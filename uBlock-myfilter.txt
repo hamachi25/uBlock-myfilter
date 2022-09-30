@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220924
+! Version: 20220930
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
