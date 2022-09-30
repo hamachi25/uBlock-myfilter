@@ -294,14 +294,14 @@ youtube.com##ytd-menu-renderer ytd-button-renderer > a:style(padding-right: 0px!
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
 
-! ヤフーニュース記事左下コメントポップアップ
-news.yahoo.co.jp##div[class^="ArticleCommentFloating__ComponentBalloon"]
-!記事下リアクション
+! 記事下リアクション
 news.yahoo.co.jp##div[class^="ArticleReaction__Wrapper"]
 ! コメント
 news.yahoo.co.jp##aside[class^="CommentShort__Wrapper"]
 news.yahoo.co.jp###articleCommentModule
 news.yahoo.co.jp##a:has-text(おすすめの有料記事):upward(2)
+! 左下浮いてるコメント
+news.yahoo.co.jp###contentsWrap > [class^="CommentFloating__"]
 
 ! 読売新聞画面下
 yomiuri.co.jp##.p-footer-subscribe
@@ -324,9 +324,6 @@ fandom.com##ruby > rt
 ! 楽天PR商品
 search.rakuten.co.jp##.searchresults [href^="https://grp07.ias.rakuten.co.jp/redirect_rpp/"]:upward(.searchresultitem)
 
-! google検索歌詞コピペ
-www.google.*##[data-attrid="kc:/music/recording_cluster:lyrics"] [data-lyricid]:style(user-select: auto !important;)
-www.google.*##div[data-attrid="kc:/music/recording_cluster:lyrics"] > div > div:style(user-select: auto !important;)
 ! google検索
 google.com##[aria-labelledby="task-text"][role="dialog"] span:has-text(Google の機能改善にご協力をお願いします):upward(4)
 
