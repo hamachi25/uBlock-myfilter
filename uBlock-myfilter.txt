@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20220930
+! Version: 20221001
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -378,6 +378,7 @@ abema.tv##[href="/now-on-air/fishing"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/shogi"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/mahjong"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/mahjong-live"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/world-sports-4"]:upward(.com-tv-LinearChannelList__item)
 ! 番組情報
 abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 abema.tv##.com-tv-LinearFooterChasePlayButton
