@@ -410,9 +410,3 @@ komiflo.com##+js(aeld, contextmenu)
 ! ビリビリ邪魔なポップアップ隠蔽
 bilibili.com##.v-popover
 bilibili.com##.bpx-player-toast-wrap
-
-! 雪フィルタhtbランキングを修正
-@@||speee-ad.akamaized.net^$domain=htb.co.jp
-@@||click.speee-ad.jp^$domain=htb.co.jp
-htb.co.jp##.ad_response
-
