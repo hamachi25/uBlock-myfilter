@@ -79,6 +79,8 @@ twitter.com##[data-testid="card.layoutLarge.detail"]:has-text(bnc.lt):upward(div
 ! twitterトレンド順位消す
 twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(1):not(:has-text(トレンド))
 twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(2)
+! ツイートリプライ
+twitter.com##span:has-text(あなたがフォローしているアカウントは、よくこのユーザーをいいねしています):upward(5)
 
 nicovideo.jp##.SeekBarStoryboardPremiumLink
 nicovideo.jp##.MainContainer-marquee
@@ -157,6 +159,8 @@ nicovideo.jp##.RepresentedTagsContainer
 nicovideo.jp##.NewCommentVideosContainer:upward(.BaseLayout-block)
 ! おすすめ
 nicovideo.jp##.RecommendVideosContainer:upward(.BaseLayout-block)
+!  ニコニココメントコピペ
+nicovideo.jp##.CommentPanelDataGrid .CommentPanelDataGrid-TableCell:style(user-select: text !important;)
 
 ! チャンネル登録NG
 !youtube.com##ytd-browse ytd-grid-video-renderer:has-text(/(あ|い)/)
@@ -248,6 +252,8 @@ youtube.com###contentContainer ytd-guide-section-renderer > h3:has-text(/YouTube
 youtube.com###contentContainer ytd-guide-section-renderer a[title="設定"][href="/account"]:upward(ytd-guide-section-renderer)
 ! ホーム左下の概要
 youtube.com##tp-yt-app-drawer div[id="footer"] a:has-text(概要):upward(div[id="footer"])
+! ホーム左チャンネル一覧
+youtube.com##[href="/feed/guide_builder"]
 ! ホーム 最新ニュース
 youtube.com##[page-subtype="home"] span.ytd-rich-shelf-renderer#title:has-text(最新ニュース):upward(#contents > ytd-rich-section-renderer)
 ! ホーム動画横のスクロールバー
