@@ -405,3 +405,6 @@ komiflo.com##+js(aeld, contextmenu)
 ! ビリビリ邪魔なポップアップ隠蔽
 bilibili.com##.v-popover
 bilibili.com##.bpx-player-toast-wrap
+
+! プライムビデオ 次のビデオ
+amazon.co.jp##.atvwebplayersdk-nextupcard-wrapper
