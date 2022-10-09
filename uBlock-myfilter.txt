@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20221008
+! Version: 20221010
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -18,6 +18,8 @@ twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transfo
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
 twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]):style(display: revert !important; display: flex !important)
+twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]) + div:style(display: revert !important)
+twitter.com##div[aria-label="トレンド"] [href$="/photo/1"]:upward(7):style(display: revert !Important)
 twitter.com##div[aria-label="トレンド"] > div > div:has(span:has-text(検索フィルター)):style(display: revert !important)
 ! コロナのタブなどを消して表示させ直す
 twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div
