@@ -408,3 +408,7 @@ bilibili.com##.bpx-player-toast-wrap
 
 ! プライムビデオ 次のビデオ
 amazon.co.jp##.atvwebplayersdk-nextupcard-wrapper
+
+! discordネタバレ防止モザイク
+discord.com##.imageContent-3Av-9c:style(filter:none !important)
+discord.com##.spoilerWarning-8ovW0v
