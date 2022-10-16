@@ -189,16 +189,17 @@ youtube.com##.ytp-endscreen-content > [aria-label^="ミックスリスト"] > sp
 ! 検索結果のミックスリスト
 !youtube.com##ytd-radio-renderer
 ! ホームshorts
-youtube.com##ytd-browse[page-subtype="home"] a#video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
+youtube.com##[page-subtype="home"] #video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
 ! 動画右shorts
-youtube.com##.ytd-watch-next-secondary-results-renderer span#video-title:has-text(/shorts/i):upward(ytd-compact-video-renderer)
+youtube.com##.ytd-watch-next-secondary-results-renderer #video-title:has-text(/shorts/i):upward(ytd-compact-video-renderer)
 ! 登録チャンネルshorts
-youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
-youtube.com##ytd-browse[page-subtype="subscriptions"] a#video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="subscriptions"] #video-title[href*=shorts]:upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="subscriptions"] #video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
 ! 検索結果shorts
 youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
 ! チャンネルshorts
-youtube.com##ytd-browse[page-subtype="channels"] a#video-title[href*=shorts]:upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="channels"] #video-title[href*=shorts]:upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="channels"] #video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
 ! ホームライブ
 youtube.com###content ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-rich-item-renderer)
 ! ホームのライブ予定動画
@@ -229,8 +230,12 @@ youtube.com##.ytp-ce-element
 youtube.com##ytd-compact-movie-renderer
 ! メンバーになる
 youtube.com###sponsor-button
-! チャンネルメンバー一覧
-youtube.com##ytd-browse yt-formatted-string.title:has-text(メンバー):upward(ytd-item-section-renderer.ytd-section-list-renderer)
+! チャンネルホーム メンバー一覧
+youtube.com##yt-formatted-string.title:has-text(メンバー):upward(ytd-item-section-renderer.ytd-section-list-renderer)
+! チャンネルホーム shortsリスト
+youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has(ytd-reel-shelf-renderer)
+! チャンネルホーム メンバー限定
+www.youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has-text(メンバー限定)
 ! チャンネルコミュニティ
 youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(tp-yt-paper-tab[role="tab"])
 !チャット見れない時は消す
@@ -253,7 +258,7 @@ youtube.com##ytd-notification-topbar-button-renderer
 youtube.com###contentContainer ytd-guide-section-renderer > h3:has-text(/YouTube の他のサービス|探索/):upward(ytd-guide-section-renderer)
 youtube.com###contentContainer ytd-guide-section-renderer a[title="設定"][href="/account"]:upward(ytd-guide-section-renderer)
 ! ホーム左下の概要
-youtube.com##tp-yt-app-drawer div[id="footer"] a:has-text(概要):upward(div[id="footer"])
+youtube.com##tp-yt-app-drawer [id="footer"] a:has-text(概要):upward(div[id="footer"])
 ! ホーム左チャンネル一覧
 youtube.com##[href="/feed/guide_builder"]
 ! ホーム 最新ニュース
