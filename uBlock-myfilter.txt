@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20221012
+! Version: 20221018
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -244,9 +244,8 @@ youtube.com##yt-formatted-string#message:has-text(/(この動画ではチャッ�
 youtube.com##[page-subtype="subscriptions"] .badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
 ! ホーム上のジャンル選択
 youtube.com##[page-subtype="home"] #header
-! 左の探索とショート
+! ホーム左のショート
 youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.1.guideEntryRenderer)
-youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.2.guideEntryRenderer)
 ! 検索結果の他の人はこちらも視聴しています,ミックスリストも消える
 youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer),ytd-secondary-search-container-renderer
 !youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer,ytd-channel-renderer),ytd-secondary-search-container-renderer
