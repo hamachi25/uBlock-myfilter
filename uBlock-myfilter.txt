@@ -188,16 +188,18 @@ youtube.com##ytd-compact-playlist-renderer
 youtube.com##.ytp-endscreen-content > [aria-label^="ミックスリスト"] > span.ytp-videowall-still-listlabel-mix
 ! 検索結果のミックスリスト
 !youtube.com##ytd-radio-renderer
-! ホームshorts
+! ホームshort
 youtube.com##[page-subtype="home"] #video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
-! 動画右shorts
+! 動画右short
 youtube.com##.ytd-watch-next-secondary-results-renderer #video-title:has-text(/shorts/i):upward(ytd-compact-video-renderer)
-! 登録チャンネルshorts
+! 動画右のshort欄
+youtube.com##ytd-watch-next-secondary-results-renderer ytd-shelf-renderer
+! 登録チャンネルshort
 youtube.com##[page-subtype="subscriptions"] #video-title[href*=shorts]:upward(ytd-grid-video-renderer)
 youtube.com##[page-subtype="subscriptions"] #video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
-! 検索結果shorts
+! 検索結果short
 youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
-! チャンネルshorts
+! チャンネルshort
 youtube.com##[page-subtype="channels"] #video-title[href*=shorts]:upward(ytd-grid-video-renderer)
 youtube.com##[page-subtype="channels"] #video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
 ! ホームライブ
