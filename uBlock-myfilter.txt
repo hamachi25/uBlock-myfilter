@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20221022
+! Version: 20221027
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -83,6 +83,9 @@ twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(
 twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(2)
 ! ツイートリプライ
 twitter.com##span:has-text(あなたがフォローしているアカウントは、よくこのユーザーをいいねしています):upward(5)
+! ミュートワード表示するボタンを非表示
+twitter.com##span:has-text(このツイートにはミュートしたキーワードが含まれています。):upward(4) + div
+
 
 nicovideo.jp##.SeekBarStoryboardPremiumLink
 nicovideo.jp##.MainContainer-marquee
@@ -164,6 +167,7 @@ nicovideo.jp##.RecommendVideosContainer:upward(.BaseLayout-block)
 !  ニコニココメントコピペ
 nicovideo.jp##.CommentPanelDataGrid .CommentPanelDataGrid-TableCell:style(user-select: text !important;)
 
+
 ! チャンネル登録NG
 !youtube.com##ytd-browse ytd-grid-video-renderer:has-text(/(あ|い)/)
 ! ホームNG
@@ -176,6 +180,7 @@ nicovideo.jp##.CommentPanelDataGrid .CommentPanelDataGrid-TableCell:style(user-s
 !youtube.com##ytd-comments[id="comments"] ytd-comment-thread-renderer.ytd-item-section-renderer > ytd-comment-renderer[style^="--ytd-comment-paid-background-color"]:has-text(/あ|い)/):upward(ytd-comment-thread-renderer.ytd-item-section-renderer)
 ! コメント欄NG リプライだけ選択
 !youtube.com##ytd-comments[id="comments"] #replies ytd-comment-renderer.ytd-comment-replies-renderer:has-text(/(あ|い)/)
+
 ! ホームのミックスリスト
 youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
 ! 動画最後の関連動画のミックスリスト
@@ -186,8 +191,7 @@ youtube.com##ytd-compact-radio-renderer
 youtube.com##ytd-compact-playlist-renderer
 ! 動画最後ミックスリストの表示
 youtube.com##.ytp-endscreen-content > [aria-label^="ミックスリスト"] > span.ytp-videowall-still-listlabel-mix
-! 検索結果のミックスリスト
-!youtube.com##ytd-radio-renderer
+
 ! ホームshort
 youtube.com##[page-subtype="home"] #video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
 ! 動画右short
@@ -202,6 +206,7 @@ youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
 ! チャンネルshort
 youtube.com##[page-subtype="channels"] #video-title[href*=shorts]:upward(ytd-grid-video-renderer)
 youtube.com##[page-subtype="channels"] #video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
+
 ! ホームライブ
 youtube.com###content ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-rich-item-renderer)
 ! ホームのライブ予定動画
@@ -214,6 +219,7 @@ youtube.com##ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer
 youtube.com##[page-subtype="subscriptions"] ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-grid-video-renderer)
 ! 登録チャンネル今後のライブ
 youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(ytd-grid-video-renderer)
+
 ! 動画下次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
 ! 動画下の説明欄
@@ -225,7 +231,32 @@ youtube.com##.ytp-button.ytp-size-button
 ! 動画右上のジャンル選択
 youtube.com##yt-related-chip-cloud-renderer
 ! 動画下クリップ、Thanks、オフライン
-youtube.com##ytd-menu-renderer ytd-button-renderer.force-icon-button:has-text(/(クリップ|Thanks|オフライン)/)
+youtube.com##ytd-button-renderer:has-text(/(クリップ|Thanks|オフライン)/)
+! 動画下共有と保存の文字を非表示
+youtube.com##.yt-spec-button-shape-next--button-text-content:has-text(/共有|保存/)
+
+! 動画下新UIを以前のに似せる
+! タイトルのフォントサイズを小さくする
+youtube.com###title .ytd-watch-metadata:style(font-weight: 400;font-size: 1.8rem;)
+! 高評価や共有部分の背景を透明にする
+youtube.com##.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:style(background: transparent !important)
+! タイトル下に棒線を入れる
+!youtube.com###title.ytd-watch-metadata:style(border-bottom: 1px solid var(--yt-spec-10-percent-layer)!important;padding-bottom: 15px!important;padding-top: 4px!important)
+! 棒線下に隙間を作る
+!youtube.com###top-row.ytd-watch-metadata:style(padding-top: 16px!important)
+! コメント欄上に棒線を入れる
+!youtube.com###bottom-row.ytd-watch-metadata:style(border-bottom: 1px solid var(--yt-spec-10-percent-layer)!important;padding-bottom: 16px!important)
+! 概要欄のもっと見るを薄く
+youtube.com##tp-yt-paper-button.ytd-text-inline-expander:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
+! 高評価数を非表示
+youtube.com###segmented-like-button .yt-spec-button-shape-next--button-text-content
+! 高評価や共有部分の隙間を狭くする
+youtube.com###menu button:style( padding: 0 5px !important)
+! 概要欄の再生回数と投稿日時を薄く
+youtube.com###info.ytd-watch-metadata:style(color: var(--yt-spec-text-secondary)!important)
+! 高評価と低評価の間の線を非表示
+youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--segmented-start::after
+
 ! 動画最後の関連動画
 youtube.com##.ytp-ce-element
 ! 動画右youtube movie
@@ -269,6 +300,8 @@ youtube.com##div.ytd-rich-grid-media[id="meta"]:style(scrollbar-width: none !imp
 youtube.com##div.ytd-video-preview[id="meta"]:style(scrollbar-width: none !important)
 ! ホームの動画評価
 youtube.com##ytd-inline-survey-renderer:upward(2)
+! ホームでショートなどの動画以外
+youtube.com##[page-subtype="home"] ytd-rich-section-renderer
 ! 一度見た動画の下の赤線
 youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
 ! ホームに出てくる急上昇
@@ -279,29 +312,15 @@ youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(�
 youtube.com##.ytp-progress-bar-container #ytp-caption-window-container
 ! ホーム動画プレビューの字幕
 youtube.com###inline-preview-player > #ytp-caption-window-container
+
 ! ログインしていない状態
-! ホームでショートなどの動画以外
-youtube.com##[page-subtype="home"] ytd-rich-section-renderer
-! コメント動画概要欄のコメント欄
+! 動画概要欄のコメント欄
 youtube.com###comment-teaser
-! UIをできるだけログイン時と似せる
-youtube.com##yt-formatted-string.ytd-watch-metadata:style(font-weight: 400;font-size: 1.8rem;)
-youtube.com##yt-formatted-string.ytd-watch-metadata > span:style(color: var(--yt-spec-text-secondary)!important;font-weight: inherit!important)
-youtube.com###bottom-row.ytd-watch-metadata:style(border-bottom: 1px solid var(--yt-spec-10-percent-layer)!important;padding-bottom: 16px!important)
-youtube.com###top-row.ytd-watch-metadata:style(padding-top: 16px!important)
-youtube.com###title.ytd-watch-metadata:style(border-bottom: 1px solid var(--yt-spec-10-percent-layer)!important;padding-bottom: 15px!important;padding-top: 4px!important)
-youtube.com###snippet-text .yt-formatted-string:style(color: inherit!important)
-youtube.com##tp-yt-paper-button.ytd-text-inline-expander:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
-! 高評価非表示
-youtube.com##yt-formatted-string[aria-label^="高評価 "]
-youtube.com##yt-formatted-string.ytd-toggle-button-renderer:has-text(低評価)
-youtube.com##yt-formatted-string.ytd-button-renderer:has-text(共有)
-youtube.com##yt-formatted-string.ytd-button-renderer:has-text(保存)
-youtube.com##ytd-menu-renderer ytd-toggle-button-renderer > a:style(padding-right: 0px!important)
-youtube.com##ytd-menu-renderer ytd-button-renderer > a:style(padding-right: 0px!important)
+
 
 ! reddit
 reddit.com##[data-testid="join-heroes"]:upward(3)
+
 
 ! 記事下リアクション
 news.yahoo.co.jp##div[class^="ArticleReaction__Wrapper"]
@@ -312,14 +331,17 @@ news.yahoo.co.jp##a:has-text(おすすめの有料記事):upward(2)
 ! 左下浮いてるコメント
 news.yahoo.co.jp###contentsWrap > [class^="CommentFloating__"]
 
+
 ! 読売新聞画面下
 yomiuri.co.jp##.p-footer-subscribe
+
 
 ! URLをきれいに
 ! https://www.reddit.com/r/uBlockOrigin/comments/sa3ewm/im_unable_to_remove_this_parameter_from_twitter/htr4jyn
 ||twitter.com^$removeparam=t
 ||twitter.com^$removeparam=s
 ||twitter.com^$removeparam=cxt
+
 
 fandom.com###WikiaBar
 fandom.com###WikiaRail
@@ -330,30 +352,39 @@ fandom.com##.page-header__actions
 fandom.com##.notifications-placeholder
 fandom.com##ruby > rt
 
+
 ! 楽天PR商品
 search.rakuten.co.jp##.searchresults [href^="https://grp07.ias.rakuten.co.jp/redirect_rpp/"]:upward(.searchresultitem)
 
+
 ! google検索
 google.com##[aria-labelledby="task-text"][role="dialog"] span:has-text(Google の機能改善にご協力をお願いします):upward(4)
+
 
 !コメント非表示
 nhentai.net###comment-post-container
 nhentai.net###comment-container
 
+
 ! 一番下の寄付
 hitomi.la##.donate
+
 
 ! カーソルで画像拡大
 gigafree.net###preview
 
+
 ! hide adsを非表示
 beta.sankakucomplex.com##a:has-text(Hide ads):upward(4)
+
 
 ! dlsiteタイトルコピー
 dlsite.com##h1#work_name:style(user-select: auto!important)
 
+
 ! dアニメストア お知らせ
 animestore.docomo.ne.jp##.informationWrapper
+
 
 ! コメントtwitter投稿
 abema.tv##.com-o-CommentForm__twitter-wrapper
@@ -390,6 +421,7 @@ abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 abema.tv##.com-tv-LinearFooterChasePlayButton
 abema.tv##.com-tv-FeedProgramDetailContainerView__line
 
+
 !komiflo UI
 komiflo.com##.scrollbar.hor
 komiflo.com##.scrollbar.ver
@@ -408,12 +440,15 @@ komiflo.com##+js(aeld, contextmenu)
 ! マウスクリックで次の画像へ
 !komiflo.com##+js(aeld, mousedown) 
 
+
 ! ビリビリ邪魔なポップアップ隠蔽
 bilibili.com##.v-popover
 bilibili.com##.bpx-player-toast-wrap
 
+
 ! プライムビデオ 次のビデオ
 amazon.co.jp##.atvwebplayersdk-nextupcard-wrapper
+
 
 ! discordネタバレ防止モザイク
 discord.com##.imageContent-3Av-9c:style(filter:none !important)
