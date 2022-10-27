@@ -222,6 +222,8 @@ youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(yt
 
 ! 動画下次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
+! 動画下字幕使えないときは非表示
+youtube.com##.ytp-subtitles-button[data-title-no-tooltip="字幕を利用できません"]
 ! 動画下の説明欄
 youtube.com###clarify-box
 ! 動画下ミニプレイヤー
