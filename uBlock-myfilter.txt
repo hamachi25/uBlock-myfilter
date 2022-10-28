@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20221027
+! Version: 20221028
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -398,6 +398,7 @@ abema.tv##[href="/purchased/payperview"]
 abema.tv##.com-application-SideNavigationGenreHeading
 abema.tv##.com-application-SideNavigationMainList__genre-wrapper
 abema.tv##.c-application-SideNavigation__footer
+abema.tv##.com-application-FIFAWorldCupSideNavigationPrimaryItem
 ! cmのリスト追加
 abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 ! アニメ以外を消す
