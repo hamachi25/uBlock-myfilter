@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20221028
+! Version: 20221030
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -233,32 +233,40 @@ youtube.com##.ytp-button.ytp-miniplayer-button
 youtube.com##.ytp-button.ytp-size-button
 ! 動画右上のジャンル選択
 youtube.com##yt-related-chip-cloud-renderer
+
+! 動画下新UIを改善
+! タイトルのフォントサイズを小さくする
+youtube.com###title .ytd-watch-metadata:style(font-weight: 400;font-size: 1.8rem;)
+! 概要欄のもっと見るを薄く
+youtube.com##tp-yt-paper-button#expand:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
+! 高評価数を非表示
+youtube.com###segmented-like-button .yt-spec-button-shape-next--button-text-content
+! 高評価調整
+youtube.com##button.yt-spec-button-shape-next--segmented-start > .yt-spec-button-shape-next__icon:style(margin-right: -6px !important; margin-left: -2px !important;)
+youtube.com##button.yt-spec-button-shape-next--segmented-start > .yt-spec-button-shape-next__icon > yt-icon:style(padding-left: 2px !important;)
+! 低評価調整
+youtube.com##button.yt-spec-button-shape-next--segmented-end:style(width: 46px !important;)
+youtube.com##button.yt-spec-button-shape-next--segmented-end > .yt-spec-button-shape-next__icon:style(margin-left: -3px !important;)
 ! 動画下クリップ、Thanks、オフライン
 youtube.com##ytd-button-renderer:has-text(/(クリップ|Thanks|オフライン)/)
 ! 動画下共有と保存の文字を非表示
 youtube.com##.yt-spec-button-shape-next--button-text-content:has-text(/共有|保存/)
-
-! 動画下新UIを以前のに似せる
-! タイトルのフォントサイズを小さくする
-youtube.com###title .ytd-watch-metadata:style(font-weight: 400;font-size: 1.8rem;)
+! 共有、保存調整
+youtube.com##button.yt-spec-button-shape-next--icon-leading > .yt-spec-button-shape-next__icon:style(margin-right: -5px !important; margin-left: -4px !important;)
 ! 高評価や共有部分の背景を透明にする(チャンネル登録済みを除く)
-youtube.com##.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:not(:upward(ytd-subscribe-button-renderer)):style(background: transparent !important)
+!youtube.com##.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:not(:upward(ytd-subscribe-button-renderer)):style(background: transparent !important)
 ! タイトル下に棒線を入れる
 !youtube.com###title.ytd-watch-metadata:style(border-bottom: 1px solid var(--yt-spec-10-percent-layer)!important;padding-bottom: 15px!important;padding-top: 4px!important)
 ! 棒線下に隙間を作る
 !youtube.com###top-row.ytd-watch-metadata:style(padding-top: 16px!important)
 ! コメント欄上に棒線を入れる
 !youtube.com###bottom-row.ytd-watch-metadata:style(border-bottom: 1px solid var(--yt-spec-10-percent-layer)!important;padding-bottom: 16px!important)
-! 概要欄のもっと見るを薄く
-youtube.com##tp-yt-paper-button#expand:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
-! 高評価数を非表示
-youtube.com###segmented-like-button .yt-spec-button-shape-next--button-text-content
 ! 高評価や共有部分の隙間を狭くする
-youtube.com###menu button:style(padding: 0 5px !important)
+!youtube.com###menu button:style(padding: 0 5px !important)
 ! 概要欄の再生回数と投稿日時を薄く
 youtube.com###info.ytd-watch-metadata:style(color: var(--yt-spec-text-secondary)!important)
 ! 高評価と低評価の間の線を非表示
-youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--segmented-start::after
+!youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--segmented-start::after
 
 ! 動画最後の関連動画
 youtube.com##.ytp-ce-element
@@ -454,9 +462,13 @@ bilibili.com##.bpx-player-toast-wrap
 amazon.co.jp##.atvwebplayersdk-nextupcard-wrapper
 
 
-! discordネタバレ防止モザイク
+! discord画像モザイク
 discord.com##.imageContent-3Av-9c:style(filter:none !important)
 discord.com##.spoilerWarning-8ovW0v
 ! discord文字モザイク
 discord.com##.spoilerText-27bIiA > .inlineContent-2YnoDy:not(#a):style(opacity: 1 !important)
 discord.com##.spoilerText-27bIiA:not(#a):style(background-color: hsla(0,calc(var(--saturation-factor, 1)*0%),100%,.1) !important; pointer-events: none !important)
+
+
+! telegramの投稿日時非表示(自動翻訳時に誤認識防止の為)
+web.telegram.org##.time.tgico:remove()
