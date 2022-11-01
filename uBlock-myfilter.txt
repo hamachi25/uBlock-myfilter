@@ -74,8 +74,6 @@ twitter.com##article [href$="/retweets"]:upward(2)
 twitter.com##article [href$="/likes"]:upward(2)
 ! 検索結果の関連していますか
 twitter.com##[aria-label="タイムライン: タイムラインを検索"] span:has-text(このツイートは検索内容に関連していますか？):upward(div[style^="transform"])
-! タイムラインのユーザー下の要素(雪フィルタの補完)
-twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div
 ! bnc.ltツイート
 twitter.com##[data-testid="card.layoutLarge.detail"]:has-text(bnc.lt):upward(div[style^="transform"])
 ! twitterトレンド順位消す
@@ -86,6 +84,40 @@ twitter.com##span:has-text(あなたがフォローしているアカウント�
 twitter.com##span:has-text(あなたがフォローしているユーザーにフォローされています):upward(5)
 ! ミュートワード表示するボタンを非表示
 twitter.com##span:has-text(このツイートにはミュートしたキーワードが含まれています。):upward(4) + div
+! おすすめのツイート
+twitter.com##article[data-testid=tweet]:has(span[aria-label^="おすすめトピック:"][data-testid=socialContext])
+! おすすめユーザー
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"]  > div > div[style^=transform]:has(div[aria-label^=フォロー][role=button] > div > span > span)
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
+twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
+twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform]:has(div[aria-label^=フォロー][role=button] > div > span > span)
+twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform]:has(div[aria-label^=フォロー][role=button] > div > span > span)
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
+! リツイートをもとにおすすめ
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform]:has(a[id][href^="/i/topics/"] > span[aria-label^=おすすめトピック])
+! おすすめトピック
+twitter.com##div[aria-label="タイムライン: "] h2 > div[style^=-webkit] > span:has-text(おすすめトピック):upward(div[aria-label="タイムライン: "])
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/topics/picker/home"]
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div[class^=css]:only-child > div[class^=css]:only-child:empty
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] div[data-testid=ScrollSnap-SwipeableList]:has(div[aria-label^=トピック「][aria-label$=をフォロー])
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] h2 > div[style^=-webkit] > span:has-text(おすすめトピック):upward(div[style^=transform])
+! リストを見つける
+twitter.com##div[aria-label="タイムライン: 自分のリスト"] > div > div[style^=transform] h2 > div[style^=-webkit] > span:has-text(新しいリストを見つける):upward(div[style^=transform])
+twitter.com##div[aria-label="タイムライン: 自分のリスト"] > div > div[style^=transform]:has(> div > div > div[role=link] div[role=button] > div > span > span)
+twitter.com##div[aria-label="タイムライン: 自分のリスト"] > div > div[style^=transform] > div a[href="/i/lists/suggested"]
+twitter.com##div[aria-label="タイムライン: 自分のリスト"] > div > div[style^=transform] > div a[href="/i/lists/suggested"]:upward(div[style^=transform]) + div + div
+! プッシュ通知
+twitter.com##div[aria-label^="タイムライン: "] > div > div[style^=transform] h1 > span:has-text(プッシュ通知):upward(div[style^=transform])
+! カスタマイズした広告
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"]  > div > div[style^=transform]:has(span > a[href="/settings/account/personalization"])
+! 関連トピック
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] h2 > div[style^=-webkit] > span:has-text(関連トピック):upward(div[style^=transform])
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div[style^=transform] > div > div > a[href^="/i/topics/"]
+! アクセシビリティ
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[data-testid=cellInnerDiv] div[data-testid=inlinePrompt] span[dir] > span > span:has-text(Twitterのアクセシビリティを高めましょう):upward( div[data-testid=cellInnerDiv])
 
 
 nicovideo.jp##.SeekBarStoryboardPremiumLink
