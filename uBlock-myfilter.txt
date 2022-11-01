@@ -199,6 +199,8 @@ nicovideo.jp##.NewCommentVideosContainer:upward(.BaseLayout-block)
 nicovideo.jp##.RecommendVideosContainer:upward(.BaseLayout-block)
 !  ニコニココメントコピペ
 nicovideo.jp##.CommentPanelDataGrid .CommentPanelDataGrid-TableCell:style(user-select: text !important;)
+! プレミアム機能の途中再生ポップアップ
+nicovideo.jp##.PreVideoStartPremiumLinkContainer
 
 
 ! チャンネル登録NG
