@@ -84,15 +84,14 @@ twitter.com##span:has-text(あなたがフォローしているアカウント�
 twitter.com##span:has-text(あなたがフォローしているユーザーにフォローされています):upward(5)
 ! ミュートワード表示するボタンを非表示
 twitter.com##span:has-text(このツイートにはミュートしたキーワードが含まれています。):upward(4) + div
+
+! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
 twitter.com##article[data-testid=tweet]:has(span[aria-label^="おすすめトピック:"][data-testid=socialContext])
 ! おすすめユーザー
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"]  > div > div[style^=transform]:has(div[aria-label^=フォロー][role=button] > div > span > span)
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
-twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
-twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform]:has(div[aria-label^=フォロー][role=button] > div > span > span)
-twitter.com##div[aria-label="タイムライン: 話題を検索"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform]:has(div[aria-label^=フォロー][role=button] > div > span > span)
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
@@ -201,6 +200,8 @@ nicovideo.jp##.RecommendVideosContainer:upward(.BaseLayout-block)
 nicovideo.jp##.CommentPanelDataGrid .CommentPanelDataGrid-TableCell:style(user-select: text !important;)
 ! プレミアム機能の途中再生ポップアップ
 nicovideo.jp##.PreVideoStartPremiumLinkContainer
+! 右サイドバーの記事など
+nicovideo.jp##.SpecifiedRanking-sub
 
 
 ! チャンネル登録NG
@@ -265,6 +266,8 @@ youtube.com###clarify-box
 youtube.com##.ytp-button.ytp-miniplayer-button
 ! 動画下シアターモード
 youtube.com##.ytp-button.ytp-size-button
+! 動画下グッズなど
+youtube.com##ytd-merch-shelf-renderer
 ! 動画右上のジャンル選択
 youtube.com##yt-related-chip-cloud-renderer
 
