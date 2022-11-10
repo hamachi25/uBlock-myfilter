@@ -8,8 +8,8 @@
 ! リストでのみNG
 !twitter.com##[aria-label="タイムライン: リスト"] article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
 ! 検索結果のアカウント、ユーザー
-twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(/(アカウント|ユーザー)/))
-twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > :has(h2:has-text(/(アカウント|ユーザー)/)) ~ div:not(:has(article))
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(/アカウント|ユーザー/))
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(/アカウント|ユーザー/)) ~ div:not(:has(article))
 ! リプ欄のその他の返信
 twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
 ! トレンドNG
@@ -84,6 +84,12 @@ twitter.com##span:has-text(あなたがフォローしているアカウント�
 twitter.com##span:has-text(あなたがフォローしているユーザーにフォローされています):upward(5)
 ! ミュートワード表示するボタンを非表示
 twitter.com##span:has-text(このツイートにはミュートしたキーワードが含まれています。):upward(4) + div
+! ホームツイート欄の画像以外を非表示
+twitter.com##[aria-label="GIF画像を追加"]
+twitter.com##[aria-label="投票を追加"]
+twitter.com##[aria-label="投票を追加"] + div
+twitter.com##[aria-label="ツイートを予約"]
+twitter.com##[aria-label="位置情報をタグ付け"]
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
@@ -360,6 +366,8 @@ youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(�
 youtube.com##.ytp-progress-bar-container #ytp-caption-window-container
 ! ホーム動画プレビューの字幕
 youtube.com###inline-preview-player > #ytp-caption-window-container
+! ホーム放送予定LIVE
+youtube.com##.ytd-video-meta-block:has-text(に公開予定):upward(ytd-rich-item-renderer)
 
 ! ログインしていない状態
 ! 動画概要欄のコメント欄
@@ -418,6 +426,10 @@ nhentai.net###comment-container
 hitomi.la##.donate
 
 
+! logout非表示
+kemono.party##[href="/account/logout"]
+
+
 ! カーソルで画像拡大
 gigafree.net###preview
 
@@ -428,6 +440,8 @@ beta.sankakucomplex.com##a:has-text(Hide ads):upward(4)
 
 ! dlsiteタイトルコピー
 dlsite.com##h1#work_name:style(user-select: auto!important)
+! 豆腐フィルタdlsite上の横スクロール部分の誤爆
+@@||eisys-bcs.jp^$3p,domain=dlsite.com
 
 
 ! dアニメストア お知らせ
@@ -505,7 +519,17 @@ discord.com##.spoilerWarning-8ovW0v
 ! discord文字モザイク
 discord.com##.spoilerText-27bIiA > .inlineContent-2YnoDy:not(#a):style(opacity: 1 !important)
 discord.com##.spoilerText-27bIiA:not(#a):style(background-color: hsla(0,calc(var(--saturation-factor, 1)*0%),100%,.1) !important; pointer-events: none !important)
+!  会話非表示
+discord.com##[d="M11.383 3.07904C11.009 2.92504 10.579 3.01004 10.293 3.29604L6 8.00204H3C2.45 8.00204 2 8.45304 2 9.00204V15.002C2 15.552 2.45 16.002 3 16.002H6L10.293 20.71C10.579 20.996 11.009 21.082 11.383 20.927C11.757 20.772 12 20.407 12 20.002V4.00204C12 3.59904 11.757 3.23204 11.383 3.07904ZM14 5.00195V7.00195C16.757 7.00195 19 9.24595 19 12.002C19 14.759 16.757 17.002 14 17.002V19.002C17.86 19.002 21 15.863 21 12.002C21 8.14295 17.86 5.00195 14 5.00195ZM14 9.00195C15.654 9.00195 17 10.349 17 12.002C17 13.657 15.654 15.002 14 15.002V13.002C14.551 13.002 15 12.553 15 12.002C15 11.451 14.551 11.002 14 11.002V9.00195Z"]:upward(li)
 
 
 ! telegramの投稿日時非表示(自動翻訳時に誤認識防止の為)
 web.telegram.org##.time.tgico:remove()
+
+
+! amazonトップページ上
+amazon.co.jp###desktop-banner
+
+
+! 検索結果の人気の作品(プレミアム機能)
+pixiv.net##[href="/premium/lead/lp?g=anchor&i=popular_works_list&p=free_campaign&page=visitor"]:upward(2)
