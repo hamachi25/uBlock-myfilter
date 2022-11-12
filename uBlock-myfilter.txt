@@ -210,51 +210,42 @@ nicovideo.jp##.PreVideoStartPremiumLinkContainer
 nicovideo.jp##.SpecifiedRanking-sub
 
 
-! チャンネル登録NG
-!youtube.com##ytd-browse ytd-grid-video-renderer:has-text(/(あ|い)/)
 ! ホームNG
-!youtube.com##ytd-browse ytd-rich-item-renderer:has-text(/(あ|い)/)
+!youtube.com##ytd-rich-item-renderer:has-text(/(あ|い)/)
+! チャンネル登録NG
+!youtube.com##ytd-grid-video-renderer:has-text(/(あ|い)/)
 ! 動画右NG
-!youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has-text(/(あ|い)/)
+!youtube.com##ytd-compact-video-renderer:has-text(/(あ|い)/)
 ! 検索結果NG
-!youtube.com##ytd-search ytd-video-renderer:has-text(/(あ|い)/)
-! コメント欄NG リプライも含めて全部消される
-!youtube.com##ytd-comments[id="comments"] ytd-comment-thread-renderer.ytd-item-section-renderer > ytd-comment-renderer[style^="--ytd-comment-paid-background-color"]:has-text(/あ|い)/):upward(ytd-comment-thread-renderer.ytd-item-section-renderer)
-! コメント欄NG リプライだけ選択
-!youtube.com##ytd-comments[id="comments"] #replies ytd-comment-renderer.ytd-comment-replies-renderer:has-text(/(あ|い)/)
+!youtube.com##ytd-video-renderer:has-text(/(あ|い)/)
+! コメント欄NG
+!youtube.com##ytd-comment-renderer:has-text(/(あ|い)/)
 
 ! ホームのミックスリスト
-youtube.com##ytd-rich-item-renderer #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
-! 動画最後の関連動画のミックスリスト
-!youtube.com##a.ytp-videowall-still.ytp-suggestion-set[data-is-mix="true"]
+youtube.com###video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
 ! 動画右のミックスリスト
 youtube.com##ytd-compact-radio-renderer
 ! 動画右の再生リスト
 youtube.com##ytd-compact-playlist-renderer
-! 動画最後ミックスリストの表示
-youtube.com##.ytp-endscreen-content > [aria-label^="ミックスリスト"] > span.ytp-videowall-still-listlabel-mix
 
 ! ホームshort
-youtube.com##[page-subtype="home"] #video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
+youtube.com###video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
 ! 動画右short
-youtube.com##.ytd-watch-next-secondary-results-renderer #video-title:has-text(/shorts/i):upward(ytd-compact-video-renderer)
+youtube.com###video-title:has-text(/shorts/i):upward(ytd-compact-video-renderer)
 ! 動画右のshort欄
 youtube.com##ytd-watch-next-secondary-results-renderer ytd-shelf-renderer
 ! 登録チャンネルshort
-youtube.com##[page-subtype="subscriptions"] #video-title[href*=shorts]:upward(ytd-grid-video-renderer)
-youtube.com##[page-subtype="subscriptions"] #video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
+youtube.com###video-title[href*=shorts]:upward(ytd-grid-video-renderer)
+youtube.com###video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
 ! 検索結果short
-youtube.com##ytd-search a#thumbnail[href*=shorts]:upward(ytd-video-renderer)
-! チャンネルshort
-youtube.com##[page-subtype="channels"] #video-title[href*=shorts]:upward(ytd-grid-video-renderer)
-youtube.com##[page-subtype="channels"] #video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
+youtube.com###thumbnail[href*=shorts]:upward(ytd-video-renderer)
 
 ! ホームライブ
 youtube.com###content ytd-badge-supported-renderer > div > span:has-text(ライブ):upward(ytd-rich-item-renderer)
 ! ホームのライブ予定動画
 youtube.com##yt-formatted-string:has-text(通知する):upward(ytd-rich-item-renderer)
 ! 履歴shorts
-youtube.com##[page-subtype="history"] ytd-reel-shelf-renderer
+youtube.com##ytd-reel-shelf-renderer
 ! 動画横ライブ
 youtube.com##ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer span:has-text(ライブ):upward(ytd-compact-video-renderer)
 ! 登録チャンネルライブ
