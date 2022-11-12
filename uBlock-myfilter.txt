@@ -276,6 +276,7 @@ youtube.com##yt-related-chip-cloud-renderer
 youtube.com###title .ytd-watch-metadata:style(font-weight: 400;font-size: 1.8rem;)
 ! 概要欄のもっと見るを薄く
 youtube.com##tp-yt-paper-button#expand:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
+youtube.com##tp-yt-paper-button#collapse:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
 ! 高評価数を非表示
 youtube.com###segmented-like-button .yt-spec-button-shape-next--button-text-content
 ! 高評価調整
