@@ -251,6 +251,11 @@ youtube.com##[page-subtype="subscriptions"] ytd-badge-supported-renderer > div >
 ! 登録チャンネル今後のライブ
 youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(ytd-grid-video-renderer)
 
+ホームプレミアム公開
+youtube.com##.badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
+! 登録チャンネルプレミアム公開
+youtube.com##.badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
+
 ! 動画下次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
 ! 動画下字幕使えないときは非表示
@@ -316,8 +321,6 @@ www.youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has-text(�
 youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(tp-yt-paper-tab[role="tab"])
 !チャット見れない時は消す
 youtube.com##yt-formatted-string#message:has-text(/(この動画ではチャットのリプレイを利用できません|このプレミア公開では、チャットのリプレイは無効です)/):upward(ytd-live-chat-frame)
-! 登録チャンネルプレミアム公開
-youtube.com##[page-subtype="subscriptions"] .badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
 ! ホーム上のジャンル選択
 youtube.com##[page-subtype="home"] #header
 ! ホーム左のショート
@@ -348,7 +351,7 @@ youtube.com##[page-subtype="home"] ytd-rich-section-renderer
 ! 一度見た動画の下の赤線
 youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
 ! ホームに出てくる急上昇
-youtube.com##[id="contents"] a.yt-simple-endpoint:has-text(急上昇):upward(ytd-rich-section-renderer.ytd-rich-grid-renderer)
+youtube.com##[id="contents"] .yt-simple-endpoint:has-text(急上昇):upward(ytd-rich-section-renderer.ytd-rich-grid-renderer)
 ! ホームの最新のYouTube投稿
 youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(最新の YouTube 投稿))
 ! ホームで動画にカーソルを当てた時の字幕
