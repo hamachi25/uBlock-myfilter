@@ -129,25 +129,25 @@ nicovideo.jp##.SeekBarStoryboardPremiumLink
 nicovideo.jp##.MainContainer-marquee
 ! 上のタブ
 nicovideo.jp##[href^="https://account.nicovideo.jp/premium/register?site="]
-nicovideo.jp##[href^="https://ch.nicovideo.jp"]
-nicovideo.jp##[href^="https://game.nicovideo.jp/atsumaru/"]
-nicovideo.jp##[href^="http://app.nicovideo.jp"]
-nicovideo.jp##[href^="https://seiga.nicovideo.jp"]
+nicovideo.jp###CommonHeader [href^="https://ch.nicovideo.jp"]
+nicovideo.jp###CommonHeader [href^="https://game.nicovideo.jp/atsumaru/"]
+nicovideo.jp###CommonHeader [href^="http://app.nicovideo.jp"]
+nicovideo.jp###CommonHeader [href^="https://seiga.nicovideo.jp"]
 ! 上のタブその他
 nicovideo.jp###CommonHeader .nico-CommonHeaderRoot > div > div > div:nth-of-type(1) > div
 ! 上のタブ通知
 nicovideo.jp###CommonHeader .nico-CommonHeaderRoot > div > div > div:nth-of-type(2) > div:nth-of-type(2)
 ! 上のタブ　アカウントいらないもの
-nicovideo.jp##[href^="https://blog.nicovideo.jp/niconews/category/videotop"]
-nicovideo.jp##[href^="https://www.upload.nicovideo.jp/garage"]
-nicovideo.jp##[href^="https://point.nicovideo.jp/index/bank"]:upward(1)
-nicovideo.jp##[href^="https://qa.nicovideo.jp"]
-nicovideo.jp##[href^="https://live.nicovideo.jp/create"]
-nicovideo.jp##[href^="https://www.nicovideo.jp/my/history/purchased-serials"]
-nicovideo.jp##[href^="https://live.nicovideo.jp/my"]
-nicovideo.jp##[href^="https://site.live.nicovideo.jp/watch.html"]
-nicovideo.jp##[href^="https://site.live.nicovideo.jp/broadcast.html"]
-nicovideo.jp##[href^="https://site.nicovideo.jp/premium_contents"]
+nicovideo.jp###CommonHeader [href^="https://blog.nicovideo.jp/niconews/category/videotop"]
+nicovideo.jp###CommonHeader [href^="https://www.upload.nicovideo.jp/garage"]
+nicovideo.jp###CommonHeader [href^="https://point.nicovideo.jp/index/bank"]:upward(1)
+nicovideo.jp###CommonHeader [href^="https://qa.nicovideo.jp"]
+nicovideo.jp###CommonHeader [href^="https://live.nicovideo.jp/create"]
+nicovideo.jp###CommonHeader [href^="https://www.nicovideo.jp/my/history/purchased-serials"]
+nicovideo.jp###CommonHeader [href^="https://live.nicovideo.jp/my"]
+nicovideo.jp###CommonHeader [href^="https://site.live.nicovideo.jp/watch.html"]
+nicovideo.jp###CommonHeader [href^="https://site.live.nicovideo.jp/broadcast.html"]
+nicovideo.jp###CommonHeader [href^="https://site.nicovideo.jp/premium_contents"]
 ! ランキングの提供、ニコニ広告、動画サムネのラッパマーク
 ||nicoad.nicovideo.jp^$domain=www.nicovideo.jp
 !コメント下のギフト
