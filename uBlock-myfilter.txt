@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20221112
+! Version: 20221113
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -276,6 +276,7 @@ youtube.com##yt-related-chip-cloud-renderer
 youtube.com###title .ytd-watch-metadata:style(font-weight: 400;font-size: 1.8rem;)
 ! 概要欄のもっと見るを薄く
 youtube.com##tp-yt-paper-button#expand:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
+! 一部を表示を薄く
 youtube.com##tp-yt-paper-button#collapse:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
 ! 高評価数を非表示
 youtube.com###segmented-like-button .yt-spec-button-shape-next--button-text-content
@@ -472,6 +473,7 @@ abema.tv##[href="/now-on-air/keirin-auto"]:upward(.com-tv-LinearChannelList__ite
 abema.tv##[href="/now-on-air/fishing"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href^="/now-on-air/shogi"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href^="/now-on-air/mahjong"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href="/now-on-air/sumo"]:upward(.com-tv-LinearChannelList__item)
 ! 番組情報
 abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 abema.tv##.com-tv-LinearFooterChasePlayButton
