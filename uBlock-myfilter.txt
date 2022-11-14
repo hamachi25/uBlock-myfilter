@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20221113
+! Version: 202211
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -7,9 +7,9 @@
 !twitter.com##[aria-label="タイムライン: リスト"] article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"]):style(display: revert !important)
 ! リストでのみNG
 !twitter.com##[aria-label="タイムライン: リスト"] article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
-! 検索結果のアカウント、ユーザー
-twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(/アカウント|ユーザー/))
-twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(/アカウント|ユーザー/)) ~ div:not(:has(article))
+! 検索結果のユーザー
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(ユーザー))
+twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(ユーザー)) ~ div:not(:has(article))
 ! リプ欄のその他の返信
 twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
 ! トレンドNG
@@ -90,6 +90,9 @@ twitter.com##[aria-label="投票を追加"]
 twitter.com##[aria-label="投票を追加"] + div
 twitter.com##[aria-label="ツイートを予約"]
 twitter.com##[aria-label="位置情報をタグ付け"]
+! プロフィールのフォロしているフォロワー
+twitter.com##[aria-label="知り合いのフォロワー"]:upward(4)
+twitter.com##[aria-label="ホームタイムライン"] span:has-text(フォローしている人にフォロワーはいません):upward(6)
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
@@ -528,3 +531,7 @@ amazon.co.jp###desktop-banner
 
 ! 検索結果の人気の作品(プレミアム機能)
 pixiv.net##[href="/premium/lead/lp?g=anchor&i=popular_works_list&p=free_campaign&page=visitor"]:upward(2)
+
+
+! noteテキスト選択時の共有ポップアップ
+note.com##.m-shareSheet
