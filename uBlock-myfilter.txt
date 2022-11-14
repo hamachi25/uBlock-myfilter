@@ -92,7 +92,7 @@ twitter.com##[aria-label="ツイートを予約"]
 twitter.com##[aria-label="位置情報をタグ付け"]
 ! プロフィールのフォロしているフォロワー
 twitter.com##[aria-label="知り合いのフォロワー"]:upward(4)
-twitter.com##[aria-label="ホームタイムライン"] span:has-text(フォローしている人にフォロワーはいません):upward(6)
+twitter.com##:xpath(//nav[@aria-label="プロフィールタイムライン"]/preceding-sibling::div/div/div[contains(.//span,"フォローしている人にフォロワーはいません")])
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
