@@ -453,7 +453,7 @@ abema.tv##.com-application-SideNavigationGenreHeading
 abema.tv##.com-application-SideNavigationMainList__genre-wrapper
 abema.tv##.c-application-SideNavigation__footer
 abema.tv##.com-application-FIFAWorldCupSideNavigationPrimaryItem
-! cmのリスト追加
+! CMマイリスト
 abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 ! アニメ以外を消す
 abema.tv##[href^="/now-on-air/asia-drama"]:upward(.com-tv-LinearChannelList__item)
@@ -475,10 +475,15 @@ abema.tv##[href="/now-on-air/fishing"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href^="/now-on-air/shogi"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href^="/now-on-air/mahjong"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/sumo"]:upward(.com-tv-LinearChannelList__item)
+! 高さ調整
+abema.tv##.com-tv-LinearChannelList::before:style(height: calc(20%) !important)
+abema.tv##.com-tv-LinearChannelList::after:style(height: calc(20%) !important)
 ! 番組情報
-abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 abema.tv##.com-tv-LinearFooterChasePlayButton
-abema.tv##.com-tv-FeedProgramDetailContainerView__line
+! ロゴ
+abema.tv##.com-tv-LinearFooter__logo
+! 画面下フィルター
+abema.tv##.com-tv-LinearFooter:style(background-image:none !important)
 
 
 !komiflo UI
