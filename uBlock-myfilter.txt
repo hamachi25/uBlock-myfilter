@@ -483,6 +483,11 @@ abema.tv##.com-tv-LinearFooterChasePlayButton
 abema.tv##.com-tv-LinearFooter__logo
 ! 画面下フィルター
 abema.tv##.com-tv-LinearFooter:style(background-image:none !important)
+! お使いのブラウザは推奨環境外
+abema.tv##.com-m-NotificationManager
+! 上バーのFIFA
+abema.tv##.com-application-FIFAWorldCupHeader::after
+abema.tv##.com-application-FIFAWorldCupHeader__header-item-parts
 
 
 !komiflo UI
