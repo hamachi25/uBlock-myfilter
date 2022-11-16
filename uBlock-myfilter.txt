@@ -227,7 +227,7 @@ youtube.com###video-title-link[title*="ミックス"][href$="start_radio=1"]:upw
 ! 動画右のミックスリスト
 youtube.com##ytd-compact-radio-renderer
 ! 動画右の再生リスト
-youtube.com##ytd-compact-playlist-renderer
+!youtube.com##ytd-compact-playlist-renderer
 
 ! ホームshort
 youtube.com###video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
@@ -245,6 +245,8 @@ youtube.com###thumbnail[href*=shorts]:upward(ytd-video-renderer)
 youtube.com##ytd-badge-supported-renderer:has-text(ライブ):upward(ytd-rich-item-renderer)
 ! ホームのライブ予定動画
 youtube.com##yt-formatted-string:has-text(通知する):upward(ytd-rich-item-renderer)
+! ホーム放送予定ライブ
+youtube.com##.ytd-video-meta-block:has-text(に公開予定):upward(ytd-rich-item-renderer)
 ! 動画横ライブ
 youtube.com##ytd-badge-supported-renderer:has-text(ライブ):upward(ytd-compact-video-renderer)
 ! 登録チャンネルライブ
@@ -325,6 +327,8 @@ youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has(ytd-reel-sh
 www.youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has-text(メンバー限定)
 ! チャンネルコミュニティ
 youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(tp-yt-paper-tab[role="tab"])
+! チャンネル上の人気の動画切り替え
+youtube.com##ytd-rich-grid-renderer #header
 !チャット見れない時は消す
 youtube.com##yt-formatted-string#message:has-text(/(この動画ではチャットのリプレイを利用できません|このプレミア公開では、チャットのリプレイは無効です)/):upward(ytd-live-chat-frame)
 ! ホーム上のジャンル選択
@@ -354,15 +358,13 @@ youtube.com##[page-subtype="home"] ytd-rich-section-renderer
 ! 一度見た動画の下の赤線
 youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
 ! ホームに出てくる急上昇
-youtube.com##[id="contents"] .yt-simple-endpoint:has-text(急上昇):upward(ytd-rich-section-renderer.ytd-rich-grid-renderer)
+!youtube.com##[id="contents"] .yt-simple-endpoint:has-text(急上昇):upward(ytd-rich-section-renderer.ytd-rich-grid-renderer)
 ! ホームの最新のYouTube投稿
 youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(最新の YouTube 投稿))
 ! ホームで動画にカーソルを当てた時の字幕
 youtube.com##.ytp-progress-bar-container #ytp-caption-window-container
 ! ホーム動画プレビューの字幕
 youtube.com###inline-preview-player > #ytp-caption-window-container
-! ホーム放送予定LIVE
-youtube.com##.ytd-video-meta-block:has-text(に公開予定):upward(ytd-rich-item-renderer)
 
 ! ログインしていない状態
 ! 動画概要欄のコメント欄
@@ -435,9 +437,6 @@ beta.sankakucomplex.com##a:has-text(Hide ads):upward(4)
 
 ! dlsiteタイトルコピー
 dlsite.com##h1#work_name:style(user-select: auto!important)
-! 豆腐フィルタdlsite上の横スクロール部分の誤爆
-@@||eisys-bcs.jp^$3p,domain=dlsite.com
-
 
 ! dアニメストア お知らせ
 animestore.docomo.ne.jp##.informationWrapper
@@ -478,7 +477,7 @@ abema.tv##[href="/now-on-air/sumo"]:upward(.com-tv-LinearChannelList__item)
 ! 高さ調整
 abema.tv##.com-tv-LinearChannelList::before:style(height: calc(20%) !important)
 abema.tv##.com-tv-LinearChannelList::after:style(height: calc(20%) !important)
-! 番組情報
+! 最初からみる
 abema.tv##.com-tv-LinearFooterChasePlayButton
 ! ロゴ
 abema.tv##.com-tv-LinearFooter__logo
