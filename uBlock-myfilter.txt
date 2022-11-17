@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20221116
+! Version: 20221118
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -209,6 +209,8 @@ nicovideo.jp##.CommentPanelDataGrid .CommentPanelDataGrid-TableCell:style(user-s
 nicovideo.jp##.PreVideoStartPremiumLinkContainer
 ! 右サイドバーの記事など
 nicovideo.jp##.SpecifiedRanking-sub
+! シークバーの広告部分
+nicovideo.jp##.SeekBarContainer-videoAdMarker
 
 
 ! ホームNG
