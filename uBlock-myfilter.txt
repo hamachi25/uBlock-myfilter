@@ -178,8 +178,8 @@ nicovideo.jp##.PlayerOptionContainer:style(max-height:488px!important)
 !フッター
 nicovideo.jp##footer
 ! ジャンル選択アニメ以外なくす
-nicovideo.jp##.VideoTopGenreListContainer > .VideoTopGenreListContainer-item:not(:has([href="/video_top/genre/anime"]))
-nicovideo.jp##.VideoTopGenreListContainer:style(background-color:transparent!important)
+www.nicovideo.jp##.RankingGenreListContainer-item:not(:has([href="/ranking/genre/anime?video_ranking_menu"]))
+www.nicovideo.jp##.RankingGenreListContainer:style(background-color:transparent!important)
 ! 検索結果コミュニティ
 nicovideo.jp##.column.sub > section.relatedInfo.community
 ! トップページ自動再生
@@ -192,17 +192,19 @@ nicovideo.jp##.TagContainer-area.TagContainer-TagEditButtonArea
 ! 一度見た動画の下の赤線
 nicovideo.jp##.NC-VideoPlaybackIndicator
 ! 注目のタグ
-nicovideo.jp##.TrendyTagAreaContainer:upward(.BaseLayout-block)
+www.nicovideo.jp##.TrendyTagAreaContainer:upward(.BaseLayout-block)
 ! 新着投稿動画
-nicovideo.jp##.NewArrivalVideosContainer:upward(.BaseLayout-block)
+www.nicovideo.jp##.NewArrivalVideosContainer:upward(.BaseLayout-block)
 ! 注目タグの動画
-nicovideo.jp##.TrendyTagsWithVideosContainer:upward(.BaseLayout-block)
+www.nicovideo.jp##.TrendyTagsWithVideosContainer:upward(.BaseLayout-block)
 ! タグ
-nicovideo.jp##.RepresentedTagsContainer
+www.nicovideo.jp##.RepresentedTagsContainer
 ! 新着コメント動画
-nicovideo.jp##.NewCommentVideosContainer:upward(.BaseLayout-block)
+www.nicovideo.jp##.NewCommentVideosContainer:upward(.BaseLayout-block)
 ! おすすめ
-nicovideo.jp##.RecommendVideosContainer:upward(.BaseLayout-block)
+www.nicovideo.jp##.RecommendVideosContainer:upward(.BaseLayout-block)
+! TV放送中のアニメチャンネル
+www.nicovideo.jp##.OnTvAnimeChannelsContainer
 !  ニコニココメントコピペ
 nicovideo.jp##.CommentPanelDataGrid .CommentPanelDataGrid-TableCell:style(user-select: text !important;)
 ! プレミアム機能の途中再生ポップアップ
