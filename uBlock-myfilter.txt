@@ -232,8 +232,8 @@ nicovideo.jp##.SeekBarContainer-videoAdMarker
 youtube.com###video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
 ! 動画右のミックスリスト
 youtube.com##ytd-compact-radio-renderer
-! 動画右の再生リスト
-!youtube.com##ytd-compact-playlist-renderer
+! 動画右のYoutube Music
+youtube.com##ytd-compact-playlist-renderer
 
 ! ホームshort
 youtube.com###video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
