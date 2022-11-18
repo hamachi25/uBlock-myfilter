@@ -180,6 +180,8 @@ nicovideo.jp##footer
 ! ジャンル選択アニメ以外なくす
 www.nicovideo.jp##.RankingGenreListContainer-item:not(:has([href="/ranking/genre/anime?video_ranking_menu"]))
 www.nicovideo.jp##.RankingGenreListContainer:style(background-color:transparent!important)
+www.nicovideo.jp##.VideoTopGenreListContainer-item:not(:has([href="/video_top/genre/anime"]))
+www.nicovideo.jp##.VideoTopGenreListContainer:style(background-color:transparent!important)
 ! 検索結果コミュニティ
 nicovideo.jp##.column.sub > section.relatedInfo.community
 ! トップページ自動再生
