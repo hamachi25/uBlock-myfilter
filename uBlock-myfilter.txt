@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20221118
+! Version: 20221120
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -388,7 +388,8 @@ news.yahoo.co.jp##aside[class^="CommentShort__Wrapper"]
 news.yahoo.co.jp###articleCommentModule
 news.yahoo.co.jp##a:has-text(おすすめの有料記事):upward(2)
 ! 左下浮いてるコメント
-news.yahoo.co.jp###contentsWrap > [class^="CommentFloating__"]
+news.yahoo.co.jp##[class^="CommentFloating__"]
+news.yahoo.co.jp##[class^="CommentFloatingCSR__ComponentBalloon-"]
 
 
 ! 読売新聞画面下
