@@ -352,7 +352,7 @@ youtube.com##ytd-notification-topbar-button-renderer
 youtube.com##ytd-guide-section-renderer:has(h3:has-text(/YouTube の他のサービス|探索/))
 youtube.com##ytd-guide-section-renderer:has([title="設定"])
 ! ホーム左下の概要
-youtube.com###footer
+youtube.com##tp-yt-app-drawer #footer
 ! ホーム左チャンネル一覧
 youtube.com##[href="/feed/guide_builder"]
 ! ホーム 最新ニュース
