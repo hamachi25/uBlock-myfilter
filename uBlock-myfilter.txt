@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20221205
+! Version: 20221221
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -531,6 +531,7 @@ amazon.co.jp##.atvwebplayersdk-nextupcard-wrapper
 ! discord画像モザイク
 discord.com##.imageContent-3Av-9c:style(filter:none !important)
 discord.com##.spoilerWarning-8ovW0v
+discord.com##.spoilerAttachment-1QvPhn:style(filter:none !important)
 ! discord文字モザイク
 discord.com##.spoilerText-27bIiA > .inlineContent-2YnoDy:not(#a):style(opacity: 1 !important)
 discord.com##.spoilerText-27bIiA:not(#a):style(background-color: hsla(0,calc(var(--saturation-factor, 1)*0%),100%,.1) !important; pointer-events: none !important)
