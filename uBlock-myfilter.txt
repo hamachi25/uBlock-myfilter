@@ -1,5 +1,6 @@
 ! Title: uBlock-myfilter
-! Version: 20221225
+! Homepage: https://github.com/chimaha/uBlock-myfilter
+! Version: 20221226
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -60,11 +61,13 @@ twitter.com##[data-testid="settingsAndSupport"]:upward(6):style(border-radius: 3
 twitter.com##[data-testid="DMDrawer"] > div
 ! ホームの上最新を固定
 twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"]:upward(9):style(position: static!important)
-! リツイートといいね数を隠す
-twitter.com##article [data-testid="retweet"] > div > div:nth-of-type(2)
-twitter.com##article [data-testid="unretweet"] > div > div:nth-of-type(2)
-twitter.com##article [data-testid="like"] > div > div:nth-of-type(2)
-twitter.com##article [data-testid="unlike"] > div > div:nth-of-type(2)
+! リツイート数、いいね数、アナリティクスを隠す
+twitter.com##[data-testid="retweet"] > div > div:nth-of-type(2)
+twitter.com##[data-testid="unretweet"] > div > div:nth-of-type(2)
+twitter.com##[data-testid="like"] > div > div:nth-of-type(2)
+twitter.com##[data-testid="unlike"] > div > div:nth-of-type(2)
+twitter.com##article [role="group"] > div > div:has([href$="/analytics"])
+twitter.com##article [role="group"] > div:has(>[href$="/analytics"])
 ! 左下自分のアカウント名だけ隠す
 twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 ! 左下アカウント画像を暗く
@@ -95,6 +98,8 @@ twitter.com##:xpath(//nav[@aria-label="プロフィールタイムライン"]/pr
 ! もっと見つける
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform])
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform]) ~ div
+! ユーザープロフィールのおすすめユーザー
+twitter.com##[aria-label="おすすめユーザー"]
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
@@ -440,6 +445,10 @@ hitomi.la##.donate
 kemono.party##[href="/account/logout"]
 
 
+! 字幕非表示
+www.asmr.one###lyricsBar
+
+
 ! カーソルで画像拡大
 gigafree.net###preview
 
@@ -556,3 +565,11 @@ pixiv.net##[href="/premium/lead/lp?g=anchor&i=popular_works_list&p=free_campaign
 
 ! noteテキスト選択時の共有ポップアップ
 note.com##.m-shareSheet
+
+! 画像モザイク
+www.reddit.com##img:style(filter: none!important)
+! New Posts
+www.reddit.com##._369llFshxbL10dgfLlIApJ
+! ヘッダー
+www.reddit.com##[href^="https://ads.reddit.com"]
+www.reddit.com##.x0hiXHicn7r3BG9m1FJH4
