@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Version: 20221222
+! Version: 20221225
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -250,15 +250,15 @@ youtube.com###video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
 youtube.com###thumbnail[href*=shorts]:upward(ytd-video-renderer)
 
 ! ホームライブ
-youtube.com##ytd-badge-supported-renderer:has-text(ライブ):upward(ytd-rich-item-renderer)
+youtube.com##.badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
 ! ホームのライブ予定動画
 youtube.com##yt-formatted-string:has-text(通知する):upward(ytd-rich-item-renderer)
 ! ホーム放送予定ライブ
 youtube.com##.ytd-video-meta-block:has-text(に公開予定):upward(ytd-rich-item-renderer)
 ! 動画横ライブ
-youtube.com##ytd-badge-supported-renderer:has-text(ライブ):upward(ytd-compact-video-renderer)
+youtube.com##.badge-style-type-live-now-alternate:upward(ytd-compact-video-renderer)
 ! 登録チャンネルライブ
-youtube.com##ytd-badge-supported-renderer:has-text(ライブ):upward(ytd-grid-video-renderer)
+youtube.com##.badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
 ! 登録チャンネル今後のライブ
 youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(ytd-grid-video-renderer)
 ! ライブ動画横のスクロールバー
@@ -270,16 +270,18 @@ youtube.com##.badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
 ! 登録チャンネルプレミアム公開
 youtube.com##.badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
 
-! 動画下次へ
+! 動画オーバーレイ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
-! 動画下字幕使えないときは非表示
+! 動画オーバーレイ字幕使えないときは非表示
 youtube.com##.ytp-subtitles-button[data-title-no-tooltip="字幕を利用できません"]
+! 動画オーバーレイミニプレイヤー
+youtube.com##.ytp-button.ytp-miniplayer-button
+! 動画オーバーレイシアターモード
+youtube.com##.ytp-button.ytp-size-button
+! 動画オーバーレイ自動再生
+youtube.com##.ytp-button[data-tooltip-target-id="ytp-autonav-toggle-button"]
 ! 動画下の説明欄
 youtube.com###clarify-box
-! 動画下ミニプレイヤー
-youtube.com##.ytp-button.ytp-miniplayer-button
-! 動画下シアターモード
-youtube.com##.ytp-button.ytp-size-button
 ! 動画下グッズなど
 youtube.com##ytd-merch-shelf-renderer
 ! 動画右上のジャンル選択
@@ -321,8 +323,10 @@ youtube.com###info.ytd-watch-metadata:style(color: var(--yt-spec-text-secondary)
 ! 高評価と低評価の間の線を非表示
 !youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--segmented-start::after
 
-! 動画最後の関連動画
+! 動画終了前のおすすめ動画
 youtube.com##.ytp-ce-element
+! 動画終了後のエンドスクリーンと自動再生無効
+/endscreen.js$script,important,domain=youtube.com
 ! 動画右youtube movie
 youtube.com##ytd-compact-movie-renderer
 ! メンバーになる
@@ -333,9 +337,10 @@ youtube.com##yt-formatted-string.title:has-text(メンバー):upward(ytd-item-se
 youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has(ytd-reel-shelf-renderer)
 ! チャンネルホーム メンバー限定
 www.youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has-text(メンバー限定)
-! チャンネルコミュニティ
-youtube.com###tabsContent .tp-yt-paper-tab:has-text(コミュニティ):upward(tp-yt-paper-tab[role="tab"])
-! チャンネル上の人気の動画切り替え
+! チャンネルタブ
+youtube.com###tabsContent > tp-yt-paper-tab:has-text(/コミュニティ|ショート|ライブ/)
+youtube.com###tabsContent > ytd-expandable-tab-renderer
+! チャンネルの最近アップロードされた動画と人気の動画切り替え
 youtube.com##ytd-rich-grid-renderer #header
 !チャット見れない時は消す
 youtube.com##yt-formatted-string#message:has-text(/(この動画ではチャットのリプレイを利用できません|このプレミア公開では、チャットのリプレイは無効です)/):upward(ytd-live-chat-frame)
@@ -345,7 +350,6 @@ youtube.com##[page-subtype="home"] #header
 youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.1.guideEntryRenderer)
 ! 検索結果の他の人はこちらも視聴しています,ミックスリストも消える
 youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer),ytd-secondary-search-container-renderer
-!youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer,ytd-channel-renderer),ytd-secondary-search-container-renderer
 ! 音声検索
 youtube.com###voice-search-button
 ! 右上通知
