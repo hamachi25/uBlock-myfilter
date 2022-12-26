@@ -68,6 +68,8 @@ twitter.com##[data-testid="like"] > div > div:nth-of-type(2)
 twitter.com##[data-testid="unlike"] > div > div:nth-of-type(2)
 twitter.com##article [role="group"] > div > div:has([href$="/analytics"])
 twitter.com##article [role="group"] > div:has(>[href$="/analytics"])
+! ツイートアナリティクスを表示
+twitter.com##article [data-testid="analyticsButton"]:upward(1)
 ! 左下自分のアカウント名だけ隠す
 twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 ! 左下アカウント画像を暗く
