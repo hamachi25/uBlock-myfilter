@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20221226
+! Version: 20221227
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -96,6 +96,7 @@ twitter.com##[aria-label="投票を追加"] + div
 twitter.com##[aria-label="ツイートを予約"]
 twitter.com##[aria-label="位置情報をタグ付け"]
 ! プロフィールのフォロしているフォロワー
+twitter.com##[aria-label="ホームタイムライン"] [href$="/followers_you_follow"]:upward(4)
 twitter.com##:xpath(//nav[@aria-label="プロフィールタイムライン"]/preceding-sibling::div/div/div[contains(.//span,"フォローしている人にフォロワーはいません")])
 ! もっと見つける
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform])
@@ -224,6 +225,8 @@ nicovideo.jp##.PreVideoStartPremiumLinkContainer
 nicovideo.jp##.SpecifiedRanking-sub
 ! シークバーの広告部分
 nicovideo.jp##.SeekBarContainer-videoAdMarker
+! ニコニコ動画アワード2022
+nicovideo.jp##[href="https://site.nicovideo.jp/premiumaward/?ref=header_premiumaward"]:upward(2)
 
 
 ! ホームNG
@@ -259,7 +262,7 @@ youtube.com###thumbnail[href*=shorts]:upward(ytd-video-renderer)
 ! ホームライブ
 youtube.com##.badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
 ! ホームのライブ予定動画
-youtube.com##yt-formatted-string:has-text(通知する):upward(ytd-rich-item-renderer)
+youtube.com##ytd-browse ytd-rich-item-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
 ! ホーム放送予定ライブ
 youtube.com##.ytd-video-meta-block:has-text(に公開予定):upward(ytd-rich-item-renderer)
 ! 動画横ライブ
@@ -267,15 +270,10 @@ youtube.com##.badge-style-type-live-now-alternate:upward(ytd-compact-video-rende
 ! 登録チャンネルライブ
 youtube.com##.badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
 ! 登録チャンネル今後のライブ
-youtube.com##[page-subtype="subscriptions"] ytd-toggle-button-renderer:upward(ytd-grid-video-renderer)
+youtube.com##ytd-browse ytd-grid-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
 ! ライブ動画横のスクロールバー
 !youtube.com###meta.ytd-rich-grid-media:style(scrollbar-width: none !important)
 !youtube.com###meta.ytd-video-preview:style(scrollbar-width: none !important)
-
-ホームプレミアム公開
-youtube.com##.badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
-! 登録チャンネルプレミアム公開
-youtube.com##.badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
 
 ! 動画オーバーレイ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
@@ -475,7 +473,6 @@ abema.tv##[href="/purchased/payperview"]
 abema.tv##.com-application-SideNavigationGenreHeading
 abema.tv##.com-application-SideNavigationMainList__genre-wrapper
 abema.tv##.c-application-SideNavigation__footer
-abema.tv##.com-application-FIFAWorldCupSideNavigationPrimaryItem
 ! CMマイリスト
 abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 ! アニメ以外を消す
@@ -509,9 +506,6 @@ abema.tv##.com-tv-LinearFooter__logo
 abema.tv##.com-tv-LinearFooter:style(background-image:none !important)
 ! お使いのブラウザは推奨環境外
 abema.tv##.com-m-NotificationManager
-! 上バーのFIFA
-abema.tv##.com-application-FIFAWorldCupHeader::after
-abema.tv##.com-application-FIFAWorldCupHeader__header-item-parts
 
 
 !komiflo UI
