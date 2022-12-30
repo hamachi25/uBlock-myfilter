@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20221227
+! Version: 20221231
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -103,6 +103,8 @@ twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見�
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform]) ~ div
 ! ユーザープロフィールのおすすめユーザー
 twitter.com##[aria-label="おすすめユーザー"]
+! ツイート作成枠
+twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"])
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
@@ -248,27 +250,25 @@ youtube.com##ytd-compact-radio-renderer
 youtube.com##ytd-compact-playlist-renderer
 
 ! ホームshort
-youtube.com###video-title-link:has-text(/shorts/i):upward(ytd-rich-item-renderer)
+youtube.com##[page-subtype="home"] #video-title-link:has-text(/#shorts|#short/i):upward(ytd-rich-item-renderer)
 ! 動画右short
-youtube.com###video-title:has-text(/shorts/i):upward(ytd-compact-video-renderer)
-! 動画右のshort欄
+youtube.com##ytd-watch-next-secondary-results-renderer #video-title:has-text(/#shorts|#short/i):upward(ytd-compact-video-renderer)
 youtube.com##ytd-watch-next-secondary-results-renderer ytd-shelf-renderer
 ! 登録チャンネルshort
-youtube.com###video-title[href*=shorts]:upward(ytd-grid-video-renderer)
-youtube.com###video-title:has-text(/shorts/i):upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="subscriptions"] [overlay-style="SHORTS"]:upward(ytd-grid-video-renderer)
 ! 検索結果short
-youtube.com###thumbnail[href*=shorts]:upward(ytd-video-renderer)
+youtube.com##ytd-search [overlay-style="SHORTS"]:upward(ytd-video-renderer)
 
 ! ホームライブ
-youtube.com##.badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
+youtube.com##[page-subtype="home"] .badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
 ! ホームのライブ予定動画
 youtube.com##ytd-browse ytd-rich-item-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
 ! ホーム放送予定ライブ
 youtube.com##.ytd-video-meta-block:has-text(に公開予定):upward(ytd-rich-item-renderer)
 ! 動画横ライブ
-youtube.com##.badge-style-type-live-now-alternate:upward(ytd-compact-video-renderer)
+youtube.com##ytd-watch-next-secondary-results-renderer .badge-style-type-live-now-alternate:upward(ytd-compact-video-renderer)
 ! 登録チャンネルライブ
-youtube.com##.badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="subscriptions"] .badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
 ! 登録チャンネル今後のライブ
 youtube.com##ytd-browse ytd-grid-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
 ! ライブ動画横のスクロールバー
