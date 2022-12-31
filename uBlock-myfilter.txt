@@ -229,6 +229,8 @@ nicovideo.jp##.SpecifiedRanking-sub
 nicovideo.jp##.SeekBarContainer-videoAdMarker
 ! ニコニコ動画アワード2022
 nicovideo.jp##[href="https://site.nicovideo.jp/premiumaward/?ref=header_premiumaward"]:upward(2)
+! ニコ生ギフト
+live.nicovideo.jp##[class^="___ichiba-counter___"]
 
 
 ! ホームNG
