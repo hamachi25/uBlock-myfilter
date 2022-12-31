@@ -21,7 +21,7 @@ twitter.com##div[aria-label="トレンド"] > div > div
 twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]):style(display: revert !important; display: flex !important)
 twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]) + div:style(display: revert !important)
 twitter.com##div[aria-label="トレンド"] [href$="/photo/1"]:upward(7):style(display: revert !Important)
-twitter.com##div[aria-label="トレンド"] > div > div:has(span:has-text(検索フィルター)):style(display: revert !important)
+twitter.com##div[aria-label="トレンド"] > div > div:has([data-testid="searchFiltersAdvancedSearch"]):style(display: revert !important)
 ! コロナのタブなどを消して表示させ直す
 twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div
 twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href="/explore/tabs/for-you"]):style(display: revert !important)
