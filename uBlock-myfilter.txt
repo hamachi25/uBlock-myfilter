@@ -285,6 +285,10 @@ youtube.com##ytd-browse ytd-grid-video-renderer:has(ytd-thumbnail-overlay-time-s
 ! ライブ動画横のスクロールバー
 !youtube.com###meta.ytd-rich-grid-media:style(scrollbar-width: none !important)
 !youtube.com###meta.ytd-video-preview:style(scrollbar-width: none !important)
+! ライブ配信済み
+youtube.com##ytd-grid-video-renderer:has(#metadata:has-text(に配信済み))
+youtube.com##ytd-rich-item-renderer:has(#metadata:has-text(に配信済み))
+youtube.com##ytd-compact-video-renderer:has(#metadata:has-text(に配信済み)
 
 ! 動画オーバーレイ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
@@ -378,15 +382,13 @@ youtube.com##tp-yt-app-drawer #footer
 ! ホーム左チャンネル一覧
 youtube.com##[href="/feed/guide_builder"]
 ! ホーム 最新ニュース
-youtube.com##[page-subtype="home"] span.ytd-rich-shelf-renderer#title:has-text(最新ニュース):upward(#contents > ytd-rich-section-renderer)
+!youtube.com##[page-subtype="home"] span.ytd-rich-shelf-renderer#title:has-text(最新ニュース):upward(#contents > ytd-rich-section-renderer)
 ! ホームの動画評価
 youtube.com##ytd-inline-survey-renderer:upward(2)
 ! ホームでショートなどの動画以外
 youtube.com##[page-subtype="home"] ytd-rich-section-renderer
 ! 一度見た動画の下の赤線
 youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
-! ホームに出てくる急上昇
-!youtube.com##[id="contents"] .yt-simple-endpoint:has-text(急上昇):upward(ytd-rich-section-renderer.ytd-rich-grid-renderer)
 ! ホームの最新のYouTube投稿
 youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(最新の YouTube 投稿))
 ! ホームで動画にカーソルを当てた時の字幕
