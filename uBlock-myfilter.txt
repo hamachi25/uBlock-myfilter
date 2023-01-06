@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230106
+! Version: 20230107
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -85,8 +85,9 @@ twitter.com##[data-testid="card.layoutLarge.detail"]:has-text(bnc.lt):upward(div
 twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(1):not(:has-text(トレンド))
 twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(2)
 ! ツイートリプライ
-twitter.com##span:has-text(あなたがフォローしているアカウントは、よくこのユーザーをいいねしています):upward(5)
-twitter.com##span:has-text(あなたがフォローしているユーザーにフォローされています):upward(5)
+twitter.com##[aria-label="タイムライン: 会話"] [data-testid="socialContext"]:upward(4)
+!twitter.com##span:has-text(あなたがフォローしているアカウントは、よくこのユーザーをいいねしています):upward(5)
+!twitter.com##span:has-text(あなたがフォローしているユーザーにフォローされています):upward(5)
 ! ミュートワード表示するボタンを非表示
 twitter.com##span:has-text(このツイートにはミュートしたキーワードが含まれています。):upward(4) + div
 ! ホームツイート欄の画像以外を非表示
@@ -97,7 +98,9 @@ twitter.com##[aria-label="ツイートを予約"]
 twitter.com##[aria-label="位置情報をタグ付け"]
 ! プロフィールのフォロしているフォロワー
 twitter.com##[aria-label="ホームタイムライン"] [href$="/followers_you_follow"]:upward(4)
-twitter.com##:xpath(//nav[@aria-label="プロフィールタイムライン"]/preceding-sibling::div/div/div[contains(.//span,"フォローしている人にフォロワーはいません")])
+twitter.com##[data-testid="HoverCard"] [href$="/followers_you_follow"]:upward(3)
+!twitter.com##:xpath(//nav[@aria-label="プロフィールタイムライン"]/preceding-sibling::div/div/div[contains(.//span,"フォローしている人にフォロワーはいません")])
+twitter.com##[aria-label="ホームタイムライン"] [data-testid="UserName"] ~ div:has-text(フォローしている人にフォロワーはいません)
 ! もっと見つける
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform])
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform]) ~ div
