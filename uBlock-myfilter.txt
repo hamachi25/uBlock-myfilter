@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230107
+! Version: 20230108
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -85,7 +85,7 @@ twitter.com##[data-testid="card.layoutLarge.detail"]:has-text(bnc.lt):upward(div
 twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(1):not(:has-text(トレンド))
 twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(2)
 ! ツイートリプライ
-twitter.com##[aria-label="タイムライン: 会話"] [data-testid="socialContext"]:upward(4)
+twitter.com##[aria-label="タイムライン: 会話"] [tabindex="0"] [data-testid="socialContext"]:upward(4)
 !twitter.com##span:has-text(あなたがフォローしているアカウントは、よくこのユーザーをいいねしています):upward(5)
 !twitter.com##span:has-text(あなたがフォローしているユーザーにフォローされています):upward(5)
 ! ミュートワード表示するボタンを非表示
