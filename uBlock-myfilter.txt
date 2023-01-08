@@ -35,8 +35,13 @@ twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href^
 twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(span:has-text(/(ツイート|メディア|いいね)/)):style(display: revert !important)
 ! 通知の誤爆
 twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has([href^="/notifications"]):style(display: revert !important)
-twitter.com##div[data-testid="ScrollSnap-nextButtonWrapper"]
-twitter.com##div[data-testid="ScrollSnap-prevButtonWrapper"]
+twitter.com##[aria-label="ホームタイムライン"]:not(:has([aria-label="タイムライン: トピック"])) div[data-testid="ScrollSnap-nextButtonWrapper"]
+twitter.com##[aria-label="ホームタイムライン"]:not(:has([aria-label="タイムライン: トピック"])) div[data-testid="ScrollSnap-prevButtonWrapper"]
+! トピック誤爆
+twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href$="/topics/followed"]):style(display: revert !important)
+twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href$="/topics/recommended"]):style(display: revert !important)
+twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href$="/topics/not_interested"]):style(display: revert !important)
+twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has([aria-label$="をフォロー"]):style(display: revert !important)
 ! URLから開いたときのその他のツイート
 twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"])
 twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"]) ~ [data-testid="cellInnerDiv"] 
@@ -119,6 +124,8 @@ twitter.com##div[aria-label="タイムライン: ホームタイムライン"] >
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform]:has(div[aria-label^=フォロー][role=button] > div > span > span)
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
+twitter.com##[aria-label="タイムライン: トピック"] h2:has-text(トレンドユーザー):upward(div[style^=transform])
+twitter.com##[aria-label="タイムライン: トピック"] [aria-label^="フォロー @"][data-testid]:upward(div[style^="transform"])
 ! リツイートをもとにおすすめ
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform]:has(a[id][href^="/i/topics/"] > span[aria-label^=おすすめトピック])
 ! おすすめトピック
@@ -127,6 +134,10 @@ twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイー�
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div[class^=css]:only-child > div[class^=css]:only-child:empty
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] div[data-testid=ScrollSnap-SwipeableList]:has(div[aria-label^=トピック「][aria-label$=をフォロー])
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] h2 > div[style^=-webkit] > span:has-text(おすすめトピック):upward(div[style^=transform])
+twitter.com##[aria-label="タイムライン: トピック"] h2:has-text(おすすめトピック):upward(div[style^="transform"])
+twitter.com##[aria-label="タイムライン: トピック"] [aria-label="タイムライン: Carousel"] [href^="/i/topics/"]:upward(div[style^="transform"])
+twitter.com##[aria-label="タイムライン: トピック"] [aria-label="タイムライン: Carousel"] [aria-label$="を非表示にする"]:upward(div[style^="transform"])
+twitter.com##[aria-label="タイムライン: トピック"] [href="/i/topics/picker/home"]:upward(div[style^="transform"])
 ! リストを見つける
 twitter.com##div[aria-label="タイムライン: 自分のリスト"] > div > div[style^=transform] h2 > div[style^=-webkit] > span:has-text(新しいリストを見つける):upward(div[style^=transform])
 twitter.com##div[aria-label="タイムライン: 自分のリスト"] > div > div[style^=transform]:has(> div > div > div[role=link] div[role=button] > div > span > span)
