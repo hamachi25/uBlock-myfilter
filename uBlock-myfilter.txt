@@ -374,7 +374,7 @@ youtube.com###tabsContent > ytd-expandable-tab-renderer
 ! チャンネルの最近アップロードされた動画と人気の動画切り替え
 youtube.com##ytd-rich-grid-renderer #header
 !チャット見れない時は消す
-youtube.com##yt-formatted-string#message:has-text(/(この動画ではチャットのリプレイを利用できません|このプレミア公開では、チャットのリプレイは無効です)/):upward(ytd-live-chat-frame)
+youtube.com##yt-formatted-string#message:has-text(/この動画ではチャットのリプレイを利用できません|このプレミア公開では、チャットのリプレイは無効です/):upward(ytd-live-chat-frame)
 ! ホーム上のジャンル選択
 youtube.com##[page-subtype="home"] #header
 ! ホーム左のショート
@@ -406,6 +406,9 @@ youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(�
 youtube.com##.ytp-progress-bar-container #ytp-caption-window-container
 ! ホーム動画プレビューの字幕
 youtube.com###inline-preview-player > #ytp-caption-window-container
+! キューに追加
+youtube.com##ytd-menu-service-item-renderer:has-text(キューに追加)
+youtube.com##ytd-thumbnail-overlay-toggle-button-renderer[aria-label="キューに追加"]
 
 ! ログインしていない状態
 ! 動画概要欄のコメント欄
