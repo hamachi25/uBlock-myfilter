@@ -313,6 +313,8 @@ youtube.com##.ytp-button.ytp-size-button
 youtube.com##.ytp-button[data-tooltip-target-id="ytp-autonav-toggle-button"]
 ! 動画下の説明欄
 youtube.com###clarify-box
+! 概要欄の文字起こし
+youtube.com##ytd-text-inline-expander > [slot="extra-content"]:has(ytd-structured-description-content-renderer)
 ! 動画下グッズなど
 youtube.com##ytd-merch-shelf-renderer
 ! 動画右上のジャンル選択
@@ -363,13 +365,13 @@ youtube.com##ytd-compact-movie-renderer
 ! メンバーになる
 youtube.com###sponsor-button
 ! チャンネルホーム メンバー一覧
-youtube.com##yt-formatted-string.title:has-text(メンバー):upward(ytd-item-section-renderer.ytd-section-list-renderer)
+youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has(ytd-recognition-shelf-renderer)
 ! チャンネルホーム shortsリスト
 youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has(ytd-reel-shelf-renderer)
 ! チャンネルホーム メンバー限定
-www.youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has-text(メンバー限定)
+youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has(.badge-style-type-members-only)
 ! チャンネルタブ
-youtube.com###tabsContent > tp-yt-paper-tab:has-text(/コミュニティ|ショート|ライブ/)
+youtube.com###tabsContent > tp-yt-paper-tab:has-text(/コミュニティ|ショート|ライブ|ストア/)
 youtube.com###tabsContent > ytd-expandable-tab-renderer
 ! チャンネルの最近アップロードされた動画と人気の動画切り替え
 youtube.com##ytd-rich-grid-renderer #header
