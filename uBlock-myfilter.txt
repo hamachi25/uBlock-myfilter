@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230108
+! Version: 20230109
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -265,44 +265,47 @@ live.nicovideo.jp##[class^="___promotion-panel___"]
 !youtube.com##ytd-comment-renderer:has-text(/(あ|い)/)
 
 ! ホームのミックスリスト
-youtube.com###video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(#video-title-link[title*="ミックス"][href$="start_radio=1"])
 ! 動画右のミックスリスト
 youtube.com##ytd-compact-radio-renderer
 ! 動画右のYoutube Music
 youtube.com##ytd-compact-playlist-renderer
+! 動画右youtube movie
+youtube.com##ytd-compact-movie-renderer
 
 ! ホームshort
-youtube.com##[page-subtype="home"] #video-title-link:has-text(/#shorts|#short/i):upward(ytd-rich-item-renderer)
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(#video-title-link:has-text(/#short/i))
 ! 動画右short
-youtube.com##ytd-watch-next-secondary-results-renderer #video-title:has-text(/#shorts|#short/i):upward(ytd-compact-video-renderer)
+youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has([href^="/shorts/"])
 youtube.com##ytd-watch-next-secondary-results-renderer ytd-shelf-renderer
 ! 登録チャンネルshort
-youtube.com##[page-subtype="subscriptions"] [overlay-style="SHORTS"]:upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has([href^="/shorts/"])
 ! 検索結果short
-youtube.com##ytd-search [overlay-style="SHORTS"]:upward(ytd-video-renderer)
+youtube.com##ytd-search ytd-video-renderer:has([href^="/shorts/"])
 
 ! ホームライブ
-youtube.com##[page-subtype="home"] .badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(.badge-style-type-live-now-alternate)
 ! ホームのライブ予定動画
-youtube.com##ytd-browse ytd-rich-item-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
 ! ホーム放送予定ライブ
-youtube.com##.ytd-video-meta-block:has-text(に公開予定):upward(ytd-rich-item-renderer)
+!youtube.com##.ytd-video-meta-block:has-text(に公開予定):upward(ytd-rich-item-renderer)
 ! 動画横ライブ
-youtube.com##ytd-watch-next-secondary-results-renderer .badge-style-type-live-now-alternate:upward(ytd-compact-video-renderer)
+youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(.badge-style-type-live-now-alternate)
 ! 登録チャンネルライブ
-youtube.com##[page-subtype="subscriptions"] .badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
-! 登録チャンネル今後のライブ
-youtube.com##ytd-browse ytd-grid-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
+youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has(.badge-style-type-live-now-alternate)
+! 登録チャンネル配信予定のライブ
+youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
 ! ライブ動画横のスクロールバー
 !youtube.com###meta.ytd-rich-grid-media:style(scrollbar-width: none !important)
 !youtube.com###meta.ytd-video-preview:style(scrollbar-width: none !important)
 ! ライブ配信済み
-youtube.com##ytd-grid-video-renderer:has(#metadata:has-text(に配信済み))
-youtube.com##ytd-rich-item-renderer:has(#metadata:has-text(に配信済み))
-youtube.com##ytd-compact-video-renderer:has(#metadata:has-text(に配信済み)
+youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has(#metadata-line:has-text(に配信済み))
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(#metadata-line:has-text(に配信済み))
+youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(#metadata-line:has-text(に配信済み))
 
-! 動画オーバーレイ次へ
+! 動画オーバーレイ前へ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
+youtube.com##.ytp-prev-button[data-title-no-tooltip="前へ"]
 ! 動画オーバーレイ字幕使えないときは非表示
 youtube.com##.ytp-subtitles-button[data-title-no-tooltip="字幕を利用できません"]
 ! 動画オーバーレイミニプレイヤー
@@ -335,10 +338,12 @@ youtube.com##button.yt-spec-button-shape-next--segmented-start > .yt-spec-button
 ! 低評価調整
 youtube.com##button.yt-spec-button-shape-next--segmented-end:style(width: 46px !important;)
 youtube.com##button.yt-spec-button-shape-next--segmented-end > .yt-spec-button-shape-next__icon:style(margin-left: -3px !important;)
-! 動画下クリップ、Thanks、オフライン
-youtube.com##ytd-button-renderer:has-text(/(クリップ|Thanks|オフライン)/)
+! 動画下クリップ、Thanks
+youtube.com##ytd-button-renderer:has([aria-label="クリップ"])
+youtube.com##ytd-button-renderer:has([aria-label="Thanks"])
 ! 動画下共有と保存の文字を非表示
-youtube.com##.yt-spec-button-shape-next--button-text-content:has-text(/共有|保存/)
+youtube.com##[aria-label="共有"] > .yt-spec-button-shape-next--button-text-content
+youtube.com##[aria-label="再生リストに保存"] > .yt-spec-button-shape-next--button-text-content
 ! 共有、保存調整
 youtube.com##button.yt-spec-button-shape-next--icon-leading > .yt-spec-button-shape-next__icon:style(margin-right: -5px !important; margin-left: -4px !important;)
 ! 高評価や共有部分の背景を透明にする(チャンネル登録済みを除く)
@@ -360,8 +365,6 @@ youtube.com###info.ytd-watch-metadata:style(color: var(--yt-spec-text-secondary)
 youtube.com##.ytp-ce-element
 ! 動画終了後のエンドスクリーンと自動再生無効
 /endscreen.js$script,important,domain=youtube.com
-! 動画右youtube movie
-youtube.com##ytd-compact-movie-renderer
 ! メンバーになる
 youtube.com###sponsor-button
 ! チャンネルホーム メンバー一覧
@@ -403,13 +406,13 @@ youtube.com##[page-subtype="home"] ytd-rich-section-renderer
 ! 一度見た動画の下の赤線
 youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
 ! ホームの最新のYouTube投稿
-youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(最新の YouTube 投稿))
+!youtube.com##ytd-rich-section-renderer:has(h2.ytd-rich-shelf-renderer:has-text(最新の YouTube 投稿))
 ! ホームで動画にカーソルを当てた時の字幕
 youtube.com##.ytp-progress-bar-container #ytp-caption-window-container
 ! ホーム動画プレビューの字幕
 youtube.com###inline-preview-player > #ytp-caption-window-container
 ! キューに追加
-youtube.com##ytd-menu-service-item-renderer:has-text(キューに追加)
+youtube.com##ytd-menu-service-item-renderer:has([d="M21,16h-7v-1h7V16z M21,11H9v1h12V11z M21,7H3v1h18V7z M10,15l-7-4v8L10,15z"])
 youtube.com##ytd-thumbnail-overlay-toggle-button-renderer[aria-label="キューに追加"]
 
 ! ログインしていない状態
@@ -525,6 +528,11 @@ abema.tv##[href^="/now-on-air/shogi"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href^="/now-on-air/mahjong"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/sumo"]:upward(.com-tv-LinearChannelList__item)
 abema.tv##[href="/now-on-air/boxing"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href^="/now-on-air/family-anime-"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href^="/now-on-air/80s-anime-"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href^="/now-on-air/90s-anime-"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href^="/now-on-air/00s-anime-"]:upward(.com-tv-LinearChannelList__item)
+abema.tv##[href^="/now-on-air/family-anime-"]:upward(.com-tv-LinearChannelList__item)
 ! 高さ調整
 abema.tv##.com-tv-LinearChannelList::before:style(height: calc(20%) !important)
 abema.tv##.com-tv-LinearChannelList::after:style(height: calc(20%) !important)
