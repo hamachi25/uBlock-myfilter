@@ -183,7 +183,8 @@ nicovideo.jp###CommonHeader [href^="https://site.nicovideo.jp/premium_contents"]
 nicovideo.jp##div.GiftSubEffectContainer
 ! コメント上
 nicovideo.jp##.PlayerPanelContainer:style(top: 0px !important;z-index: 0!important)
-nicovideo.jp##.MylistButton.VideoMenuContainer-button:style(top: 36px!important;left: 55px!important;z-index: 1!important;transform: scale(0.7);fill: #b2bac2!important)nicovideo.jp##.SharePanelVisibleActionButton:style(top: 36px!important;left: -175px!important;z-index: 1!important;transform: scale(0.8);fill: #b2bac2!important)
+nicovideo.jp##.MylistButton.VideoMenuContainer-button:style(top: 36px!important;left: 55px!important;z-index: 1!important;transform: scale(0.7);fill: #b2bac2!important)
+nicovideo.jp##.SharePanelVisibleActionButton:style(top: 36px!important;left: -175px!important;z-index: 1!important;transform: scale(0.8))
 nicovideo.jp##.SharePanelVisibleActionButton > svg:style(fill: #b2bac2!important)
 ! 動画右有料動画
 nicovideo.jp##.MainContainer-playerPanel .VideoLabel:has-text(有料):upward(.WatchRecommendation-video)
