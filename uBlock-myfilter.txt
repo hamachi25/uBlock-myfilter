@@ -116,8 +116,7 @@ twitter.com##[aria-label="おすすめユーザー"]
 ! ツイート作成枠
 twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"])
 ! 非表示にしたリプライ
-twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の返信"]:upward(2)
-
+twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の返信"]
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
 !twitter.com##article[data-testid=tweet]:has(span[aria-label^="おすすめトピック:"][data-testid=socialContext])
