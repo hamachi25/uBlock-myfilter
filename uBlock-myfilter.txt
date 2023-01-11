@@ -69,10 +69,10 @@ twitter.com##[data-testid="DMDrawer"] > div
 ! ホームの上最新を固定
 twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"]:upward(9):style(position: static!important)
 ! リツイート数、いいね数、アナリティクスを隠す
-twitter.com##article div[data-testid="retweet"] > div > div:nth-of-type(2)
-twitter.com##article div[data-testid="unretweet"] > div > div:nth-of-type(2)
-twitter.com##article div[data-testid="like"] > div > div:nth-of-type(2)
-twitter.com##article div[data-testid="unlike"] > div > div:nth-of-type(2)
+twitter.com##div[data-testid="retweet"] span[data-testid="app-text-transition-container"]
+twitter.com##div[data-testid="unretweet"] span[data-testid="app-text-transition-container"]
+twitter.com##div[data-testid="like"] span[data-testid="app-text-transition-container"]
+twitter.com##div[data-testid="unlike"] span[data-testid="app-text-transition-container"]
 twitter.com##article div[role="group"] > div:has(>[href$="/analytics"])
 twitter.com##div[aria-label="タイムライン: 会話"] a[aria-describedby] ~ span
 ! ツイートを開いた状態いいねとリツイート
