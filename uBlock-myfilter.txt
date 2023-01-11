@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230111
+! Version: 20230112
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -22,26 +22,34 @@ twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キ
 twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]) + div:style(display: revert !important)
 twitter.com##div[aria-label="トレンド"] [href$="/photo/1"]:upward(7):style(display: revert !Important)
 twitter.com##div[aria-label="トレンド"] > div > div:has([data-testid="searchFiltersAdvancedSearch"]):style(display: revert !important)
+! 話題を検索タブ
+! ニュース
+twitter.com##a[href="/explore/tabs/news_unified"]:upward(1)
+! スポーツ
+twitter.com##a[href="/explore/tabs/sports_unified"]:upward(1)
+! エンターテイメント
+twitter.com##a[href="/explore/tabs/entertainment_unified"]:upward(1)
 ! コロナのタブなどを消して表示させ直す
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href="/explore/tabs/for-you"]):style(display: revert !important)
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href="/explore/tabs/trending"]):style(display: revert !important)
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href="/explore/tabs/for-you"]):style(display: revert !important)
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href="/explore/tabs/trending"]):style(display: revert !important)
 ! 検索結果の誤爆
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href^="/search?q="]):style(display: revert !important)
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href^="/hashtag/"]):style(display: revert !important)
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href^="/search?q="]):style(display: revert !important)
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href^="/hashtag/"]):style(display: revert !important)
 ! リストの誤爆
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href^="/i/lists"]):style(display: revert !important)
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href^="/i/lists"]):style(display: revert !important)
 ! アカウントの誤爆
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(span:has-text(/(ツイート|メディア|いいね)/)):style(display: revert !important)
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(span:has-text(/(ツイート|メディア|いいね)/)):style(display: revert !important)
 ! 通知の誤爆
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has([href^="/notifications"]):style(display: revert !important)
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has([href^="/notifications"]):style(display: revert !important)
+! トピック誤爆
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href$="/topics/followed"]):style(display: revert !important)
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href$="/topics/recommended"]):style(display: revert !important)
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href$="/topics/not_interested"]):style(display: revert !important)
+!twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has([aria-label$="をフォロー"]):style(display: revert !important)
+! 横スクロールの矢印
 twitter.com##[aria-label="ホームタイムライン"]:not(:has([aria-label="タイムライン: トピック"])) div[data-testid="ScrollSnap-nextButtonWrapper"]
 twitter.com##[aria-label="ホームタイムライン"]:not(:has([aria-label="タイムライン: トピック"])) div[data-testid="ScrollSnap-prevButtonWrapper"]
-! トピック誤爆
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href$="/topics/followed"]):style(display: revert !important)
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href$="/topics/recommended"]):style(display: revert !important)
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href$="/topics/not_interested"]):style(display: revert !important)
-twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has([aria-label$="をフォロー"]):style(display: revert !important)
 ! URLから開いたときのその他のツイート
 twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"])
 twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"]) ~ [data-testid="cellInnerDiv"] 
