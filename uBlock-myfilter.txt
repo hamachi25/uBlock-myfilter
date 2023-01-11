@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230110
+! Version: 20230111
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -9,8 +9,8 @@
 ! リストでのみNG
 !twitter.com##[aria-label="タイムライン: リスト"] article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
 ! 検索結果のユーザー
-twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(ユーザー))
-twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(ユーザー)) ~ div:not(:has(article))
+!twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(ユーザー))
+!twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(ユーザー)) ~ div:not(:has(article))
 ! リプ欄のその他の返信
 twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
 ! トレンドNG
@@ -61,7 +61,9 @@ twitter.com##[data-testid="Dropdown"] [href="https://support.twitter.com/"]
 twitter.com##[data-testid="Dropdown"] [href="/i/display"]
 twitter.com##[data-testid="Dropdown"] [href="/i/keyboard_shortcuts"]
 twitter.com##[data-testid="Dropdown"] [role="separator"]
-twitter.com##[data-testid="settingsAndSupport"]:upward(6):style(border-radius: 30px !important;top: 470px !important)
+twitter.com##[data-testid="settingsAndSupport"]:upward(6):style(top: 38% !important)
+! Twitter Blue
+twitter.com##a[href="/i/twitter_blue_sign_up"]
 !右下DM
 twitter.com##[data-testid="DMDrawer"] > div
 ! ホームの上最新を固定
@@ -113,6 +115,8 @@ twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見�
 twitter.com##[aria-label="おすすめユーザー"]
 ! ツイート作成枠
 twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"])
+! 非表示にしたリプライ
+twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の返信"]:upward(2)
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
@@ -282,16 +286,20 @@ youtube.com##ytd-search ytd-video-renderer:has([href^="/shorts/"])
 
 ! ホームライブ
 youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(.badge-style-type-live-now-alternate)
-! ホームのライブ予定動画
+! ホーム配信予定
 youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
-! ホーム放送予定ライブ
-!youtube.com##.ytd-video-meta-block:has-text(に公開予定):upward(ytd-rich-item-renderer)
-! 動画横ライブ
+! 動画右ライブ
 youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(.badge-style-type-live-now-alternate)
+! 動画右配信予定
+youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
 ! 登録チャンネルライブ
 youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has(.badge-style-type-live-now-alternate)
 ! 登録チャンネル配信予定のライブ
 youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
+! 検索結果
+youtube.com##ytd-search ytd-video-renderer:has(.badge-style-type-live-now-alternate)
+! 検索結果配信予定
+youtube.com##ytd-search ytd-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
 ! ライブ動画横のスクロールバー
 !youtube.com###meta.ytd-rich-grid-media:style(scrollbar-width: none !important)
 !youtube.com###meta.ytd-video-preview:style(scrollbar-width: none !important)
@@ -299,6 +307,7 @@ youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has(ytd-thum
 youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has(#metadata-line:has-text(に配信済み))
 youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(#metadata-line:has-text(に配信済み))
 youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(#metadata-line:has-text(に配信済み))
+youtube.com##ytd-search ytd-video-renderer:has(#metadata-line:has-text(に配信済み))
 
 ! 動画オーバーレイ前へ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
@@ -382,7 +391,7 @@ youtube.com##[page-subtype="home"] #header
 ! ホーム左のショート
 youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.1.guideEntryRenderer)
 ! 検索結果の他の人はこちらも視聴しています,ミックスリストも消える
-youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer),ytd-secondary-search-container-renderer
+youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer,ytd-channel-renderer),ytd-secondary-search-container-renderer
 ! 音声検索
 youtube.com###voice-search-button
 ! 右上通知
