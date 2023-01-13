@@ -284,37 +284,40 @@ youtube.com##ytd-compact-movie-renderer
 ! ホームshort
 youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(#video-title-link:has-text(/#short/i))
 ! 動画右short
-youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has([href^="/shorts/"])
+youtube.com##ytd-watch-next-secondary-results-renderer [href^="/shorts/"]:upward(ytd-compact-video-renderer)
 youtube.com##ytd-watch-next-secondary-results-renderer ytd-shelf-renderer
 ! 登録チャンネルshort
-youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has([href^="/shorts/"])
+youtube.com##[page-subtype="subscriptions"] [href^="/shorts/"]:upward(ytd-grid-video-renderer)
 ! 検索結果short
-youtube.com##ytd-search ytd-video-renderer:has([href^="/shorts/"])
+youtube.com##ytd-search [href^="/shorts/"]:upward(ytd-video-renderer)
 
 ! ホームライブ
-youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(.badge-style-type-live-now-alternate)
+youtube.com##[page-subtype="home"] .badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
 ! ホーム配信予定
-youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
+youtube.com##[page-subtype="home"] ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-rich-item-renderer)
+! ホーム配信済み
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(#metadata-line:has-text(に配信済み))
 ! 動画右ライブ
-youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(.badge-style-type-live-now-alternate)
+youtube.com##ytd-watch-next-secondary-results-renderer .badge-style-type-live-now-alternate:upward(ytd-compact-video-renderer)
 ! 動画右配信予定
-youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
+youtube.com##ytd-watch-next-secondary-results-renderer ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-compact-video-renderer)
+! 動画右配信済み
+youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(#metadata-line:has-text(に配信済み))
 ! 登録チャンネルライブ
-youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has(.badge-style-type-live-now-alternate)
+youtube.com##[page-subtype="subscriptions"] .badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
 ! 登録チャンネル配信予定のライブ
-youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
-! 検索結果
-youtube.com##ytd-search ytd-video-renderer:has(.badge-style-type-live-now-alternate)
+youtube.com##[page-subtype="subscriptions"] ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-grid-video-renderer)
+! 登録チャンネル配信済み
+youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has(#metadata-line:has-text(に配信済み))
+! 検索結果ライブ
+youtube.com##ytd-search .badge-style-type-live-now-alternate:upward(ytd-video-renderer)
 ! 検索結果配信予定
-youtube.com##ytd-search ytd-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
+youtube.com##ytd-search ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-video-renderer)
+! 検索結果配信済み
+youtube.com##ytd-search ytd-video-renderer:has(#metadata-line:has-text(に配信済み))
 ! ライブ動画横のスクロールバー
 !youtube.com###meta.ytd-rich-grid-media:style(scrollbar-width: none !important)
 !youtube.com###meta.ytd-video-preview:style(scrollbar-width: none !important)
-! ライブ配信済み
-youtube.com##[page-subtype="subscriptions"] ytd-grid-video-renderer:has(#metadata-line:has-text(に配信済み))
-youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(#metadata-line:has-text(に配信済み))
-youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(#metadata-line:has-text(に配信済み))
-youtube.com##ytd-search ytd-video-renderer:has(#metadata-line:has-text(に配信済み))
 
 ! 動画オーバーレイ前へ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
@@ -381,11 +384,11 @@ youtube.com##.ytp-ce-element
 ! メンバーになる
 youtube.com###sponsor-button
 ! チャンネルホーム メンバー一覧
-youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has(ytd-recognition-shelf-renderer)
+youtube.com##[page-subtype="channels"] ytd-recognition-shelf-renderer:upward(ytd-item-section-renderer)
 ! チャンネルホーム shortsリスト
-youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has(ytd-reel-shelf-renderer)
+youtube.com##[page-subtype="channels"] ytd-reel-shelf-renderer:upward(ytd-item-section-renderer)
 ! チャンネルホーム メンバー限定
-youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has(.badge-style-type-members-only)
+youtube.com##[page-subtype="channels"] .badge-style-type-members-only:upward(ytd-item-section-renderer)
 ! チャンネルタブ
 youtube.com###tabsContent > tp-yt-paper-tab:has-text(/コミュニティ|ショート|ライブ|ストア/)
 youtube.com###tabsContent > ytd-expandable-tab-renderer
@@ -397,7 +400,7 @@ youtube.com##yt-formatted-string#message:has-text(/この動画ではチャッ�
 youtube.com##[page-subtype="home"] #header
 ! ホーム左のショート
 youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.1.guideEntryRenderer)
-! 検索結果の他の人はこちらも視聴しています,ミックスリストも消える
+! 検索結果の検索結果の他の人はこちらも視聴していますなど
 youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer,ytd-channel-renderer),ytd-secondary-search-container-renderer
 ! 音声検索
 youtube.com###voice-search-button
