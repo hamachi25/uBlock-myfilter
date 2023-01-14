@@ -126,6 +126,8 @@ twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + d
 twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の返信"]
 ! ホームのタブ(For youとFollowing)
 twitter.com##[aria-label="ホームタイムライン"] a[href="/home"]
+! さらに返信を表示(攻撃的な～)を非表示
+twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="-1"]:not([data-testid="tweet"])
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
