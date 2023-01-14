@@ -57,7 +57,7 @@ twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([d
 twitter.com##[data-testid="tweet"] [aria-labelledby] div:style(filter: none !important)
 twitter.com##[data-testid="tweet"] [aria-labelledby] span:has-text(ツイートの作成者が、このツイートをセンシティブな内容として設定しました。):upward(4)
 ! トレンドやおすすめなどのタブ透過をやめる
-twitter.com##[aria-label="ホームタイムライン"] > div:has([role="tablist"]):style(background-color: rgba(255, 255, 255, 1) !important)
+twitter.com##[aria-label="ホームタイムライン"] > div:first-child:style(background-color: rgba(255, 255, 255, 1))
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
 ! もっと見るの設定意外を消す
@@ -75,19 +75,17 @@ twitter.com##a[href="/i/twitter_blue_sign_up"]
 !右下DM
 twitter.com##[data-testid="DMDrawer"] > div
 ! ホームの上最新を固定
-twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"]:upward(9):style(position: static!important)
+twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"][dir="ltr"]:upward(9):style(position: static!important)
 ! リツイート数、いいね数、アナリティクスを隠す
 twitter.com##div[data-testid="retweet"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="unretweet"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="like"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="unlike"] span[data-testid="app-text-transition-container"]
-twitter.com##article div[role="group"] > div:has(>[href$="/analytics"])
+twitter.com##article a[href$="/analytics"]:upward(1)
 twitter.com##div[aria-label="タイムライン: 会話"] a[aria-describedby] ~ span
 ! ツイートを開いた状態いいねとリツイート
 twitter.com##article a[href$="/retweets"]:upward(2)
 twitter.com##article a[href$="/likes"]:upward(2)
-! ツイートアナリティクスを表示
-twitter.com##article a[data-testid="analyticsButton"]:upward(1)
 ! 左下自分のアカウント名だけ隠す
 twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 ! 左下アカウント画像を暗く
@@ -106,11 +104,11 @@ twitter.com##div[aria-label="タイムライン: 会話"] div[data-testid="socia
 ! ミュートワード表示するボタンを非表示
 twitter.com##span:has-text(このツイートにはミュートしたキーワードが含まれています。):upward(4) + div
 ! ホームツイート欄の画像以外を非表示
-twitter.com##[aria-label="GIF画像を追加"]
-twitter.com##[aria-label="投票を追加"]
-twitter.com##[aria-label="投票を追加"] + div
-twitter.com##[aria-label="ツイートを予約"]
-twitter.com##[aria-label="位置情報をタグ付け"]
+!twitter.com##[aria-label="GIF画像を追加"]
+!twitter.com##[aria-label="投票を追加"]
+!twitter.com##[aria-label="投票を追加"] + div
+!twitter.com##[aria-label="ツイートを予約"]
+!twitter.com##[aria-label="位置情報をタグ付け"]
 ! プロフィールのフォロしているフォロワー
 twitter.com##[aria-label="ホームタイムライン"] [href$="/followers_you_follow"]:upward(4)
 twitter.com##[data-testid="HoverCard"] [href$="/followers_you_follow"]:upward(3)
