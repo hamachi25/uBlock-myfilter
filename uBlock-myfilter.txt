@@ -122,9 +122,7 @@ twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見�
 ! ユーザープロフィールのおすすめユーザー
 twitter.com##[aria-label="おすすめユーザー"]
 ! ツイート作成枠
-!twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"])
-twitter.com##[data-testid="tweetTextarea_0"][aria-controls="typeaheadDropdownWrapped-0"]:upward(27)
-twitter.com##[data-testid="tweetTextarea_0"][aria-controls="typeaheadDropdownWrapped-0"]:upward(27) + div
+twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"])
 ! 非表示にしたリプライ
 twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の返信"]
 
