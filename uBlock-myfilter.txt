@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230114
+! Version: 20230115
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -122,9 +122,12 @@ twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見�
 ! ユーザープロフィールのおすすめユーザー
 twitter.com##[aria-label="おすすめユーザー"]
 ! ツイート作成枠
-twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"])
+twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"]):upward(2)
+twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"]):upward(2) + div
 ! 非表示にしたリプライ
 twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の返信"]
+! ホームのタブ(For youとFollowing)
+twitter.com##[aria-label="ホームタイムライン"] a[href="/home"]
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
