@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230115
+! Version: 20230117
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -58,6 +58,8 @@ twitter.com##[data-testid="tweet"] [aria-labelledby] div:style(filter: none !imp
 twitter.com##[data-testid="tweet"] [aria-labelledby] span:has-text(ツイートの作成者が、このツイートをセンシティブな内容として設定しました。):upward(4)
 ! トレンドやおすすめなどのタブ透過をやめる
 twitter.com##[aria-label="ホームタイムライン"] > div:first-child:style(background-color: rgba(255, 255, 255, 1))
+! ホームの上最新を固定
+twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"][dir="ltr"]:upward(9):style(position: static!important)
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
 ! もっと見るの設定意外を消す
@@ -74,8 +76,6 @@ twitter.com##[data-testid="settingsAndSupport"]:upward(6):style(top: 38% !import
 twitter.com##a[href="/i/twitter_blue_sign_up"]
 !右下DM
 twitter.com##[data-testid="DMDrawer"] > div
-! ホームの上最新を固定
-twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"][dir="ltr"]:upward(9):style(position: static!important)
 ! リツイート数、いいね数、アナリティクスを隠す
 twitter.com##div[data-testid="retweet"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="unretweet"] span[data-testid="app-text-transition-container"]
@@ -434,6 +434,8 @@ youtube.com###inline-preview-player > #ytp-caption-window-container
 ! キューに追加
 youtube.com##ytd-menu-service-item-renderer:has([d="M21,16h-7v-1h7V16z M21,11H9v1h12V11z M21,7H3v1h18V7z M10,15l-7-4v8L10,15z"])
 youtube.com##ytd-thumbnail-overlay-toggle-button-renderer[aria-label="キューに追加"]
+! 動画右3つ目の再生数が少ない動画
+youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:nth-of-type(3):has(ytd-badge-supported-renderer:has-text(新着))
 
 ! ログインしていない状態
 ! 動画概要欄のコメント欄
@@ -599,8 +601,8 @@ discord.com##.imageContent-3Av-9c:style(filter:none !important)
 discord.com##.spoilerWarning-8ovW0v
 discord.com##.spoilerAttachment-1QvPhn:style(filter:none !important)
 ! discord文字モザイク
-discord.com##.spoilerText-27bIiA > .inlineContent-2YnoDy:not(#a):style(opacity: 1 !important)
-discord.com##.spoilerText-27bIiA:not(#a):style(background-color: hsla(0,calc(var(--saturation-factor, 1)*0%),100%,.1) !important; pointer-events: none !important)
+discord.com##.spoilerText-27bIiA > .inlineContent-2YnoDy:not(#a):style(opacity: 1 !important;pointer-events: auto!important;cursor: auto !important)
+discord.com##.spoilerText-27bIiA:not(#a):style(background-color: hsla(0,calc(var(--saturation-factor, 1)*0%),100%,.1) !important)
 ! discordリンクモザイク
 discord.com##.grid-1aWVsE:style(filter:none !important)
 
