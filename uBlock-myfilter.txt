@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230117
+! Version: 20230118
 
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
@@ -164,18 +164,20 @@ twitter.com##div[aria-label="タイムライン: トピック"] a[href="/i/topic
 !twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[data-testid=cellInnerDiv] div[data-testid=inlinePrompt] span[dir] > span > span:has-text(Twitterのアクセシビリティを高めましょう):upward( div[data-testid=cellInnerDiv])
 
 
+! シークバーのプレビュー
 nicovideo.jp##.SeekBarStoryboardPremiumLink
+! 動画上黒帯
 nicovideo.jp##.MainContainer-marquee
 ! 上のタブ
 nicovideo.jp##[href^="https://account.nicovideo.jp/premium/register?site="]
-nicovideo.jp###CommonHeader [href^="https://ch.nicovideo.jp"]
-nicovideo.jp###CommonHeader [href^="https://game.nicovideo.jp/atsumaru/"]
-nicovideo.jp###CommonHeader [href^="http://app.nicovideo.jp"]
-nicovideo.jp###CommonHeader [href^="https://seiga.nicovideo.jp"]
+nicovideo.jp##.nico-CommonHeaderRoot [href^="https://ch.nicovideo.jp"]
+nicovideo.jp##.nico-CommonHeaderRoot [href^="https://game.nicovideo.jp/atsumaru/"]
+nicovideo.jp##.nico-CommonHeaderRoot [href^="http://app.nicovideo.jp"]
+nicovideo.jp##.nico-CommonHeaderRoot [href^="https://seiga.nicovideo.jp"]
 ! 上のタブその他
-nicovideo.jp###CommonHeader .nico-CommonHeaderRoot > div > div > div:nth-of-type(1) > div
+nicovideo.jp##.nico-CommonHeaderRoot > div > div > div:nth-of-type(1) > div
 ! 上のタブ通知
-nicovideo.jp###CommonHeader .nico-CommonHeaderRoot > div > div > div:nth-of-type(2) > div:nth-of-type(2)
+nicovideo.jp##.nico-CommonHeaderRoot path[d^="M10.913 22c1.44"]:upward(4)
 ! 上のタブ　アカウントいらないもの
 nicovideo.jp###CommonHeader [href^="https://blog.nicovideo.jp/niconews/category/videotop"]
 nicovideo.jp###CommonHeader [href^="https://www.upload.nicovideo.jp/garage"]
@@ -192,14 +194,14 @@ nicovideo.jp###CommonHeader [href^="https://site.nicovideo.jp/premium_contents"]
 !コメント下のギフト
 nicovideo.jp##div.GiftSubEffectContainer
 ! コメント上
-nicovideo.jp##.PlayerPanelContainer:style(top: 0px !important;z-index: 0!important)
+nicovideo.jp##.PlayerPanelContainer:style(top: 0px !important)
 nicovideo.jp##.MylistButton.VideoMenuContainer-button:style(top: 36px!important;left: 55px!important;z-index: 1!important;transform: scale(0.7);fill: #b2bac2!important)
 nicovideo.jp##.SharePanelVisibleActionButton:style(top: 36px!important;left: -175px!important;z-index: 1!important;transform: scale(0.8))
 nicovideo.jp##.SharePanelVisibleActionButton > svg:style(fill: #b2bac2!important)
 ! 動画右有料動画
-nicovideo.jp##.MainContainer-playerPanel .VideoLabel:has-text(有料):upward(.WatchRecommendation-video)
+nicovideo.jp##.WatchRecommendation .VideoLabel-paid:upward(.WatchRecommendation-video)
 ! 動画右有料次の動画
-nicovideo.jp##.MainContainer-playerPanel .VideoLabel:has-text(有料):upward(.NextPlayVideoContainer)
+nicovideo.jp##.NextPlayVideoContainer:has(.VideoLabel-paid)
 ! 検索結果有料動画
 nicovideo.jp##.iconPayment:has-text(有料):upward(li.item[data-video-id])
 ! 動画上下お知らせ
@@ -207,12 +209,14 @@ nicovideo.jp##.WakutkoolNoticeContainer
 nicovideo.jp##.WakutkoolHeaderContainer
 nicovideo.jp##.WakutkoolFooterContainer
 ! 動画下
-nicovideo.jp##.BottomContainer
+nicovideo.jp##.WatchAppContainer-main .BottomContainer
 !動画設定プレミアム機能
-nicovideo.jp##.PlaybackRateMenu .PremiumIcon:upward(2)
-nicovideo.jp##.PlayerOptionContainer .PremiumIcon:upward(3)
-nicovideo.jp##.PlayerOptionMenuGroup:nth-of-type(3)
-nicovideo.jp##.PlayerOptionContainer:style(max-height:488px!important)
+nicovideo.jp##.PlaybackRateMenu-contents .PremiumRequirer
+nicovideo.jp##.PlayerOptionMenuItem.FlipMenuItem
+nicovideo.jp##.PlayerOptionMenuItem.ResumeMenuItem
+nicovideo.jp##.PlayerOptionMenuItem.SkipMenuItem
+nicovideo.jp##.PlayerOptionMenuGroup:has(.MarqueeMenuItem)
+nicovideo.jp##.PlayerOptionContainer:style(max-height:524px!important)
 !フッター
 nicovideo.jp##footer
 ! ジャンル選択アニメ以外なくす
@@ -251,8 +255,6 @@ nicovideo.jp##.CommentPanelDataGrid .CommentPanelDataGrid-TableCell:style(user-s
 nicovideo.jp##.PreVideoStartPremiumLinkContainer
 ! 右サイドバーの記事など
 nicovideo.jp##.SpecifiedRanking-sub
-! シークバーの広告部分
-nicovideo.jp##.SeekBarContainer-videoAdMarker
 ! ニコニコ動画アワード2022
 nicovideo.jp##[href="https://site.nicovideo.jp/premiumaward/?ref=header_premiumaward"]:upward(2)
 ! ニコ生動画下ギフト
