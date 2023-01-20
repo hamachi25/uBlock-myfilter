@@ -1,7 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230118
-
+! Version: 20230121
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
 ! リストではNGなし
@@ -419,6 +418,8 @@ youtube.com##ytd-guide-section-renderer:has([title="設定"])
 youtube.com##tp-yt-app-drawer #footer
 ! ホーム左チャンネル一覧
 youtube.com##[href="/feed/guide_builder"]
+! ホーム左チャンネル一覧折りたたむ
+youtube.com##ytd-guide-section-renderer:has(h3:has-text(登録チャンネル)) #expanded > ytd-guide-entry-renderer
 ! ホーム 最新ニュース
 !youtube.com##[page-subtype="home"] span.ytd-rich-shelf-renderer#title:has-text(最新ニュース):upward(#contents > ytd-rich-section-renderer)
 ! ホームの動画評価
