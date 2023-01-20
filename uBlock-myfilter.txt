@@ -53,8 +53,8 @@ twitter.com##[aria-label="ホームタイムライン"]:not(:has([aria-label="�
 twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"])
 twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"]) ~ [data-testid="cellInnerDiv"] 
 ! センシティブ警告
-twitter.com##[data-testid="tweet"] [aria-labelledby] div:style(filter: none !important)
-twitter.com##[data-testid="tweet"] [aria-labelledby] span:has-text(ツイートの作成者が、このツイートをセンシティブな内容として設定しました。):upward(4)
+!twitter.com##[data-testid="tweet"] [aria-labelledby] div:style(filter: none !important)
+!twitter.com##[data-testid="tweet"] [aria-labelledby] span:has-text(ツイートの作成者が、このツイートをセンシティブな内容として設定しました。):upward(4)
 ! トレンドやおすすめなどのタブ透過をやめる
 twitter.com##[aria-label="ホームタイムライン"] > div:first-child:style(background-color: rgba(255, 255, 255, 1))
 ! ホームの上最新を固定
@@ -126,7 +126,7 @@ twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の
 ! ホームのタブ(For youとFollowing)
 twitter.com##[aria-label="ホームタイムライン"] a[href="/home"]
 ! さらに返信を表示(攻撃的な～)を非表示
-twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="-1"]:not([data-testid="tweet"])
+twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="-1"]:not([data-testid="tweet"]) [role="button"]:upward(div[style^="transform"])
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
