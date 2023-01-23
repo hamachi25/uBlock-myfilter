@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230121
+! Version: 20230124
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
 ! リストではNGなし
@@ -70,7 +70,7 @@ twitter.com##[data-testid="Dropdown"] [href="https://support.twitter.com/"]
 twitter.com##[data-testid="Dropdown"] [href="/i/display"]
 twitter.com##[data-testid="Dropdown"] [href="/i/keyboard_shortcuts"]
 twitter.com##[data-testid="Dropdown"] [role="separator"]
-twitter.com##[data-testid="settingsAndSupport"]:upward(6):style(top: 38% !important)
+twitter.com##[data-testid="settingsAndSupport"]:upward(div[role="menu"]):style(top: 23rem !important)
 ! Twitter Blue
 twitter.com##a[href="/i/twitter_blue_sign_up"]
 !右下DM
@@ -359,9 +359,10 @@ youtube.com##button.yt-spec-button-shape-next--segmented-start > .yt-spec-button
 ! 低評価調整
 youtube.com##button.yt-spec-button-shape-next--segmented-end:style(width: 46px !important;)
 youtube.com##button.yt-spec-button-shape-next--segmented-end > .yt-spec-button-shape-next__icon:style(margin-left: -3px !important;)
-! 動画下クリップ、Thanks
+! 動画下クリップ、Thanks、オフライン
 youtube.com##ytd-button-renderer:has([aria-label="クリップ"])
 youtube.com##ytd-button-renderer:has([aria-label="Thanks"])
+youtube.com##ytd-download-button-renderer
 ! 動画下共有と保存の文字を非表示
 youtube.com##[aria-label="共有"] > .yt-spec-button-shape-next--button-text-content
 youtube.com##[aria-label="再生リストに保存"] > .yt-spec-button-shape-next--button-text-content
@@ -625,6 +626,7 @@ pixiv.net##[href="/premium/lead/lp?g=anchor&i=popular_works_list&p=free_campaign
 ! noteテキスト選択時の共有ポップアップ
 note.com##.m-shareSheet
 
+
 ! 画像モザイク
 www.reddit.com##img:style(filter: none!important)
 ! New Posts
@@ -632,3 +634,7 @@ www.reddit.com##._369llFshxbL10dgfLlIApJ
 ! ヘッダー
 www.reddit.com##[href^="https://ads.reddit.com"]
 www.reddit.com##.x0hiXHicn7r3BG9m1FJH4
+
+
+! 5chスレ中央
+5ch.net##div.thread > div:style(position: relative; left:25%;)
