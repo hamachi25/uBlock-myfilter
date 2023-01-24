@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230124
+! Version: 20230125
 ! ツイートNG
 !twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
 ! リストではNGなし
@@ -10,17 +10,25 @@
 ! 検索結果のユーザー
 !twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(ユーザー))
 !twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(ユーザー)) ~ div:not(:has(article))
-! リプ欄のその他の返信
-twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
 ! トレンドNG
 twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transform"]:not(:has([data-testid="trend"])):not(span:has-text(日本のトレンド))
 !twitter.com##[style^="transform"]:has([data-testid="trend"]:has-text(/(a|b)/i))
+! twitterトレンド順位消す
+twitter.com##[data-testid="trend"] > div > div:first-child > div:first-child:not(:has-text(トレンド))
+twitter.com##[data-testid="trend"] > div > div:first-child > div:nth-child(2)
+
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
 twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]):style(display: revert !important; display: flex !important)
 twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]) + div:style(display: revert !important)
 twitter.com##div[aria-label="トレンド"] [href$="/photo/1"]:upward(7):style(display: revert !Important)
 twitter.com##div[aria-label="トレンド"] > div > div:has([data-testid="searchFiltersAdvancedSearch"]):style(display: revert !important)
+! 右のトレンド
+!twitter.com##div[aria-label="トレンド"] div.r-1d6w8o1
+! 規約
+!twitter.com##div[aria-label="トレンド"] div.r-jxzhtn.r-1yadl64
+!twitter.com##[aria-label="関連性の高いアカウント"]
+
 ! 話題を検索タブ
 ! ニュース
 twitter.com##a[href="/explore/tabs/news_unified"]:upward(1)
@@ -70,7 +78,7 @@ twitter.com##[data-testid="Dropdown"] [href="https://support.twitter.com/"]
 twitter.com##[data-testid="Dropdown"] [href="/i/display"]
 twitter.com##[data-testid="Dropdown"] [href="/i/keyboard_shortcuts"]
 twitter.com##[data-testid="Dropdown"] [role="separator"]
-twitter.com##[data-testid="settingsAndSupport"]:upward(div[role="menu"]):style(top: 23rem !important)
+twitter.com##[data-testid="settingsAndSupport"]:upward(div[role="menu"]):style(top: 23rem !important;)
 ! Twitter Blue
 twitter.com##a[href="/i/twitter_blue_sign_up"]
 !右下DM
@@ -93,13 +101,12 @@ twitter.com##[aria-label="アカウントメニュー"] [data-testid^="UserAvata
 twitter.com##[aria-label="タイムライン: タイムラインを検索"] span:has-text(このツイートは検索内容に関連していますか？):upward(div[style^="transform"])
 ! bnc.ltツイート
 twitter.com##[data-testid="card.layoutLarge.detail"]:has-text(bnc.lt):upward(div[style^="transform"])
-! twitterトレンド順位消す
-twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(1):not(:has-text(トレンド))
-twitter.com##[data-testid="trend"] > div > div:nth-of-type(1) > div:nth-of-type(2)
 ! ツイートリプライ
-twitter.com##div[aria-label="タイムライン: 会話"] div[data-testid="socialContext"]:upward(4)
+!twitter.com##div[aria-label="タイムライン: 会話"] div[data-testid="socialContext"]:upward(4)
 !twitter.com##span:has-text(あなたがフォローしているアカウントは、よくこのユーザーをいいねしています):upward(5)
 !twitter.com##span:has-text(あなたがフォローしているユーザーにフォローされています):upward(5)
+! リプ欄のその他の返信
+twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
 ! ミュートワード表示するボタンを非表示
 twitter.com##span:has-text(このツイートにはミュートしたキーワードが含まれています。):upward(4) + div
 ! ホームツイート欄の画像以外を非表示
@@ -108,25 +115,42 @@ twitter.com##span:has-text(このツイートにはミュートしたキーワ�
 !twitter.com##[aria-label="投票を追加"] + div
 !twitter.com##[aria-label="ツイートを予約"]
 !twitter.com##[aria-label="位置情報をタグ付け"]
-! プロフィールのフォロしているフォロワー
-twitter.com##[aria-label="ホームタイムライン"] [href$="/followers_you_follow"]:upward(4)
-twitter.com##[data-testid="HoverCard"] [href$="/followers_you_follow"]:upward(3)
-!twitter.com##:xpath(//nav[@aria-label="プロフィールタイムライン"]/preceding-sibling::div/div/div[contains(.//span,"フォローしている人にフォロワーはいません")])
-twitter.com##[aria-label="ホームタイムライン"] [data-testid="UserName"] ~ div:has-text(フォローしている人にフォロワーはいません)
+! プロフィールのフォロしている人
+!twitter.com##[aria-label="ホームタイムライン"] [href$="/followers_you_follow"]:upward(4)
+!twitter.com##[data-testid="HoverCard"] [href$="/followers_you_follow"]:upward(3)
+!twitter.com##[aria-label="ホームタイムライン"] [data-testid="UserName"] ~ div:has-text(フォローしている人にフォロワーはいません)
+twitter.com##[aria-label="ホームタイムライン"] div.r-ymttw5 > div.r-1s2bzr4
+twitter.com##div[data-testid="HoverCard"] > div > div > div.r-bt1l66
+! プロフィールのtwitter始めた日
+twitter.com##[aria-label="ホームタイムライン"] span[data-testid="UserJoinDate"]
+! プロフィールのフォロー数フォロワー数
+twitter.com##[aria-label="ホームタイムライン"] div.r-ymttw5 > div.r-13awgt0.r-1w6e6rj
+! プロフィールの隙間
+twitter.com##[aria-label="ホームタイムライン"] div.r-ymttw5.r-ttdzmv:style(margin-bottom: 0px !important;)
+! ユーザープロフィールのおすすめユーザー
+!twitter.com##[aria-label="おすすめユーザー"]
+! プロフィール通知
+twitter.com##div[aria-label="ツイート通知をオンにする"]
+
 ! もっと見つける
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform])
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform]) ~ div
-! ユーザープロフィールのおすすめユーザー
-twitter.com##[aria-label="おすすめユーザー"]
 ! ツイート作成枠
-twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"]):upward(2)
-twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"]):upward(2) + div
+!twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"]):upward(2)
+!twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"]):upward(2) + div
+! ホームツイート欄
+twitter.com##div[aria-label="ホームタイムライン"] > div.r-14lw9ot
+twitter.com##div[aria-label="ホームタイムライン"] > div.r-1sw30gj
+! 会話ツイート欄
+twitter.com##div[aria-label="タイムライン: 会話"] div.r-184en5c
 ! 非表示にしたリプライ
 twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の返信"]
 ! ホームのタブ(For youとFollowing)
 twitter.com##[aria-label="ホームタイムライン"] a[href="/home"]
 ! さらに返信を表示(攻撃的な～)を非表示
 twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="-1"]:not([data-testid="tweet"]) [role="button"]:upward(div[style^="transform"])
+! 通知のタブを非表示
+twitter.com##nav[aria-label="通知タイムライン"] > div
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめのツイート
@@ -140,8 +164,6 @@ twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイー�
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
 twitter.com##div[aria-label="タイムライン: トピック"] h2:has-text(トレンドユーザー):upward(div[style^=transform])
 twitter.com##div[aria-label="タイムライン: トピック"] div[aria-label^="フォロー @"][data-testid]:upward(div[style^="transform"])
-! リツイートをもとにおすすめ
-!twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform]:has(a[id][href^="/i/topics/"] > span[aria-label^=おすすめトピック])
 ! おすすめトピック
 twitter.com##div[aria-label="タイムライン: "] h2 > div[style^=-webkit] > span:has-text(おすすめトピック):upward(div[aria-label="タイムライン: "])
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/topics/picker/home"]
@@ -152,6 +174,8 @@ twitter.com##div[aria-label="タイムライン: トピック"] h2:has-text(お�
 twitter.com##div[aria-label="タイムライン: トピック"] div[aria-label="タイムライン: Carousel"] a[href^="/i/topics/"]:upward(div[style^="transform"])
 twitter.com##div[aria-label="タイムライン: トピック"] div[aria-label="タイムライン: Carousel"] div[aria-label$="を非表示にする"]:upward(div[style^="transform"])
 twitter.com##div[aria-label="タイムライン: トピック"] a[href="/i/topics/picker/home"]:upward(div[style^="transform"])
+! リツイートをもとにおすすめ
+!twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform]:has(a[id][href^="/i/topics/"] > span[aria-label^=おすすめトピック])
 ! プッシュ通知
 !twitter.com##div[aria-label^="タイムライン: "] > div > div[style^=transform] h1 > span:has-text(プッシュ通知):upward(div[style^=transform])
 ! カスタマイズした広告
