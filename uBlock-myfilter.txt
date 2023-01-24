@@ -125,6 +125,8 @@ twitter.com##div[data-testid="HoverCard"] > div > div > div.r-bt1l66
 twitter.com##[aria-label="ホームタイムライン"] span[data-testid="UserJoinDate"]
 ! プロフィールのフォロー数フォロワー数
 twitter.com##[aria-label="ホームタイムライン"] div.r-ymttw5 > div.r-13awgt0.r-1w6e6rj
+! プロフィールの場所
+twitter.com##[aria-label="ホームタイムライン"] div.r-13qz1uu > div:first-child > div.r-ymttw5:nth-child(3)
 ! プロフィールの隙間
 twitter.com##[aria-label="ホームタイムライン"] div.r-ymttw5.r-ttdzmv:style(margin-bottom: 0px !important;)
 ! ユーザープロフィールのおすすめユーザー
