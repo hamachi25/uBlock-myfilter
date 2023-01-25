@@ -148,6 +148,8 @@ twitter.com##div[aria-label="ホームタイムライン"] > div.r-1sw30gj
 twitter.com##div[aria-label="タイムライン: 会話"] div.r-184en5c
 ! 非表示にしたリプライ
 twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の返信"]
+! ホーム上の「ホーム」
+twitter.com##:matches-path(/home) [aria-label="ホームタイムライン"] > div:first-child > div.r-1e5uvyk > div.r-1loqt21
 ! ホームのタブ(For youとFollowing)
 twitter.com##[aria-label="ホームタイムライン"] a[href="/home"]
 ! さらに返信を表示(攻撃的な～)を非表示
