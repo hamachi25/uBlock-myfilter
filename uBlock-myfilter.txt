@@ -88,7 +88,8 @@ twitter.com##div[data-testid="retweet"] span[data-testid="app-text-transition-co
 twitter.com##div[data-testid="unretweet"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="like"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="unlike"] span[data-testid="app-text-transition-container"]
-twitter.com##article a[href$="/analytics"]:upward(1)
+twitter.com##article a[data-testid="analyticsButton"]
+twitter.com##article div[id^="id__"][aria-label] > div:nth-child(4)
 twitter.com##div[aria-label="タイムライン: 会話"] a[aria-describedby] ~ span
 ! ツイートを開いた状態いいねとリツイート
 twitter.com##article a[href$="/retweets"]:upward(2)
