@@ -78,7 +78,7 @@ twitter.com##[data-testid="Dropdown"] [href="https://support.twitter.com/"]
 twitter.com##[data-testid="Dropdown"] [href="/i/display"]
 twitter.com##[data-testid="Dropdown"] [href="/i/keyboard_shortcuts"]
 twitter.com##[data-testid="Dropdown"] [role="separator"]
-twitter.com##[data-testid="settingsAndSupport"]:upward(div[role="menu"]):style(top: 23rem !important;)
+twitter.com###layers div.r-j2cz3j:style(top: 23.5rem !important;)
 ! Twitter Blue
 twitter.com##a[href="/i/twitter_blue_sign_up"]
 !右下DM
