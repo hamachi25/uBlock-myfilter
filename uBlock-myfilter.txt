@@ -443,6 +443,8 @@ youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-rende
 youtube.com###voice-search-button
 ! 右上通知
 youtube.com##ytd-notification-topbar-button-renderer
+! 右上動画投稿
+youtube.com##ytd-topbar-menu-button-renderer[is-icon-button]
 ! ホーム左下の他のサービス
 youtube.com##ytd-guide-section-renderer:has(h3:has-text(/YouTube の他のサービス|探索/))
 youtube.com##ytd-guide-section-renderer:has([title="設定"])
