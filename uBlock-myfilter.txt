@@ -1,21 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
 ! Version: 20230127
-! ツイートNG
-!twitter.com##article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
-! リストではNGなし
-!twitter.com##[aria-label="タイムライン: リスト"] article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"]):style(display: revert !important)
-! リストでのみNG
-!twitter.com##[aria-label="タイムライン: リスト"] article [data-testid="tweetText"] > span:has-text(/(あ|い)/):upward(div[style^="transform"])
-! 検索結果のユーザー
-!twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(ユーザー))
-!twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div:has(h2:has-text(ユーザー)) ~ div:not(:has(article))
-! トレンドNG
-twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transform"]:not(:has([data-testid="trend"])):not(span:has-text(日本のトレンド))
-!twitter.com##[style^="transform"]:has([data-testid="trend"]:has-text(/(a|b)/i))
-! twitterトレンド順位消す
-twitter.com##[data-testid="trend"] > div > div:first-child > div:first-child:not(:has-text(トレンド))
-twitter.com##[data-testid="trend"] > div > div:first-child > div:nth-child(2)
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -36,6 +21,9 @@ twitter.com##a[href="/explore/tabs/news_unified"]:upward(1)
 twitter.com##a[href="/explore/tabs/sports_unified"]:upward(1)
 ! エンターテイメント
 twitter.com##a[href="/explore/tabs/entertainment_unified"]:upward(1)
+! twitterトレンド順位消す
+twitter.com##[data-testid="trend"] > div > div:first-child > div:first-child:not(:has-text(トレンド))
+twitter.com##[data-testid="trend"] > div > div:first-child > div:nth-child(2)
 ! コロナのタブなどを消して表示させ直す
 !twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div
 !twitter.com##div[data-testid="ScrollSnap-SwipeableList"] > div > div:has(a[href="/explore/tabs/for-you"]):style(display: revert !important)
@@ -57,9 +45,6 @@ twitter.com##a[href="/explore/tabs/entertainment_unified"]:upward(1)
 ! 横スクロールの矢印
 twitter.com##[aria-label="ホームタイムライン"]:not(:has([aria-label="タイムライン: トピック"])) div[data-testid="ScrollSnap-nextButtonWrapper"]
 twitter.com##[aria-label="ホームタイムライン"]:not(:has([aria-label="タイムライン: トピック"])) div[data-testid="ScrollSnap-prevButtonWrapper"]
-! URLから開いたときのその他のツイート
-twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"])
-twitter.com##h2:has-text(/^(?:More Tweets|その他のツイート)$/):upward([data-testid="cellInnerDiv"]) ~ [data-testid="cellInnerDiv"] 
 ! センシティブ警告
 !twitter.com##[data-testid="tweet"] [aria-labelledby] div:style(filter: none !important)
 !twitter.com##[data-testid="tweet"] [aria-labelledby] span:has-text(ツイートの作成者が、このツイートをセンシティブな内容として設定しました。):upward(4)
@@ -81,7 +66,7 @@ twitter.com##[data-testid="Dropdown"] [role="separator"]
 twitter.com###layers div.r-1rnoaur.r-1r851ge:style(top: 23.5rem !important;)
 ! Twitter Blue
 twitter.com##a[href="/i/twitter_blue_sign_up"]
-!右下DM
+! 右下DM
 twitter.com##[data-testid="DMDrawer"] > div
 ! リツイート数、いいね数、アナリティクスを隠す
 twitter.com##div[data-testid="retweet"] span[data-testid="app-text-transition-container"]
@@ -108,15 +93,9 @@ twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="0"] > d
 !twitter.com##span:has-text(あなたがフォローしているアカウントは、よくこのユーザーをいいねしています):upward(5)
 !twitter.com##span:has-text(あなたがフォローしているユーザーにフォローされています):upward(5)
 ! リプ欄のその他の返信
-twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
+!twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
 ! ミュートワード表示するボタンを非表示
 twitter.com##span:has-text(このツイートにはミュートしたキーワードが含まれています。):upward(4) + div
-! ホームツイート欄の画像以外を非表示
-!twitter.com##[aria-label="GIF画像を追加"]
-!twitter.com##[aria-label="投票を追加"]
-!twitter.com##[aria-label="投票を追加"] + div
-!twitter.com##[aria-label="ツイートを予約"]
-!twitter.com##[aria-label="位置情報をタグ付け"]
 ! プロフィールのフォロしている人
 !twitter.com##[aria-label="ホームタイムライン"] [href$="/followers_you_follow"]:upward(4)
 !twitter.com##[data-testid="HoverCard"] [href$="/followers_you_follow"]:upward(3)
@@ -155,13 +134,11 @@ twitter.com##:matches-path(/home) [aria-label="ホームタイムライン"] > d
 ! ホームのタブ(For youとFollowing)
 twitter.com##[aria-label="ホームタイムライン"] a[href="/home"]
 ! さらに返信を表示(攻撃的な～)を非表示
-twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="-1"]:not([data-testid="tweet"]) [role="button"]:upward(div[style^="transform"])
+twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="-1"]:not([data-testid="tweet"],.r-1ut4w64) [role="button"]:upward(div[style^="transform"])
 ! 通知のタブを非表示
 twitter.com##nav[aria-label="通知タイムライン"] > div
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
-! おすすめのツイート
-!twitter.com##article[data-testid=tweet]:has(span[aria-label^="おすすめトピック:"][data-testid=socialContext])
 ! おすすめユーザー
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(おすすめユーザー):upward(div[style^=transform])
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"]  > div > div[style^=transform]:has(div[aria-label^=フォロー][role=button] > div > span > span)
@@ -181,17 +158,6 @@ twitter.com##div[aria-label="タイムライン: トピック"] h2:has-text(お�
 twitter.com##div[aria-label="タイムライン: トピック"] div[aria-label="タイムライン: Carousel"] a[href^="/i/topics/"]:upward(div[style^="transform"])
 twitter.com##div[aria-label="タイムライン: トピック"] div[aria-label="タイムライン: Carousel"] div[aria-label$="を非表示にする"]:upward(div[style^="transform"])
 twitter.com##div[aria-label="タイムライン: トピック"] a[href="/i/topics/picker/home"]:upward(div[style^="transform"])
-! リツイートをもとにおすすめ
-!twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform]:has(a[id][href^="/i/topics/"] > span[aria-label^=おすすめトピック])
-! プッシュ通知
-!twitter.com##div[aria-label^="タイムライン: "] > div > div[style^=transform] h1 > span:has-text(プッシュ通知):upward(div[style^=transform])
-! カスタマイズした広告
-!twitter.com##div[aria-label="タイムライン: ホームタイムライン"]  > div > div[style^=transform]:has(span > a[href="/settings/account/personalization"])
-! 関連トピック
-!twitter.com##div[aria-label="タイムライン: タイムラインを検索"] h2 > div[style^=-webkit] > span:has-text(関連トピック):upward(div[style^=transform])
-!twitter.com##div[aria-label="タイムライン: タイムラインを検索"] > div > div[style^=transform] > div > div > a[href^="/i/topics/"]
-! アクセシビリティ
-!twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[data-testid=cellInnerDiv] div[data-testid=inlinePrompt] span[dir] > span > span:has-text(Twitterのアクセシビリティを高めましょう):upward( div[data-testid=cellInnerDiv])
 
 
 ! シークバーのプレビュー
@@ -297,17 +263,6 @@ live.nicovideo.jp##[class^="___nicoad-count-item___"] > button,[class^="___nicoa
 live.nicovideo.jp##[class^="___promotion-panel___"]
 
 
-! ホームNG
-!youtube.com##ytd-rich-item-renderer:has-text(/(あ|い)/)
-! チャンネル登録NG
-!youtube.com##ytd-grid-video-renderer:has-text(/(あ|い)/)
-! 動画右NG
-!youtube.com##ytd-compact-video-renderer:has-text(/(あ|い)/)
-! 検索結果NG
-!youtube.com##ytd-video-renderer:has-text(/(あ|い)/)
-! コメント欄NG
-!youtube.com##ytd-comment-renderer:has-text(/(あ|い)/)
-
 ! ホームのミックスリスト
 youtube.com##[page-subtype="home"] #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
 ! 動画右のミックスリスト
@@ -351,9 +306,6 @@ youtube.com##ytd-search .badge-style-type-live-now-alternate:upward(ytd-video-re
 youtube.com##ytd-search ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-video-renderer)
 ! 検索結果配信済み
 youtube.com##ytd-search #metadata-line:has-text(に配信済み):upward(ytd-video-renderer)
-! ライブ動画横のスクロールバー
-!youtube.com###meta.ytd-rich-grid-media:style(scrollbar-width: none !important)
-!youtube.com###meta.ytd-video-preview:style(scrollbar-width: none !important)
 
 ! 動画オーバーレイ前へ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
@@ -420,11 +372,15 @@ youtube.com##.ytp-ce-element
 /endscreen.js$script,important,domain=youtube.com
 ! メンバーになる
 youtube.com###sponsor-button
-! チャンネルホーム メンバー一覧
+! チャンネル 自動再生部分
+youtube.com####[page-subtype="channels"] ytd-channel-video-player-renderer:upward(ytd-item-section-renderer)
+! チャンネル ライブなど
+youtube.com##[page-subtype="channels"] ytd-channel-featured-content-renderer:upward(ytd-item-section-renderer)
+! チャンネル メンバー一覧
 youtube.com##[page-subtype="channels"] ytd-recognition-shelf-renderer:upward(ytd-item-section-renderer)
-! チャンネルホーム shortsリスト
+! チャンネル shortsリスト
 youtube.com##[page-subtype="channels"] ytd-reel-shelf-renderer:upward(ytd-item-section-renderer)
-! チャンネルホーム メンバー限定
+! チャンネル メンバー限定
 youtube.com##[page-subtype="channels"] .badge-style-type-members-only:upward(ytd-item-section-renderer)
 ! チャンネルタブ
 youtube.com###tabsContent > tp-yt-paper-tab:has-text(/コミュニティ|ショート|ライブ|ストア/)
@@ -454,8 +410,6 @@ youtube.com##tp-yt-app-drawer #footer
 youtube.com##[href="/feed/guide_builder"]
 ! ホーム左チャンネル一覧折りたたむ
 youtube.com##ytd-guide-section-renderer:has(h3:has-text(登録チャンネル)) #expanded > ytd-guide-entry-renderer
-! ホーム 最新ニュース
-!youtube.com##[page-subtype="home"] span.ytd-rich-shelf-renderer#title:has-text(最新ニュース):upward(#contents > ytd-rich-section-renderer)
 ! ホームの動画評価
 youtube.com##ytd-inline-survey-renderer:upward(2)
 ! ホームでショートなどの動画以外
@@ -473,7 +427,7 @@ youtube.com##ytd-menu-service-item-renderer:has([d="M21,16h-7v-1h7V16z M21,11H9v
 youtube.com##ytd-thumbnail-overlay-toggle-button-renderer[aria-label="キューに追加"]
 ! 動画右3つ目の再生数が少ない動画
 youtube.com##ytd-watch-next-secondary-results-renderer ytd-ad-slot-renderer:remove()
-youtube.com##ytd-watch-next-secondary-results-renderer #contents > :nth-child(3):not(#metadata-line:has-text(/億 回視聴|万 回視聴|\d\d\d\d 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
+youtube.com##ytd-watch-next-secondary-results-renderer #contents > :nth-child(3):has(.inline-metadata-item:has-text(/^\d{1,3} 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
 
 ! ログインしていない状態
 ! 動画概要欄のコメント欄
