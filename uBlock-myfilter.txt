@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230127
+! Version: 20230128
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -111,8 +111,8 @@ twitter.com##[data-testid="HoverCard"] div.r-1s2bzr4 > div.r-13awgt0
 twitter.com##[aria-label="ホームタイムライン"] div.r-13qz1uu > div:first-child > div.r-ymttw5:nth-child(3)
 ! プロフィールの隙間
 twitter.com##[aria-label="ホームタイムライン"] div.r-ymttw5.r-ttdzmv:style(margin-bottom: 0px !important;)
-! ユーザープロフィールのおすすめユーザー
-!twitter.com##[aria-label="おすすめユーザー"]
+! プロフィールのおすすめユーザー
+twitter.com##div[aria-label="ホームタイムライン"] aside[aria-label="おすすめユーザー"][role="complementary"]
 ! プロフィール通知
 twitter.com##div[aria-label="ツイート通知をオンにする"]
 
@@ -122,6 +122,8 @@ twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見�
 ! ツイート作成枠
 !twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"]):upward(2)
 !twitter.com##[aria-label="ホームタイムライン"] [role="progressbar"] + div:has([data-testid="tweetTextarea_0_label"]):upward(2) + div
+! リプ欄ツイート作成枠下ボーダー重なっている
+twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="-1"]:upward(3):style(border-bottom: none !important)
 ! ホームツイート欄
 twitter.com##div[aria-label="ホームタイムライン"] > div.r-14lw9ot
 twitter.com##div[aria-label="ホームタイムライン"] > div.r-1sw30gj
@@ -410,6 +412,10 @@ youtube.com##tp-yt-app-drawer #footer
 youtube.com##[href="/feed/guide_builder"]
 ! ホーム左チャンネル一覧折りたたむ
 youtube.com##ytd-guide-section-renderer:has(h3:has-text(登録チャンネル)) #expanded > ytd-guide-entry-renderer
+! 左サイドバー生放送アイコン
+youtube.com##ytd-guide-section-renderer #endpoint[href^="/@"] yt-icon
+! 左サイドバー動画通知アイコン
+youtube.com##ytd-guide-section-renderer #newness-dot
 ! ホームの動画評価
 youtube.com##ytd-inline-survey-renderer:upward(2)
 ! ホームでショートなどの動画以外
