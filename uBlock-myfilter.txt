@@ -13,6 +13,8 @@ twitter.com##div[aria-label="トレンド"] > div > div:has([data-testid="search
 ! 規約
 !twitter.com##div[aria-label="トレンド"] div.r-jxzhtn.r-1yadl64
 !twitter.com##[aria-label="関連性の高いアカウント"]
+! トレンド以外の要素を非表示
+twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transform"]:not(:has([data-testid="trend"])):not(span:has-text(日本のトレンド))
 
 ! 話題を検索タブ
 ! ニュース
