@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230128
+! Version: 20230129
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -631,4 +631,11 @@ www.reddit.com##.x0hiXHicn7r3BG9m1FJH4
 
 
 ! 5chスレ中央
-5ch.net##div.thread > div:style(position: relative; left:25%;)
+5ch.net##div.thread > div:style(position: relative; left:28%;)
+
+
+! 広告跡
+darkwebuser.blogspot.com##.fixed-leftSd
+darkwebuser.blogspot.com##.fixed-rightSd
+darkwebuser.blogspot.com##[id$="-ad"]
+darkwebuser.blogspot.com##div.twt-sub
