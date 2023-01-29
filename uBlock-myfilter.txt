@@ -313,7 +313,7 @@ youtube.com##ytd-search #metadata-line:has-text(に配信済み):upward(ytd-vide
 
 ! 動画オーバーレイ前へ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
-youtube.com##.ytp-prev-button[aria-label="もう一回見る"]
+youtube.com##.ytp-prev-button[title="もう一回見る"]
 ! 動画オーバーレイ字幕使えないときは非表示
 youtube.com##.ytp-subtitles-button[data-title-no-tooltip="字幕を利用できません"]
 ! 動画オーバーレイミニプレイヤー
@@ -377,7 +377,7 @@ youtube.com##.ytp-ce-element
 ! メンバーになる
 youtube.com###sponsor-button
 ! チャンネル 自動再生部分
-youtube.com####[page-subtype="channels"] ytd-channel-video-player-renderer:upward(ytd-item-section-renderer)
+youtube.com##[page-subtype="channels"] ytd-channel-video-player-renderer:upward(ytd-item-section-renderer)
 ! チャンネル ライブなど
 youtube.com##[page-subtype="channels"] ytd-channel-featured-content-renderer:upward(ytd-item-section-renderer)
 ! チャンネル メンバー一覧
