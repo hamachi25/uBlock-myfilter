@@ -313,7 +313,7 @@ youtube.com##ytd-search #metadata-line:has-text(に配信済み):upward(ytd-vide
 
 ! 動画オーバーレイ前へ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
-youtube.com##.ytp-prev-button[data-title-no-tooltip="前へ"]
+youtube.com##.ytp-prev-button[aria-label="もう一回見る"]
 ! 動画オーバーレイ字幕使えないときは非表示
 youtube.com##.ytp-subtitles-button[data-title-no-tooltip="字幕を利用できません"]
 ! 動画オーバーレイミニプレイヤー
