@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230129
+! Version: 20230131
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -94,8 +94,8 @@ twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="0"] > d
 !twitter.com##div[aria-label="タイムライン: 会話"] div[data-testid="socialContext"]:upward(4)
 !twitter.com##span:has-text(あなたがフォローしているアカウントは、よくこのユーザーをいいねしています):upward(5)
 !twitter.com##span:has-text(あなたがフォローしているユーザーにフォローされています):upward(5)
-! リプ欄のその他の返信
-!twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(その他の返信):upward(div[style^=transform])
+! リプ欄その他の返信
+twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(その他の返信):upward(div[style^="transform"])
 ! ミュートワード表示するボタンを非表示
 twitter.com##span:has-text(このツイートにはミュートしたキーワードが含まれています。):upward(4) + div
 ! プロフィールのフォロしている人
