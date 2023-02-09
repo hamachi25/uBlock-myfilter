@@ -1,6 +1,6 @@
 ! Title: uBlock-myfilter
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230206
+! Version: 20230209
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -69,7 +69,7 @@ twitter.com###layers div.r-1rnoaur.r-1r851ge:style(top: 23.5rem !important;)
 ! Twitter Blue
 twitter.com##a[href="/i/twitter_blue_sign_up"]
 ! 右下DM
-twitter.com##[data-testid="DMDrawer"] > div
+twitter.com##[data-testid="DMDrawer"]
 ! リツイート数、いいね数、アナリティクスを隠す
 twitter.com##div[data-testid="retweet"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="unretweet"] span[data-testid="app-text-transition-container"]
