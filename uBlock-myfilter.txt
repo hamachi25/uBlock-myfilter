@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230217
+! Version: 20230218
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -600,14 +600,15 @@ amazon.co.jp##.atvwebplayersdk-nextupcard-wrapper
 
 
 ! discord画像モザイク
-discord.com##.imageContent-3Av-9c:style(filter:none !important)
+discord.com##.imageContent-3Av-9c:style(filter:none !important;)
 discord.com##.spoilerWarning-8ovW0v
-discord.com##.spoilerAttachment-1QvPhn:style(filter:none !important)
+discord.com##.spoilerAttachment-1QvPhn:style(filter:none !important;)
 ! discord文字モザイク
-discord.com##.spoilerText-27bIiA > .inlineContent-2YnoDy:not(#a):style(opacity: 1 !important;pointer-events: auto!important;cursor: auto !important)
-discord.com##.spoilerText-27bIiA:not(#a):style(background-color: hsla(0,calc(var(--saturation-factor, 1)*0%),100%,.1) !important)
+discord.com##.spoilerText-2G40u0 > .inlineContent-2RshAT:style(opacity: 1 !important;pointer-events: auto !important;cursor: auto !important;)
+discord.com##.spoilerText-2G40u0:style(background-color: hsla(0,calc(var(--saturation-factor, 1)*0%),100%,.1) !important;)
 ! discordリンクモザイク
-discord.com##.grid-1aWVsE:style(filter:none !important)
+discord.com##.grid-1aWVsE:style(filter:none !important;)
+discord.com##.spoilerWarning-1JN1Ot
 
 
 ! telegramの投稿日時非表示(自動翻訳時に誤認識防止の為)
