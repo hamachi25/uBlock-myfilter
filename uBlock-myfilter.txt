@@ -620,8 +620,6 @@ www.reddit.com##.x0hiXHicn7r3BG9m1FJH4
 
 
 ! 広告跡
-darkwebuser.blogspot.com##.fixed-leftSd
-darkwebuser.blogspot.com##.fixed-rightSd
 darkwebuser.blogspot.com##[id$="-ad"]
 darkwebuser.blogspot.com##div.twt-sub
 
