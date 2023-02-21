@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230220
+! Version: 20230222
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -62,7 +62,7 @@ twitter.com##div[data-testid="like"] span[data-testid="app-text-transition-conta
 twitter.com##div[data-testid="unlike"] span[data-testid="app-text-transition-container"]
 twitter.com##article a[data-testid="analyticsButton"]
 twitter.com##article div[id^="id__"][aria-label] > div:nth-child(4)
-twitter.com##div[aria-label="タイムライン: 会話"] a[aria-describedby] ~ span
+twitter.com##div[aria-label="タイムライン: 会話"] a[aria-describedby]:upward(1) ~ div
 ! ツイートを開いた状態いいねとリツイート
 twitter.com##article a[href$="/retweets"]:upward(2)
 twitter.com##article a[href$="/likes"]:upward(2)
@@ -126,6 +126,13 @@ twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="-1"]:no
 twitter.com##nav[aria-label="通知タイムライン"] > div
 ! 広告を綺麗に消す
 twitter.com##div[data-testid="cellInnerDiv"]:has(div.css-1dbjc4n > div[class="css-1dbjc4n"] > div[class="css-1dbjc4n"][data-testid="placementTracking"])
+! adguard annoyancesのトピックス非表示無効
+twitter.com#@#article:has(div[class] > a[href^="/i/topics/"])
+! URLをきれいに
+! https://www.reddit.com/r/uBlockOrigin/comments/sa3ewm/im_unable_to_remove_this_parameter_from_twitter/htr4jyn
+||twitter.com^$removeparam=t
+||twitter.com^$removeparam=s
+||twitter.com^$removeparam=cxt
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめユーザー
@@ -450,13 +457,6 @@ news.yahoo.co.jp##[class^="CommentFloatingCSR__ComponentBalloon-"]
 yomiuri.co.jp##.p-footer-subscribe
 
 
-! URLをきれいに
-! https://www.reddit.com/r/uBlockOrigin/comments/sa3ewm/im_unable_to_remove_this_parameter_from_twitter/htr4jyn
-||twitter.com^$removeparam=t
-||twitter.com^$removeparam=s
-||twitter.com^$removeparam=cxt
-
-
 fandom.com###WikiaBar
 fandom.com###WikiaRail
 fandom.com##.fandom-sticky-header
@@ -633,3 +633,6 @@ darkwebuser.blogspot.com##div.twt-sub
 
 ! はてな編集プロモ
 blog.hatena.ne.jp###editor-main #promotion
+
+
+||www.1377x.to^
