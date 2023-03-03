@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230224
+! Version: 20230303
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -262,6 +262,14 @@ live.nicovideo.jp##[class^="___promotion-panel___"]
 live.nicovideo.jp##div[class^="___player-area___"] > div[class^="___player-foot-area___"]
 ! ニコ生コメント位置調整
 live.nicovideo.jp##div[class^="___broadcast-participation-area___"] > div[class^="___comment-post-panel___"]:style(padding: 5px 8px !important;)
+! ニコ生コメント上
+live.nicovideo.jp##ul[class^="___program-statistics-menu___"] > li[class^="___nicoad-count-item___"]
+live.nicovideo.jp##ul[class^="___program-statistics-menu___"] > li[class^="___gift-count-item___"]
+! ニコ生タイムシフトのコメント
+live.nicovideo.jp##form[aria-disabled="true"]:upward(div[class^="___broadcast-participation-area___"])
+! ニコ生コメント背景調整
+live.nicovideo.jp##div[class^="___player-display-footer-area___"]:has(form[aria-disabled="true"])::before:style(background-image: none !important;background-color: #3c3a3a;height: 50px !important;)
+live.nicovideo.jp##div[class^="___player-display-footer-area___"]:not(:has(form[aria-disabled="true"]))::before:style(background-image: none !important;background-color: #3c3a3a;height: 97px !important;)
 
 
 ! ホームのミックスリスト
@@ -635,5 +643,10 @@ darkwebuser.blogspot.com##div.twt-sub
 ! はてな編集プロモ
 blog.hatena.ne.jp###editor-main #promotion
 
-
+! 誤アクセス防止
 ||www.1377x.to^
+
+
+! gogole検索現在地
+www.google.com###footcnt > div[style] > div#fbar > div:first-child
+www.google.com###taw > #oFNiHe
