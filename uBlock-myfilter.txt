@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230308
+! Version: 20230311
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -76,7 +76,7 @@ twitter.com##[aria-label="タイムライン: タイムラインを検索"] span
 ! bnc.ltツイート
 twitter.com##[data-testid="card.layoutLarge.detail"]:has-text(bnc.lt):upward(div[style^="transform"])
 ! ツイートリプライ あなたがフォローしているユーザーにフォローされています
-twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="0"] > div > div > div > div:first-child > div > div > div.r-15zivkp
+twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="0"] > div > div > div:first-child > div > div > div.r-15zivkp
 !twitter.com##div[aria-label="タイムライン: 会話"] div[data-testid="socialContext"]:upward(4)
 !twitter.com##span:has-text(あなたがフォローしているアカウントは、よくこのユーザーをいいねしています):upward(5)
 !twitter.com##span:has-text(あなたがフォローしているユーザーにフォローされています):upward(5)
@@ -122,7 +122,7 @@ twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の
 ! ホームのタブ(For youとFollowing)
 twitter.com##[aria-label="ホームタイムライン"] a[href="/home"]
 ! さらに返信を表示(攻撃的な～)を非表示
-twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="-1"]:not([data-testid="tweet"],.r-1ut4w64) [role="button"]:upward(div[style^="transform"])
+!twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="-1"]:not([data-testid="tweet"],.r-1ut4w64) [role="button"]:upward(div[style^="transform"])
 ! 通知のタブを非表示
 twitter.com##nav[aria-label="通知タイムライン"] > div
 ! 広告を綺麗に消す
