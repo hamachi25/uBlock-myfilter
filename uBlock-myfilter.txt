@@ -270,6 +270,8 @@ live.nicovideo.jp##form[aria-disabled="true"]:upward(div[class^="___broadcast-pa
 ! ニコ生コメント背景調整
 live.nicovideo.jp##div[class^="___player-display-footer-area___"]:has(form[aria-disabled="true"])::before:style(background-image: none !important;background-color: #3c3a3a;height: 50px !important;)
 live.nicovideo.jp##div[class^="___player-display-footer-area___"]:not(:has(form[aria-disabled="true"]))::before:style(background-image: none !important;background-color: #3c3a3a;height: 97px !important;)
+! ニコ生全画面時
+live.nicovideo.jp##button[aria-label="コントローラーを非表示"]
 
 
 ! ホームのミックスリスト
@@ -656,3 +658,5 @@ www.google.com###footcnt > #fbarcnt:style(height: 60px !important;)
 
 ! amazonアフィ
 ||amazon.*$removeparam=linkCode
+! アマゾンプライム 再生時のフィルター
+www.amazon.co.jp##.atvwebplayersdk-overlays-container > .fkpovp9:style(background: none !important;)
