@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230312
+! Version: 20230321
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -659,4 +659,6 @@ www.google.com###footcnt > #fbarcnt:style(height: 60px !important;)
 ! amazonアフィ
 ||amazon.*$removeparam=linkCode
 ! アマゾンプライム 再生時のフィルター
-www.amazon.co.jp##.atvwebplayersdk-overlays-container > .fkpovp9:style(background: none !important;)
+www.amazon.co.jp##.atvwebplayersdk-overlays-container > .fkpovp9:nth-child(1):style(background: none !important;)
+www.amazon.co.jp##.atvwebplayersdk-bottompanel-container > .atvwebplayersdk-carousel-container
+www.amazon.co.jp##.atvwebplayersdk-miro-gradient-enabled:style(background: none !important;)
