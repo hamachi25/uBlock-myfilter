@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230321
+! Version: 20230322
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -60,14 +60,16 @@ twitter.com##div[data-testid="retweet"] span[data-testid="app-text-transition-co
 twitter.com##div[data-testid="unretweet"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="like"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="unlike"] span[data-testid="app-text-transition-container"]
+! ツイートアナリティクス
 twitter.com##article a[data-testid="analyticsButton"]
 twitter.com##article a[data-testid="analyticsButton"]:upward(1):style(border: none !important;)
+! アナリティクス
 twitter.com##article[tabindex="0"] div[role="group"] > div:nth-child(4)
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] div[aria-hidden="true"]:nth-child(2)
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] div[aria-hidden="true"]:nth-child(2) + div:last-child
 ! ツイートを開いた状態いいねとリツイート
-twitter.com##article a[href$="/retweets"]:upward(2)
-twitter.com##article a[href$="/likes"]:upward(2)
+twitter.com##article a[href$="/retweets"]:upward(1)
+twitter.com##article a[href$="/likes"]:upward(1)
 ! 左下自分のアカウント名だけ隠す
 twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 ! 左下アカウント画像を暗く
