@@ -67,9 +67,10 @@ twitter.com##article a[data-testid="analyticsButton"]:upward(1):style(border: no
 twitter.com##article[tabindex="0"] div[role="group"] > div:nth-child(4)
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] div[aria-hidden="true"]:nth-child(2)
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] div[aria-hidden="true"]:nth-child(2) + div:last-child
-! ツイートを開いた状態いいねとリツイート
+! ツイートを開いた状態いいねとリツイート、ブックマーク
 twitter.com##article a[href$="/retweets"]:upward(1)
 twitter.com##article a[href$="/likes"]:upward(1)
+twitter.com##article[tabindex="-1"] div[role="group"] > div:has(> div > div > span[data-testid="app-text-transition-container"])
 ! 左下自分のアカウント名だけ隠す
 twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 ! 左下アカウント画像を暗く
