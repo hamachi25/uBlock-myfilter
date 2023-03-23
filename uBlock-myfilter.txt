@@ -82,10 +82,8 @@ twitter.com##[aria-label="タイムライン: タイムラインを検索"] span
 ! bnc.ltツイート
 twitter.com##[data-testid="card.layoutLarge.detail"]:has-text(bnc.lt):upward(div[style^="transform"])
 ! ツイートリプライ あなたがフォローしているユーザーにフォローされています
-twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="0"] > div > div > div:first-child > div > div > div.r-15zivkp
-!twitter.com##div[aria-label="タイムライン: 会話"] div[data-testid="socialContext"]:upward(4)
-!twitter.com##span:has-text(あなたがフォローしているアカウントは、よくこのユーザーをいいねしています):upward(5)
-!twitter.com##span:has-text(あなたがフォローしているユーザーにフォローされています):upward(5)
+!twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="0"] > div > div > div:first-child > div > div > div.r-15zivkp
+twitter.com##div[aria-label="タイムライン: 会話"] div[data-testid="socialContext"]:upward(4)
 ! リプ欄その他の返信
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(その他の返信):upward(div[style^="transform"])
 ! ミュートワード表示するボタンを非表示
