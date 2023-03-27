@@ -608,7 +608,7 @@ blog.hatena.ne.jp###editor-main #promotion
 
 
 ! gogole検索現在地
-www.google.com###footcnt > div[style] > div#fbar > div:first-child
+www.google.com###footcnt > div[style] > div#fbar > div.b2hzT
 www.google.com###oFNiHe
 ! 上のフィルタに伴うサイズ調整
 www.google.com###footcnt > #fbarcnt:style(height: 60px !important;)
