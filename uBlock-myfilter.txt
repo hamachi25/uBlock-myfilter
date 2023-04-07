@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230407
+! Version: 20230408
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -452,6 +452,8 @@ youtube.com##ytd-thumbnail-overlay-toggle-button-renderer[aria-label="キュー�
 ! 動画右3つ目の再生数が少ない動画
 youtube.com##ytd-watch-next-secondary-results-renderer #items:has(ytd-ad-slot-renderer) > :nth-child(4):has(.inline-metadata-item:has-text(/^[1-3]?\d{1,2} 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
 youtube.com##ytd-watch-next-secondary-results-renderer #items:not(:has(ytd-ad-slot-renderer)) > :nth-child(3):has(.inline-metadata-item:has-text(/^[1-3]?\d{1,2} 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
+youtube.com##ytd-watch-next-secondary-results-renderer #contents:has(ytd-ad-slot-renderer) > :nth-child(4):has(.inline-metadata-item:has-text(/^[1-3]?\d{1,2} 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
+youtube.com##ytd-watch-next-secondary-results-renderer #contents:not(:has(ytd-ad-slot-renderer)) > :nth-child(3):has(.inline-metadata-item:has-text(/^[1-3]?\d{1,2} 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
 
 ! ログインしていない状態
 ! 動画概要欄のコメント欄
