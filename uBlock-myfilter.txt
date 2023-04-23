@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230408
+! Version: 20230423
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -51,6 +51,8 @@ twitter.com##[data-testid="Dropdown"] [role="separator"]
 twitter.com###layers div.r-1rnoaur.r-1r851ge:style(top: 23.5rem !important;)
 ! Twitter Blue
 twitter.com##a[href="/i/twitter_blue_sign_up"]
+! 認証済み組織
+twitter.com##a[href="/i/verified-orgs-signup"]
 ! 設定の収益化
 twitter.com##a[href="/settings/monetization"]
 ! 右下DM
@@ -107,6 +109,9 @@ twitter.com##[aria-label="ホームタイムライン"] div.r-ymttw5.r-ttdzmv:st
 twitter.com##div[aria-label="ホームタイムライン"] aside[aria-label="おすすめユーザー"][role="complementary"]
 ! プロフィール通知
 twitter.com##div[aria-label="ツイート通知をオンにする"]
+! プロフィールの関連アカウント
+! 例　https://twitter.com/lovelive_SIF
+twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/affiliates"]:upward(1)
 
 ! もっと見つける
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform])
@@ -627,3 +632,6 @@ www.google.com###footcnt > #fbarcnt:style(height: 60px !important;)
 www.amazon.co.jp##.atvwebplayersdk-overlays-container > .fkpovp9:nth-child(1):style(background: none !important;)
 www.amazon.co.jp##.atvwebplayersdk-bottompanel-container > .atvwebplayersdk-carousel-container
 www.amazon.co.jp##.atvwebplayersdk-miro-gradient-enabled:style(background: none !important;)
+
+
+deepl.com###headlessui-portal-root
