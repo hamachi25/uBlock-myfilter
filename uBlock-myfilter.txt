@@ -178,24 +178,13 @@ nicovideo.jp##.MainContainer-marquee
 ! 上のタブ
 nicovideo.jp##[href^="https://account.nicovideo.jp/premium/register?site="]
 nicovideo.jp##.nico-CommonHeaderRoot [href^="https://ch.nicovideo.jp"]
-nicovideo.jp##.nico-CommonHeaderRoot [href^="https://game.nicovideo.jp/atsumaru/"]
-nicovideo.jp##.nico-CommonHeaderRoot [href^="http://app.nicovideo.jp"]
 nicovideo.jp##.nico-CommonHeaderRoot [href^="https://seiga.nicovideo.jp"]
+nicovideo.jp##.nico-CommonHeaderRoot [href^="https://dic.nicovideo.jp"]
+nicovideo.jp##.nico-CommonHeaderRoot [href^="https://jk.nicovideo.jp"]
 ! 上のタブその他
 nicovideo.jp##.nico-CommonHeaderRoot > div > div > div:nth-of-type(1) > div
 ! 上のタブ通知
 nicovideo.jp##.nico-CommonHeaderRoot path[d^="M10.913 22c1.44"]:upward(4)
-! 上のタブ　アカウントいらないもの
-nicovideo.jp###CommonHeader [href^="https://blog.nicovideo.jp/niconews/category/videotop"]
-nicovideo.jp###CommonHeader [href^="https://www.upload.nicovideo.jp/garage"]
-nicovideo.jp###CommonHeader [href^="https://point.nicovideo.jp/index/bank"]:upward(1)
-nicovideo.jp###CommonHeader [href^="https://qa.nicovideo.jp"]
-nicovideo.jp###CommonHeader [href^="https://live.nicovideo.jp/create"]
-nicovideo.jp###CommonHeader [href^="https://www.nicovideo.jp/my/history/purchased-serials"]
-nicovideo.jp###CommonHeader [href^="https://live.nicovideo.jp/my"]
-nicovideo.jp###CommonHeader [href^="https://site.live.nicovideo.jp/watch.html"]
-nicovideo.jp###CommonHeader [href^="https://site.live.nicovideo.jp/broadcast.html"]
-nicovideo.jp###CommonHeader [href^="https://site.nicovideo.jp/premium_contents"]
 ! ランキングの提供、ニコニ広告、動画サムネのラッパマーク
 ||nicoad.nicovideo.jp^$domain=www.nicovideo.jp
 !コメント下のギフト
@@ -286,6 +275,8 @@ live.nicovideo.jp##div[class^="___player-display-footer-area___"]:has(form[aria-
 live.nicovideo.jp##div[class^="___player-display-footer-area___"]:not(:has(form[aria-disabled="true"]))::before:style(background-image: none !important;background-color: #3c3a3a;height: 97px !important;)
 ! ニコ生全画面時
 live.nicovideo.jp##button[aria-label="コントローラーを非表示"]
+!ニコ生ヘッダー
+live.nicovideo.jp##[class^="___page-header-area___"]
 
 
 ! ホームのミックスリスト
