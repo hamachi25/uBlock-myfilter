@@ -292,7 +292,7 @@ youtube.com##ytd-compact-movie-renderer
 youtube.com##[page-subtype="home"] #video-title-link:has-text(/#short/i):upward(ytd-rich-item-renderer)
 ! 動画右short
 youtube.com##ytd-watch-next-secondary-results-renderer [href^="/shorts/"]:upward(ytd-compact-video-renderer)
-youtube.com##ytd-watch-next-secondary-results-renderer ytd-shelf-renderer
+youtube.com##ytd-watch-next-secondary-results-renderer ytd-reel-shelf-renderer
 ! 登録チャンネルshort
 youtube.com##[page-subtype="subscriptions"] [href^="/shorts/"]:upward(ytd-grid-video-renderer)
 ! 検索結果short
