@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230514
+! Version: 20230527
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 twitter.com##div[aria-label="トレンド"] > div > div
@@ -148,6 +148,12 @@ twitter.com##div[aria-label="タイムライン: 自分のリスト"] h2:has-tex
 twitter.com##div[aria-label="タイムライン: 自分のリスト"] div[role="button"][style^="background-color"]:upward(div[style^="transform"])
 twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]:upward(div[style^="transform"])
 twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]:upward(div[style^="transform"]) +div + div
+! 新しいツイートがある時の「新しいツイートを表示」というポップアップ
+twitter.com##div[aria-label="新しいツイートがあります。新しいツイートに移動するには、ピリオドキーを押してください。"]
+! サイドバーのホーム 新しいツイートがある時のピリオド
+twitter.com##nav[aria-label="メインメニュー"] div[aria-label="undefined件の未読項目"]
+! 新しいツイートがある時の、タイムライン一番上に表示されるやつ
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div:nth-child(1):has-text(件のツイートを表示)
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめユーザー
@@ -367,20 +373,8 @@ youtube.com##[aria-label="共有"] > .yt-spec-button-shape-next--button-text-con
 youtube.com##[aria-label="再生リストに保存"] > .yt-spec-button-shape-next--button-text-content
 ! 共有、保存調整
 youtube.com##button.yt-spec-button-shape-next--icon-leading > .yt-spec-button-shape-next__icon:style(margin-right: -5px !important; margin-left: -4px !important;)
-! 高評価や共有部分の背景を透明にする(チャンネル登録済みを除く)
-!youtube.com##.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:not(:upward(ytd-subscribe-button-renderer)):style(background: transparent !important)
-! タイトル下に棒線を入れる
-!youtube.com###title.ytd-watch-metadata:style(border-bottom: 1px solid var(--yt-spec-10-percent-layer)!important;padding-bottom: 15px!important;padding-top: 4px!important)
-! 棒線下に隙間を作る
-!youtube.com###top-row.ytd-watch-metadata:style(padding-top: 16px!important)
-! コメント欄上に棒線を入れる
-!youtube.com###bottom-row.ytd-watch-metadata:style(border-bottom: 1px solid var(--yt-spec-10-percent-layer)!important;padding-bottom: 16px!important)
-! 高評価や共有部分の隙間を狭くする
-!youtube.com###menu button:style(padding: 0 5px !important)
 ! 概要欄の再生回数と投稿日時を薄く
-youtube.com###info.ytd-watch-metadata:style(color: var(--yt-spec-text-secondary)!important)
-! 高評価と低評価の間の線を非表示
-!youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--segmented-start::after
+!youtube.com###info.ytd-watch-metadata:style(color: var(--yt-spec-text-secondary)!important)
 
 ! 動画終了前のおすすめ動画
 youtube.com##.ytp-ce-element
@@ -417,6 +411,8 @@ youtube.com###voice-search-button
 youtube.com##ytd-notification-topbar-button-renderer
 ! 右上動画投稿
 youtube.com##ytd-topbar-menu-button-renderer[is-icon-button]
+! ホーム一番上の広告(easylistでブロックされない)
+youtube.com##ytd-rich-item-renderer:has(.ytd-in-feed-ad-layout-renderer)
 ! ホーム左下の他のサービス
 youtube.com##ytd-guide-section-renderer:has(h3:has-text(/YouTube の他のサービス|探索/))
 youtube.com##ytd-guide-section-renderer:has([title="設定"])
@@ -627,4 +623,7 @@ www.amazon.co.jp##.atvwebplayersdk-bottompanel-container > .atvwebplayersdk-caro
 www.amazon.co.jp##.atvwebplayersdk-miro-gradient-enabled:style(background: none !important;)
 
 
+! deeplポップアップ
 deepl.com###headlessui-portal-root
+! 「翻訳するにはテキストを入力してください」
+www.deepl.com##span.lmt__textarea_placeholder_text
