@@ -285,9 +285,11 @@ live.nicovideo.jp##button[aria-label="コントローラーを非表示"]
 live.nicovideo.jp##[class^="___page-header-area___"]
 
 
-! ホームの一列動画数
+! 一列の動画数
 youtube.com##[page-subtype="home"] ytd-rich-grid-row, [page-subtype="home"] #contents.ytd-rich-grid-row:style(display:contents !important;)
 youtube.com##[page-subtype="home"] ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row: 5 !important;)
+youtube.com##[page-subtype="subscriptions"] ytd-rich-grid-row, [page-subtype="subscriptions"] #contents.ytd-rich-grid-row:style(display:contents !important;)
+youtube.com##[page-subtype="subscriptions"] ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row: 5 !important;)
 ! 横スクロールバー
 youtube.com##body:style(overflow-x: hidden !important;)
 
@@ -299,16 +301,18 @@ youtube.com##ytd-compact-radio-renderer
 youtube.com##ytd-compact-playlist-renderer
 ! 動画右youtube movie
 youtube.com##ytd-compact-movie-renderer
+! ホームのYoutube music
+youtube.com##[page-subtype="home"] a[href="/music"]:upward(ytd-rich-item-renderer)
 
 ! ホームshort
 youtube.com##[page-subtype="home"] #video-title-link:has-text(/#short/i):upward(ytd-rich-item-renderer)
 ! 動画右short
-youtube.com##ytd-watch-next-secondary-results-renderer [href^="/shorts/"]:upward(ytd-compact-video-renderer)
+youtube.com##ytd-watch-next-secondary-results-renderer a[href^="/shorts/"]:upward(ytd-compact-video-renderer)
 youtube.com##ytd-watch-next-secondary-results-renderer ytd-reel-shelf-renderer
 ! 登録チャンネルshort
-youtube.com##[page-subtype="subscriptions"] [href^="/shorts/"]:upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="subscriptions"] [overlay-style="SHORTS"]:upward(ytd-rich-item-renderer)
 ! 検索結果short
-youtube.com##ytd-search [href^="/shorts/"]:upward(ytd-video-renderer)
+youtube.com##ytd-search [overlay-style="SHORTS"]:upward(ytd-video-renderer)
 
 ! ホームライブ
 youtube.com##[page-subtype="home"] .badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
@@ -323,20 +327,17 @@ youtube.com##ytd-watch-next-secondary-results-renderer ytd-thumbnail-overlay-tim
 ! 動画右配信済み
 youtube.com##ytd-watch-next-secondary-results-renderer #metadata-line:has-text(に配信済み):upward(ytd-compact-video-renderer)
 ! 登録チャンネルライブ
-youtube.com##[page-subtype="subscriptions"] .badge-style-type-live-now-alternate:upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="subscriptions"] .badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
 ! 登録チャンネル配信予定のライブ
-youtube.com##[page-subtype="subscriptions"] ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="subscriptions"] ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-rich-item-renderer)
 ! 登録チャンネル配信済み
-youtube.com##[page-subtype="subscriptions"] #metadata-line:has-text(に配信済み):upward(ytd-grid-video-renderer)
+youtube.com##[page-subtype="subscriptions"] #metadata-line:has-text(に配信済み):upward(ytd-rich-item-renderer)
 ! 検索結果ライブ
 youtube.com##ytd-search .badge-style-type-live-now-alternate:upward(ytd-video-renderer)
 ! 検索結果配信予定
 youtube.com##ytd-search ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-video-renderer)
 ! 検索結果配信済み
 youtube.com##ytd-search #metadata-line:has-text(に配信済み):upward(ytd-video-renderer)
-
-! youtube music
-youtube.com##[page-subtype="home"] a[href="/music"]:upward(ytd-rich-item-renderer
 
 ! 動画オーバーレイ前へ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
