@@ -1,21 +1,21 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230605
+! Version: 20230607
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
-twitter.com##div[aria-label="トレンド"] > div > div
-twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]):style(display: revert !important; display: flex !important)
-twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]) + div:style(display: revert !important)
-twitter.com##div[aria-label="トレンド"] [href$="/photo/1"]:upward(7):style(display: revert !Important)
-twitter.com##div[aria-label="トレンド"] > div > div:has([data-testid="searchFiltersAdvancedSearch"]):style(display: revert !important)
+!twitter.com##div[aria-label="トレンド"] > div > div
+!twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]):style(display: revert !important; display: flex !important)
+!twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]) + div:style(display: revert !important)
+!twitter.com##div[aria-label="トレンド"] [href$="/photo/1"]:upward(7):style(display: revert !Important)
+!twitter.com##div[aria-label="トレンド"] > div > div:has([data-testid="searchFiltersAdvancedSearch"]):style(display: revert !important)
 ! 右のトレンド
 !twitter.com##div[aria-label="トレンド"] div.r-1d6w8o1
 ! 規約
 !twitter.com##div[aria-label="トレンド"] div.r-jxzhtn.r-1yadl64
 !twitter.com##[aria-label="関連性の高いアカウント"]
 ! トレンド以外の要素を非表示
-twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transform"]:not(:has([data-testid="trend"])):not(span:has-text(日本のトレンド))
+twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transform"]:not(:has([data-testid="trend"])):not(span:has-text(トレンド))
 
 ! 話題を検索タブ
 ! ニュース
@@ -49,10 +49,10 @@ twitter.com##[data-testid="Dropdown"] [href="/i/display"]
 twitter.com##[data-testid="Dropdown"] [href="/i/keyboard_shortcuts"]
 twitter.com##[data-testid="Dropdown"] [role="separator"]
 twitter.com###layers div.r-1rnoaur.r-1r851ge:style(top: 23.5rem !important;)
-! Twitter Blue
+! サイドバーのTwitter Blueや認証
 twitter.com##a[href="/i/twitter_blue_sign_up"]
-! 認証済み組織
 twitter.com##a[href="/i/verified-orgs-signup"]
+twitter.com##a[href="/i/verified-choose"]
 ! 設定の収益化
 twitter.com##a[href="/settings/monetization"]
 ! 右下DM
@@ -285,6 +285,12 @@ live.nicovideo.jp##button[aria-label="コントローラーを非表示"]
 live.nicovideo.jp##[class^="___page-header-area___"]
 
 
+! ホームの一列動画数
+youtube.com##[page-subtype="home"] ytd-rich-grid-row, [page-subtype="home"] #contents.ytd-rich-grid-row:style(display:contents !important;)
+youtube.com##[page-subtype="home"] ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row: 5 !important;)
+! 横スクロールバー
+youtube.com##body:style(overflow-x: hidden !important;)
+
 ! ホームのミックスリスト
 youtube.com##[page-subtype="home"] #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
 ! 動画右のミックスリスト
@@ -328,6 +334,9 @@ youtube.com##ytd-search .badge-style-type-live-now-alternate:upward(ytd-video-re
 youtube.com##ytd-search ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-video-renderer)
 ! 検索結果配信済み
 youtube.com##ytd-search #metadata-line:has-text(に配信済み):upward(ytd-video-renderer)
+
+! youtube music
+youtube.com##[page-subtype="home"] a[href="/music"]:upward(ytd-rich-item-renderer
 
 ! 動画オーバーレイ前へ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
