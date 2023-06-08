@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230608
+! Version: 20230609
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 !twitter.com##div[aria-label="トレンド"] > div > div
@@ -9,11 +9,12 @@
 !twitter.com##div[aria-label="トレンド"] > div > div:has(form[aria-label="キーワード検索"]) + div:style(display: revert !important)
 !twitter.com##div[aria-label="トレンド"] [href$="/photo/1"]:upward(7):style(display: revert !Important)
 !twitter.com##div[aria-label="トレンド"] > div > div:has([data-testid="searchFiltersAdvancedSearch"]):style(display: revert !important)
-! 右のトレンド
-!twitter.com##div[aria-label="トレンド"] div.r-1d6w8o1
-! 規約
-!twitter.com##div[aria-label="トレンド"] div.r-jxzhtn.r-1yadl64
-!twitter.com##[aria-label="関連性の高いアカウント"]
+! 今どうしてる、おすすめユーザー、スペース、認証を受ける
+twitter.com##div[aria-label="トレンド"] > div > div.r-x572qd.r-1d6w8o1
+! 利用規約
+twitter.com##div[aria-label="トレンド"] > div > div.r-1niwhzg.r-1yadl64
+! 関連性の高いアカウント
+twitter.com##div[aria-label="トレンド"] > div > div.r-14lw9ot.r-jxzhtn:nth-child(3)
 ! トレンド以外の要素を非表示
 twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transform"]:not(:has([data-testid="trend"])):not(span:has-text(トレンド))
 
@@ -72,7 +73,7 @@ twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"]
 ! ツイートを開いた状態いいねとリツイート、ブックマーク
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] a[href$="/retweets"]:upward(1)
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] a[href$="/likes"]
-twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] > div > div > div:nth-child(3) > div[role="group"] > div > div
+twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] > div > div > div:nth-child(3) > div[role="group"] > div > div[dir="ltr"]
 ! ツイートを開いた状態のブックマークアイコン
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] div[id][role="group"] > div:nth-child(4)
 ! 左下自分のアカウント名だけ隠す
@@ -122,10 +123,10 @@ twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見�
 ! リプ欄ツイート作成枠下ボーダー重なっている
 twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^="transform"]:nth-child(1) article > div > div > div:nth-child(3) > div > div[role="group"]:style(border-bottom: none !important;)
 ! ホームツイート欄
-twitter.com##div[aria-label="ホームタイムライン"] > div.r-14lw9ot
-twitter.com##div[aria-label="ホームタイムライン"] > div.r-1sw30gj
-! 会話ツイート欄
-twitter.com##div[aria-label="タイムライン: 会話"] div.r-184en5c
+twitter.com##div[aria-label="ホームタイムライン"] > div.r-14lw9ot:nth-child(3)
+twitter.com##div[aria-label="ホームタイムライン"] > div.r-1sw30gj:nth-child(4)
+! リプライツイート欄
+twitter.com##div[aria-label="タイムライン: 会話"] > div > div[data-testid="cellInnerDiv"]:nth-child(1) > div > div > div:nth-child(2)
 ! 非表示にしたリプライ
 twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の返信"]
 ! ホームのタブ(For youとFollowing)
@@ -413,7 +414,7 @@ youtube.com##yt-formatted-string#message:has-text(/この動画ではチャッ�
 ! ホーム上のジャンル選択
 youtube.com##[page-subtype="home"] #header
 ! ホーム左のショート
-youtube.com##+js(json-prune, items.0.guideSectionRenderer.items.1.guideEntryRenderer)
+youtube.com##ytd-guide-entry-renderer > [title="ショート"]
 ! 検索結果の検索結果の他の人はこちらも視聴していますなど
 youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer,ytd-channel-renderer),ytd-secondary-search-container-renderer
 ! 音声検索
