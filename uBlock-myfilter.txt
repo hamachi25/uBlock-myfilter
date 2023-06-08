@@ -82,8 +82,6 @@ twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 twitter.com##[aria-label="アカウントメニュー"] [data-testid^="UserAvatar-Container"] > div > div > div > div > div > div:style(filter: blur(5px))
 ! 検索結果の関連していますか
 twitter.com##[aria-label="タイムライン: タイムラインを検索"] span:has-text(このツイートは検索内容に関連していますか？):upward(div[style^="transform"])
-! bnc.ltツイート
-twitter.com##[data-testid="card.layoutLarge.detail"]:has-text(bnc.lt):upward(div[style^="transform"])
 ! ツイートリプライ あなたがフォローしているユーザーにフォローされています
 !twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="0"] > div > div > div:first-child > div > div > div.r-15zivkp
 twitter.com##div[aria-label="タイムライン: 会話"] div[data-testid="socialContext"]:upward(4)
@@ -137,8 +135,6 @@ twitter.com##[aria-label="ホームタイムライン"] a[href="/home"]
 twitter.com##nav[aria-label="通知タイムライン"] > div
 ! 広告を綺麗に消す
 twitter.com##div[data-testid="cellInnerDiv"]:has(div.css-1dbjc4n > div[class="css-1dbjc4n"] > div[class="css-1dbjc4n"][data-testid="placementTracking"])
-! adguard annoyancesのトピックス非表示無効
-twitter.com#@#article:has(div[class] > a[href^="/i/topics/"])
 ! URLをきれいに
 ! https://www.reddit.com/r/uBlockOrigin/comments/sa3ewm/im_unable_to_remove_this_parameter_from_twitter/htr4jyn
 ||twitter.com^$removeparam=t
