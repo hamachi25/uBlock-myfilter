@@ -284,9 +284,8 @@ live.nicovideo.jp##[class^="___page-header-area___"]
 
 
 ! 一列の動画数
-youtube.com##[page-subtype="home"] ytd-rich-grid-row, [page-subtype="home"] #contents.ytd-rich-grid-row:style(display:contents !important;)
+youtube.com##ytd-rich-grid-row, [page-subtype="home"] #contents.ytd-rich-grid-row:style(display:contents !important;)
 youtube.com##[page-subtype="home"] ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row: 5 !important;)
-youtube.com##[page-subtype="subscriptions"] ytd-rich-grid-row, [page-subtype="subscriptions"] #contents.ytd-rich-grid-row:style(display:contents !important;)
 youtube.com##[page-subtype="subscriptions"] ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row: 5 !important;)
 ! 横スクロールバー
 youtube.com##body:style(overflow-x: hidden !important;)
