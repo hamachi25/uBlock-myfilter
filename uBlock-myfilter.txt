@@ -124,7 +124,7 @@ twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^="tr
 twitter.com##div[aria-label="ホームタイムライン"] > div.r-14lw9ot:nth-child(3)
 twitter.com##div[aria-label="ホームタイムライン"] > div.r-1sw30gj:nth-child(4)
 ! リプライツイート欄
-twitter.com##div[aria-label="タイムライン: 会話"] > div > div[data-testid="cellInnerDiv"]:nth-child(1) > div > div > div:nth-child(2)
+twitter.com##div[aria-label="タイムライン: 会話"] div.r-184en5c:nth-child(2)
 ! 非表示にしたリプライ
 twitter.com##[aria-label="タイムライン: 会話"] [aria-label="非表示の返信"]
 ! ホームのタブ(For youとFollowing)
