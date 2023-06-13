@@ -363,7 +363,8 @@ youtube.com###title .ytd-watch-metadata:style(font-weight: 400;font-size: 1.8rem
 youtube.com##tp-yt-paper-button#expand:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
 ! 一部を表示を薄く
 youtube.com##tp-yt-paper-button#collapse:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
-! 高評価数を非表示
+! 高評価数を非表示]
+youtube.com###segmented-like-button .yt-spec-button-shape-next--button-text-content
 youtube.com###segmented-like-button .yt-spec-button-shape-next__button-text-content
 ! 高評価調整
 youtube.com##button.yt-spec-button-shape-next--segmented-start > .yt-spec-button-shape-next__icon:style(margin-right: -6px !important; margin-left: -2px !important;)
@@ -376,6 +377,8 @@ youtube.com##ytd-button-renderer:has([aria-label="クリップ"])
 youtube.com##ytd-button-renderer:has([aria-label="Thanks"])
 youtube.com##ytd-download-button-renderer
 ! 動画下共有と保存の文字を非表示
+youtube.com##[aria-label="共有"] > .yt-spec-button-shape-next--button-text-content
+youtube.com##[aria-label="再生リストに保存"] > .yt-spec-button-shape-next--button-text-content
 youtube.com##[aria-label="共有"] > .yt-spec-button-shape-next__button-text-content
 youtube.com##[aria-label="再生リストに保存"] > .yt-spec-button-shape-next__button-text-content
 ! 共有、保存調整
