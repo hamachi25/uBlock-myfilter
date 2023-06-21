@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230613
+! Version: 20230622
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 !twitter.com##div[aria-label="トレンド"] > div > div
@@ -26,8 +26,8 @@ twitter.com##a[href="/explore/tabs/sports_unified"]:upward(1)
 ! エンターテイメント
 twitter.com##a[href="/explore/tabs/entertainment_unified"]:upward(1)
 ! twitterトレンド順位消す
-twitter.com##[data-testid="trend"] > div > div:first-child > div:first-child:not(:has-text(トレンド))
-twitter.com##[data-testid="trend"] > div > div:first-child > div:nth-child(2)
+twitter.com##div[aria-label="タイムライン: 話題を検索"] div[data-testid="trend"] > div > div:first-child > div:first-child
+twitter.com##div[aria-label="タイムライン: 話題を検索"] div[data-testid="trend"] > div > div:first-child > div:nth-child(2)
 ! 横スクロールの矢印
 twitter.com##[aria-label="ホームタイムライン"]:not(:has([aria-label="タイムライン: トピック"])) div[data-testid="ScrollSnap-nextButtonWrapper"]
 twitter.com##[aria-label="ホームタイムライン"]:not(:has([aria-label="タイムライン: トピック"])) div[data-testid="ScrollSnap-prevButtonWrapper"]
