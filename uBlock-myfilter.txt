@@ -154,25 +154,18 @@ twitter.com##div[aria-label="タイムライン: ホームタイムライン"] >
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめユーザー
-twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(/おすすめユーザー|Who to follow|おすすめクリエイター/):upward(div[style^=transform])
-twitter.com##div[aria-label="タイムライン: ホームタイムライン"]  > div > div[style^=transform]:has(div[aria-label^=フォロー][role=button] > div > span > span)
-twitter.com##div[aria-label="タイムライン: ホームタイムライン"]  > div > div[style^=transform]:has(div[aria-label^=購入する][role=button] > div > span > span)
-twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
-twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] h2 > div[style^="-webkit"] > span:has-text(/おすすめユーザー|Who to follow/):upward(div[style^=transform])
-twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform]:has(div[aria-label^=フォロー][role=button] > div > span > span)
-twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/connect_people?"]
-twitter.com##div[aria-label="タイムライン: トピック"] h2:has-text(トレンドユーザー):upward(div[style^=transform])
-twitter.com##div[aria-label="タイムライン: トピック"] div[aria-label^="フォロー @"][data-testid]:upward(div[style^="transform"])
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] h2 > div[style^="-webkit"] > span:has-text(/おすすめユーザー|Who to follow|おすすめクリエイター/):upward(div[style^=transform])
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] div[aria-label^=フォロー][role=button]:upward(div[style^=transform])
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] div[aria-label^=購入する][role=button]:upward(div[style^=transform])
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] a[href^="/i/connect_people?"]:upward(div[style^=transform])
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] h2 > div[style^="-webkit"] > span:has-text(/おすすめユーザー|Who to follow/):upward(div[style^=transform])
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] div[aria-label^=フォロー][role=button]:upward(div[style^=transform])
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] a[href^="/i/connect_people?"]:upward(div[style^=transform])
 ! おすすめトピック
-twitter.com##div[aria-label="タイムライン: "] h2 > div[style^=-webkit] > span:has-text(おすすめトピック):upward(div[aria-label="タイムライン: "])
-twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/topics/picker/home"]
-twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div[class^=css]:only-child > div[class^=css]:only-child:empty
-twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] div[data-testid=ScrollSnap-SwipeableList]:has(div[aria-label^=トピック「][aria-label$=をフォロー])
-twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] h2 > div[style^=-webkit] > span:has-text(おすすめトピック):upward(div[style^=transform])
-twitter.com##div[aria-label="タイムライン: トピック"] h2:has-text(おすすめトピック):upward(div[style^="transform"])
-twitter.com##div[aria-label="タイムライン: トピック"] div[aria-label="タイムライン: Carousel"] a[href^="/i/topics/"]:upward(div[style^="transform"])
-twitter.com##div[aria-label="タイムライン: トピック"] div[aria-label="タイムライン: Carousel"] div[aria-label$="を非表示にする"]:upward(div[style^="transform"])
-twitter.com##div[aria-label="タイムライン: トピック"] a[href="/i/topics/picker/home"]:upward(div[style^="transform"])
+!twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/topics/picker/home"]
+!twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div[class^=css]:only-child > div[class^=css]:only-child:empty
+!twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] div[data-testid=ScrollSnap-SwipeableList]:has(div[aria-label^=トピック「][aria-label$=をフォロー])
+!twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] h2 > div[style^=-webkit] > span:has-text(おすすめトピック):upward(div[style^=transform])
 
 
 ! シークバーのプレビュー
