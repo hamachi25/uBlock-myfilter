@@ -135,6 +135,7 @@ twitter.com##[aria-label="ホームタイムライン"] a[href="/home"]
 twitter.com##nav[aria-label="通知タイムライン"] > div
 ! 広告を綺麗に消す
 twitter.com##div[data-testid="cellInnerDiv"]:has(div.css-1dbjc4n > div[class="css-1dbjc4n"] > div[class="css-1dbjc4n"][data-testid="placementTracking"])
+
 ! URLをきれいに
 ! https://www.reddit.com/r/uBlockOrigin/comments/sa3ewm/im_unable_to_remove_this_parameter_from_twitter/htr4jyn
 ||twitter.com^$removeparam=t
@@ -158,9 +159,11 @@ twitter.com##div[aria-label="タイムライン: ホームタイムライン"] h
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] div[aria-label^=フォロー][role=button]:upward(div[style^=transform])
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] div[aria-label^=購入する][role=button]:upward(div[style^=transform])
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] a[href^="/i/connect_people?"]:upward(div[style^=transform])
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform]
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] h2 > div[style^="-webkit"] > span:has-text(/おすすめユーザー|Who to follow/):upward(div[style^=transform])
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] div[aria-label^=フォロー][role=button]:upward(div[style^=transform])
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] a[href^="/i/connect_people?"]:upward(div[style^=transform])
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform]
 ! おすすめトピック
 !twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/topics/picker/home"]
 !twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div[class^=css]:only-child > div[class^=css]:only-child:empty
