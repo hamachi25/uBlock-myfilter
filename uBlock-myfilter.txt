@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230622
+! Version: 20230629
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 !twitter.com##div[aria-label="トレンド"] > div > div
@@ -151,7 +151,7 @@ twitter.com##div[aria-label="新しいツイートがあります。新しいツ
 ! サイドバーのホーム 新しいツイートがある時のピリオド
 twitter.com##nav[aria-label="メインメニュー"] div[aria-label="undefined件の未読項目"]
 ! 新しいツイートがある時の、タイムライン一番上に表示されるやつ
-twitter.com##div[aria-label="タイムライン: ホームタイムライン"] > div > div:nth-child(1):has-text(件のツイートを表示)
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] div[data-testid="cellInnerDiv"]:nth-child(1):has-text(件のツイートを表示)
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめユーザー
