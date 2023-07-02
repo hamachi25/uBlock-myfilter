@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230629
+! Version: 20230703
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 !twitter.com##div[aria-label="トレンド"] > div > div
@@ -102,15 +102,15 @@ twitter.com##[aria-label="ホームタイムライン"] span[data-testid="UserJo
 !twitter.com##[data-testid="HoverCard"] div.r-1s2bzr4 > div.r-13awgt0
 ! プロフィールの場所
 twitter.com##[aria-label="ホームタイムライン"] div.r-13qz1uu > div:first-child > div.r-ymttw5:nth-child(3)
-! プロフィールの隙間
-twitter.com##[aria-label="ホームタイムライン"] div.r-ymttw5.r-ttdzmv:style(margin-bottom: 0px !important;)
 ! プロフィールのおすすめユーザー
 twitter.com##div[aria-label="ホームタイムライン"] aside[aria-label="おすすめユーザー"][role="complementary"]
 ! プロフィール通知
 twitter.com##div[aria-label="ツイート通知をオンにする"]
-! プロフィールの関連アカウント
+! プロフィールの関連アカウント、ハイライト、サブスク
 ! 例　https://twitter.com/lovelive_SIF
 twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/affiliates"]:upward(1)
+twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/highlights"]:upward(1)
+twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/superfollows"]:upward(1)
 
 ! もっと見つける
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform])
