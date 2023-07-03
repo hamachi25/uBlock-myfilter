@@ -144,7 +144,7 @@ twitter.com##div[data-testid="cellInnerDiv"]:has(div.css-1dbjc4n > div[class="cs
 ||twitter.com^$removeparam=s
 ||twitter.com^$removeparam=cxt
 ! 新しいリストを見つける
-twitter.com##div[aria-label="タイムライン: 自分のリスト"] h2 > div[style^=-webkit] > span:has-text(新しいリストを見つける):upward(div[style^=transform])
+twitter.com##div[aria-label="タイムライン: 自分のリスト"] h2 > div[style^=-webkit] > span:has-text(新しいリストを見つける):upward(div[style^="transform"])
 twitter.com##div[aria-label="タイムライン: 自分のリスト"] div[role="button"][aria-describedby]:upward(div[style^="transform"])
 twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]
 twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]:upward(div[style^="transform"]) +div + div
