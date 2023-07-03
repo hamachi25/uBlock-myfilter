@@ -51,11 +51,11 @@ twitter.com##[data-testid="Dropdown"] [href="/i/keyboard_shortcuts"]
 twitter.com##[data-testid="Dropdown"] [role="separator"]
 twitter.com###layers div.r-1rnoaur.r-1r851ge:style(top: 23.5rem !important;)
 ! サイドバーのTwitter Blueや認証
-twitter.com##a[href="/i/twitter_blue_sign_up"]
-twitter.com##a[href="/i/verified-orgs-signup"]
 twitter.com##a[href="/i/verified-choose"]
 ! 設定の収益化
-twitter.com##a[href="/settings/monetization"]
+twitter.com##section[aria-label="セクションナビゲーション"] a[href="/settings/monetization"]
+twitter.com##section[aria-label="セクションナビゲーション"] a[href="/i/twitter_blue_sign_up"]
+twitter.com##section[aria-label="セクションナビゲーション"] a[href="/settings/manage_subscriptions"]
 ! 右下DM
 twitter.com##[data-testid="DMDrawer"]
 ! リツイート数、いいね数、アナリティクスを隠す
@@ -142,9 +142,9 @@ twitter.com##div[data-testid="cellInnerDiv"]:has(div.css-1dbjc4n > div[class="cs
 ||twitter.com^$removeparam=s
 ||twitter.com^$removeparam=cxt
 ! 新しいリストを見つける
-twitter.com##div[aria-label="タイムライン: 自分のリスト"] h2:has-text(新しいリストを見つける):upward(div[style^="transform"])
-twitter.com##div[aria-label="タイムライン: 自分のリスト"] div[role="button"][style^="background-color"]:upward(div[style^="transform"])
-twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]:upward(div[style^="transform"])
+twitter.com##div[aria-label="タイムライン: 自分のリスト"] h2 > div[style^=-webkit] > span:has-text(新しいリストを見つける):upward(div[style^=transform])
+twitter.com##div[aria-label="タイムライン: 自分のリスト"] div[role="button"][aria-describedby]:upward(div[style^="transform"])
+twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]
 twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]:upward(div[style^="transform"]) +div + div
 ! 新しいツイートがある時の「新しいツイートを表示」というポップアップ
 twitter.com##div[aria-label="新しいツイートがあります。新しいツイートに移動するには、ピリオドキーを押してください。"]
