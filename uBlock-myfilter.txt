@@ -40,6 +40,8 @@ twitter.com##[aria-label="ホームタイムライン"] > div:first-child:style(
 twitter.com##[aria-label="ホームタイムライン"] h2[role="heading"][dir="ltr"]:upward(9):style(position: static!important)
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
+! おすすめ一番上の広告下の隙間
+twitter.com##div[data-testid="eventHero"]:has(path[d$="10H8.996V8h7v7z"]):upward(div[style^=transform]) + div + div
 ! もっと見るの設定意外を消す
 twitter.com##[data-testid="Dropdown"] [href$="/topics"]
 twitter.com##[data-testid="Dropdown"] [href="/i/circles"]
