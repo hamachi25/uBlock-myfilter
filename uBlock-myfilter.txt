@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230708
+! Version: 20230715
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 !twitter.com##div[aria-label="トレンド"] > div > div
@@ -438,6 +438,7 @@ youtube.com##ytd-guide-section-renderer #newness-dot
 youtube.com##ytd-inline-survey-renderer:upward(2)
 ! ホームでショートなどの動画以外
 youtube.com##[page-subtype="home"] ytd-rich-section-renderer
+youtube.com##[page-subtype="subscriptions"] ytd-rich-section-renderer
 ! 一度見た動画の下の赤線
 youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
 ! ホームの最新のYouTube投稿
