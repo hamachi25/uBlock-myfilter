@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230715
+! Version: 20230718
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 !twitter.com##div[aria-label="トレンド"] > div > div
@@ -165,6 +165,7 @@ twitter.com##div[aria-label="タイムライン: ホームタイムライン"] a
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] h2 > div[style^="-webkit"] > span:has-text(/おすすめユーザー|Who to follow/):upward(div[style^=transform])
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] div[aria-label^=フォロー][role=button]:upward(div[style^=transform])
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] a[href^="/i/connect_people?"]:upward(div[style^=transform])
+twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform]
 twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform] + div[style^=transform]
 ! おすすめトピック
 !twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/topics/picker/home"]
