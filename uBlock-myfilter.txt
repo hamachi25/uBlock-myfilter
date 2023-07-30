@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230718
+! Version: 20230731
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 !twitter.com##div[aria-label="トレンド"] > div > div
@@ -123,8 +123,8 @@ twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見�
 ! リプ欄ツイート作成枠下ボーダー重なっている
 twitter.com##div[aria-label="タイムライン: 会話"] > div > div[style^="transform"]:nth-child(1) article > div > div > div:nth-child(3) > div > div[role="group"]:style(border-bottom: none !important;)
 ! ホームツイート欄
-twitter.com##div[aria-label="ホームタイムライン"] > div.r-14lw9ot:nth-child(3)
-twitter.com##div[aria-label="ホームタイムライン"] > div.r-1sw30gj:nth-child(4)
+!twitter.com##div[aria-label="ホームタイムライン"] > div.r-14lw9ot:nth-child(3)
+!twitter.com##div[aria-label="ホームタイムライン"] > div.r-1sw30gj:nth-child(4)
 ! リプライツイート欄
 twitter.com##div[aria-label="タイムライン: 会話"] div.r-184en5c:nth-child(2)
 ! 非表示にしたリプライ
@@ -172,6 +172,9 @@ twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイー�
 !twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div[class^=css]:only-child > div[class^=css]:only-child:empty
 !twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] div[data-testid=ScrollSnap-SwipeableList]:has(div[aria-label^=トピック「][aria-label$=をフォロー])
 !twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] h2 > div[style^=-webkit] > span:has-text(おすすめトピック):upward(div[style^=transform])
+
+! tweetdeck preview
+tweetdeck.twitter.com##.gryphon-beta-btn-container
 
 
 ! シークバーのプレビュー
@@ -505,8 +508,14 @@ google.com##[aria-labelledby="task-text"][role="dialog"] span:has-text(Google �
 gigafree.net###preview
 
 
-! dアニメストア お知らせ
-animestore.docomo.ne.jp##.informationWrapper
+! dアニメストア
+! アニメやブックのジャンル選択
+animestore.docomo.ne.jp##div[data-component="topCategoryMenu"][data-component-type="anime"]
+animestore.docomo.ne.jp##.headerTab
+animestore.docomo.ne.jp##:matches-path(/animestore/mp_viw_pc).announceArea
+animestore.docomo.ne.jp##.headerSubTab:style(margin: 10px auto !important;)
+! お知らせ
+animestore.docomo.ne.jp##.isNotice
 
 
 ! コメントtwitter投稿
