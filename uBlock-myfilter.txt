@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230731
+! Version: 20230801
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 !twitter.com##div[aria-label="トレンド"] > div > div
@@ -77,7 +77,7 @@ twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"]
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] a[href$="/likes"]
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] > div > div > div:nth-child(3) > div[role="group"] > div > div[dir="ltr"]
 ! ツイートを開いた状態のブックマークアイコン
-twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] div[id][role="group"] > div:nth-child(4)
+!twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] div[id][role="group"] > div:nth-child(4)
 ! 左下自分のアカウント名だけ隠す
 twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 ! 左下アカウント画像を暗く
