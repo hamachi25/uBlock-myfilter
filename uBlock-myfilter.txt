@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230810
+! Version: 20230826
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 !twitter.com##div[aria-label="トレンド"] > div > div
@@ -162,10 +162,10 @@ twitter.com##div[aria-label="タイムライン: ホームタイムライン"] d
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] div[aria-label^=購入する][role=button]:upward(div[style^=transform])
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] a[href^="/i/connect_people?"]:upward(div[style^=transform])
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform]
-twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] h2 > div[style^="-webkit"] > span:has-text(/おすすめユーザー|Who to follow/):upward(div[style^=transform])
-twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] div[aria-label^=フォロー][role=button]:upward(div[style^=transform])
-twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] a[href^="/i/connect_people?"]:upward(div[style^=transform])
-!twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform]
+twitter.com##div[aria-label^=タイムライン][aria-label$="’s posts"] h2 > div[style^="-webkit"] > span:has-text(/おすすめユーザー|Who to follow/):upward(div[style^=transform])
+twitter.com##div[aria-label^=タイムライン][aria-label$="’s posts"] div[aria-label^=フォロー][role=button]:upward(div[style^=transform])
+twitter.com##div[aria-label^=タイムライン][aria-label$="’s posts"] a[href^="/i/connect_people?"]:upward(div[style^=transform])
+!twitter.com##div[aria-label^=タイムライン][aria-label$="’s posts"] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform]
 ! おすすめトピック
 !twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/topics/picker/home"]
 !twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div[class^=css]:only-child > div[class^=css]:only-child:empty
@@ -404,7 +404,7 @@ youtube.com##[page-subtype="channels"] ytd-reel-shelf-renderer:upward(ytd-item-s
 ! チャンネル メンバー限定
 youtube.com##[page-subtype="channels"] .badge-style-type-members-only:upward(ytd-item-section-renderer)
 ! チャンネルタブ
-youtube.com###tabsContent > tp-yt-paper-tab:has-text(/コミュニティ|ショート|ライブ|ストア/)
+youtube.com###tabsContent > tp-yt-paper-tab:has-text(/コミュニティ|ショート|ストア/)
 youtube.com###tabsContent > ytd-expandable-tab-renderer
 ! チャンネルの最近アップロードされた動画と人気の動画切り替え
 youtube.com##ytd-rich-grid-renderer #header
