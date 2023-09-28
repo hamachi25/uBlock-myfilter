@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230925
+! Version: 20230928
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 !twitter.com##div[aria-label="トレンド"] > div > div
@@ -16,7 +16,7 @@ twitter.com##div[aria-label="トレンド"] > div > div.r-1niwhzg.r-1yadl64
 ! 関連性の高いアカウント
 twitter.com##div[aria-label="トレンド"] > div > div.r-14lw9ot.r-jxzhtn:nth-child(3)
 ! トレンド以外の要素を非表示
-twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transform"]:not(:has([data-testid="trend"])):not(span:has-text(トレンド))
+twitter.com##[aria-label="タイムライン: 話題を検索"] [style^="transform"]:not(:has([data-testid="trend"])):not(:has(h2 > div:nth-child(2) > span:has-text(トレンド)))
 
 ! 話題を検索タブ
 ! ニュース
