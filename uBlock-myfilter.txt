@@ -61,19 +61,19 @@ twitter.com##section[aria-label="セクションナビゲーション"] a[href="
 twitter.com##section[aria-label="セクションナビゲーション"] a[href="/settings/manage_subscriptions"]
 ! 右下DM
 twitter.com##[data-testid="DMDrawer"]
-! リツイート数、いいね数、アナリティクスを隠す
+! リツイート数、いいね数、ブックマーク数を隠す
 twitter.com##div[data-testid="retweet"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="unretweet"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="like"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="unlike"] span[data-testid="app-text-transition-container"]
+twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] [data-testid="removeBookmark"] > div > div:nth-child(2)
+twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] [data-testid="bookmark"] > div > div:nth-child(2)
 twitter.com##a[href$="/analytics"]:upward(1)
-! ツイートアナリティクス
-twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] a[data-testid="analyticsButton"]
-twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] a[data-testid="analyticsButton"]:upward(1):style(border: none !important;)
 ! アナリティクス
 twitter.com##article[tabindex="0"] div[role="group"] > div:nth-child(4)
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] div[aria-hidden="true"]:nth-child(2)
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] div[aria-hidden="true"]:nth-child(2) + div:last-child
+twitter.com##a[href$="/analytics"]:upward(1)
 ! ツイートを開いた状態のブックマークアイコン
 !twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] div[id][role="group"] > div:nth-child(4)
 ! 左下自分のアカウント名だけ隠す
@@ -159,7 +159,7 @@ twitter.com##div[aria-label="タイムライン: ホームタイムライン"] h
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] div[aria-label^=フォロー][role=button]:upward(div[style^=transform])
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] div[aria-label^=購入する][role=button]:upward(div[style^=transform])
 twitter.com##div[aria-label="タイムライン: ホームタイムライン"] a[href^="/i/connect_people?"]:upward(div[style^=transform])
-twitter.com##div[aria-label="タイムライン: ホームタイムライン"] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform]
+twitter.com##div[aria-label="タイムライン: ホームタイムライン"] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform]:has(> div > div:empty)
 twitter.com##div[aria-label^=タイムライン][aria-label$="さんのポスト"] h2 > div[style^="-webkit"] > span:has-text(/おすすめユーザー|Who to follow/):upward(div[style^=transform])
 twitter.com##div[aria-label^=タイムライン][aria-label$="さんのポスト"] div[aria-label^=フォロー][role=button]:upward(div[style^=transform])
 twitter.com##div[aria-label^=タイムライン][aria-label$="さんのポスト"] a[href^="/i/connect_people?"]:upward(div[style^=transform])
