@@ -161,7 +161,7 @@ twitter.com##div[aria-label="タイムライン: ホームタイムライン"] a
 twitter.com##div[aria-label^=タイムライン][aria-label$="さんのポスト"] h2 > div[style^="-webkit"] > span:has-text(/おすすめユーザー|Who to follow/):upward(div[style^=transform])
 twitter.com##div[aria-label^=タイムライン][aria-label$="さんのポスト"] div[aria-label^=フォロー][role=button]:upward(div[style^=transform])
 twitter.com##div[aria-label^=タイムライン][aria-label$="さんのポスト"] a[href^="/i/connect_people?"]:upward(div[style^=transform])
-!twitter.com##div[aria-label^=タイムライン][aria-label$="さんのポスト"] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform]:has(> div > div:empty)
+twitter.com##div[aria-label^=タイムライン][aria-label$="さんのポスト"] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform]:has(> div > div:empty)
 ! おすすめトピック
 !twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/topics/picker/home"]
 !twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div[class^=css]:only-child > div[class^=css]:only-child:empty
