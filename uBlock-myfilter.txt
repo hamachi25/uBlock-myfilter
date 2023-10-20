@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20231020
+! Version: 20231021
 
 ! ホーム右のいまどうしてるなどを消して表示させ直す
 !twitter.com##div[aria-label="トレンド"] > div > div
@@ -52,7 +52,8 @@ twitter.com##[data-testid="Dropdown"] [href="/i/display"]
 twitter.com##[data-testid="Dropdown"] [href="/i/keyboard_shortcuts"]
 twitter.com##[data-testid="Dropdown"] [role="separator"]
 twitter.com###layers div.r-1rnoaur.r-1r851ge:style(top: 23.5rem !important;)
-! サイドバーのTwitter Blueや認証
+! サイドバーのコミュニティやプレミアム
+twitter.com##a[href$="/communities"]
 twitter.com##a[href="/i/verified-choose"]
 ! 設定の収益化
 twitter.com##section[aria-label="セクションナビゲーション"] a[href="/settings/monetization"]
@@ -65,6 +66,7 @@ twitter.com##div[data-testid="retweet"] span[data-testid="app-text-transition-co
 twitter.com##div[data-testid="unretweet"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="like"] span[data-testid="app-text-transition-container"]
 twitter.com##div[data-testid="unlike"] span[data-testid="app-text-transition-container"]
+twitter.com##a[href$="/analytics"]:upward(1)
 ! ツイートアナリティクス
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] a[data-testid="analyticsButton"]
 twitter.com##div[aria-label="タイムライン: 会話"] article[tabindex="-1"] a[data-testid="analyticsButton"]:upward(1):style(border: none !important;)
