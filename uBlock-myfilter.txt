@@ -43,7 +43,7 @@ twitter.com##[aria-label="アカウントメニュー"] > div:nth-of-type(2)
 twitter.com##[aria-label="アカウントメニュー"] [data-testid^="UserAvatar-Container"] > div > div > div > div > div > div:style(filter: blur(5px))
 
 ! 検索結果の関連していますか
-!twitter.com##[aria-label="タイムライン: タイムラインを検索"] span:has-text(このツイートは検索内容に関連していますか？):upward(div[style^="transform"])
+twitter.com##[aria-label="タイムライン: タイムラインを検索"] [aria-labelledby][role="group"] span:has-text(このポストは検索内容に関連していますか？):upward(div[style^="transform"])
 
 ! リプ欄その他の返信
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(その他の返信):upward(div[style^="transform"])
