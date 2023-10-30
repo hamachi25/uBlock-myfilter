@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20231028
+! Version: 20231030
 
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
@@ -533,10 +533,6 @@ www.reddit.com##._369llFshxbL10dgfLlIApJ
 ! ヘッダー
 www.reddit.com##[href^="https://ads.reddit.com"]
 www.reddit.com##.x0hiXHicn7r3BG9m1FJH4
-
-
-! 5chスレ中央
-5ch.net##div.thread > div:style(position: relative; left:28%;)
 
 
 ! 広告跡
