@@ -1,14 +1,14 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20231030
+! Version: 20231114
 
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
 ! おすすめ　トレンド以外を非表示し、表示させなおす
 twitter.com##[aria-label="タイムライン: 話題を検索"] > div > div
-twitter.com##[data-testid="trend"]:upward([data-testid="cellInnerDiv"]):style(display: revert !Important)
-twitter.com##[aria-label="タイムライン: 話題を検索"] h2 > div > span:has-text(トレンド):upward([data-testid="cellInnerDiv"]):style(display: revert !Important)
+twitter.com##[data-testid="trend"]:upward([data-testid="cellInnerDiv"]):style(display: revert !important)
+twitter.com##[aria-label="タイムライン: 話題を検索"] h2 > div > span:has-text(トレンド):upward([data-testid="cellInnerDiv"]):style(display: revert !important)
 
 ! twitterトレンド順位消す
 twitter.com##div[aria-label="タイムライン: 話題を検索"] div[data-testid="trend"] > div[id] > div:first-child > div:first-child:not(:only-child)
@@ -47,8 +47,6 @@ twitter.com##[aria-label="タイムライン: タイムラインを検索"] [ari
 
 ! リプ欄その他の返信
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(その他の返信):upward(div[style^="transform"])
-! ミュートワード表示するボタンを非表示
-twitter.com##span:has-text(このツイートにはミュートしたキーワードが含まれています。):upward(4) + div
 
 ! プロフィールのフォロしている人
 twitter.com##[aria-label="ホームタイムライン"] div.r-ymttw5 > div.r-1s2bzr4
