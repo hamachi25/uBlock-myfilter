@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20231114
+! Version: 20231116
 
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
@@ -200,16 +200,6 @@ live.nicovideo.jp##button[aria-label="コントローラーを非表示"]
 live.nicovideo.jp##[class^="___page-header-area___"]
 
 
-! 一列の動画数
-youtube.com##ytd-rich-grid-row, #contents.ytd-rich-grid-row:style(display:contents !important;)
-youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
-youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-posts-per-row: 5 !important;)
-youtube.com##ytd-rich-item-renderer[is-slim-grid]:first-of-type:style(margin-left: auto !important;)
-youtube.com##ytd-rich-item-renderer[is-slim-grid]:last-of-type:style(margin-right: auto !important;)
-youtube.com##:matches-path(//videos|/shorts|/streams|/podcasts|/playlists/) ytd-two-column-browse-results-renderer.grid-5-columns, ytd-two-column-browse-results-renderer.grid-6-columns:style(width: 100% !important;)
-youtube.com##ytd-two-column-browse-results-renderer.grid, ytd-rich-grid-renderer[is-shorts-grid] #contents.ytd-rich-grid-renderer:style(max-width: initial !important;)
-! 横スクロールバー
-youtube.com##body:style(overflow-x: hidden !important;)
 
 ! ホームのミックスリスト
 youtube.com##[page-subtype="home"] #video-title-link[title*="ミックス"][href$="start_radio=1"]:upward(ytd-rich-item-renderer)
