@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20231118
+! Version: 20231126
 
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
@@ -64,8 +64,6 @@ twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/su
 ! もっと見つける
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform])
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform]) ~ div
-! さらに返信を表示(攻撃的な～)を非表示
-twitter.com##[aria-label="タイムライン: 会話"] article[tabindex="-1"]:not([data-testid="tweet"],.r-1ut4w64) [role="button"]:upward(div[style^="transform"])
 ! 広告を綺麗に消す
 !twitter.com##div[data-testid="cellInnerDiv"]:has(div.css-1dbjc4n > div[class="css-1dbjc4n"] > div[class="css-1dbjc4n"][data-testid="placementTracking"])
 
