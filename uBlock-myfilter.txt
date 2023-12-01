@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20231201
+! Version: 20231202
 
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
@@ -271,7 +271,7 @@ youtube.com##tp-yt-paper-button#expand:style(color: var(--yt-spec-text-secondary
 ! 一部を表示を薄く
 youtube.com##tp-yt-paper-button#collapse:style(color: var(--yt-spec-text-secondary)!important;font-size: 1.3rem!important)
 ! 高評価数を非表示
-youtube.com##button[title="高く評価"] > .yt-spec-button-shape-next__button-text-content
+youtube.com##.yt-spec-button-shape-next--icon-leading[aria-pressed] > .yt-spec-button-shape-next__button-text-content
 ! 高評価調整
 youtube.com##button.yt-spec-button-shape-next--segmented-start > .yt-spec-button-shape-next__icon:style(margin-right: -6px !important; margin-left: -2px !important;)
 youtube.com##button.yt-spec-button-shape-next--segmented-start > .yt-spec-button-shape-next__icon > yt-icon:style(padding-left: 2px !important;)
