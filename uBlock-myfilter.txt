@@ -1,5 +1,5 @@
 ! Title: uBlock-myfilter
-! Expires: 4 days (update frequency)
+! Expires: 6 hours
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
 ! Version: 20231211
 
