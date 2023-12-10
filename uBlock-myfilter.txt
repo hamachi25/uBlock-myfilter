@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20231202
+! Version: 20231211
 
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
@@ -62,8 +62,10 @@ twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/hi
 twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/superfollows"]:upward(1)
 
 ! もっと見つける
-twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform])
-twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward(div[style^=transform]) ~ div
+twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(その他のツイート):upward([data-testid="cellInnerDiv"])
+twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(その他のツイート):upward([data-testid="cellInnerDiv"]) ~ div
+twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward([data-testid="cellInnerDiv"])
+twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward([data-testid="cellInnerDiv"]) ~ div
 ! 広告を綺麗に消す
 !twitter.com##div[data-testid="cellInnerDiv"]:has(div.css-1dbjc4n > div[class="css-1dbjc4n"] > div[class="css-1dbjc4n"][data-testid="placementTracking"])
 
@@ -279,8 +281,8 @@ youtube.com##button.yt-spec-button-shape-next--segmented-start > .yt-spec-button
 youtube.com##button.yt-spec-button-shape-next--segmented-end:style(width: 46px !important;)
 youtube.com##button.yt-spec-button-shape-next--segmented-end > .yt-spec-button-shape-next__icon:style(margin-left: -3px !important;)
 ! 動画下クリップ、Thanks、オフライン
-youtube.com##ytd-button-renderer:has([aria-label="クリップ"])
-youtube.com##ytd-button-renderer:has([aria-label="Thanks"])
+youtube.com##yt-button-view-model:has(button[aria-label="Thanks"])
+youtube.com##yt-button-view-model:has(button[aria-label="クリップ"])
 youtube.com##ytd-download-button-renderer
 ! 動画下共有と保存の文字を非表示
 youtube.com##[aria-label="共有"] > .yt-spec-button-shape-next--button-text-content
