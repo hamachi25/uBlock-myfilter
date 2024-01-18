@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 6 hours
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20231211
+! Version: 20231219
 
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
@@ -62,10 +62,8 @@ twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/hi
 twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/superfollows"]:upward(1)
 
 ! もっと見つける
-twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(その他のツイート):upward([data-testid="cellInnerDiv"])
-twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(その他のツイート):upward([data-testid="cellInnerDiv"]) ~ div
-twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward([data-testid="cellInnerDiv"])
-twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(もっと見つける):upward([data-testid="cellInnerDiv"]) ~ div
+twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(/もっと見つける|その他のツイート/):upward([data-testid="cellInnerDiv"])
+twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(/もっと見つける|その他のツイート/):upward([data-testid="cellInnerDiv"]) ~ div
 ! 広告を綺麗に消す
 !twitter.com##div[data-testid="cellInnerDiv"]:has(div.css-1dbjc4n > div[class="css-1dbjc4n"] > div[class="css-1dbjc4n"][data-testid="placementTracking"])
 
@@ -225,25 +223,25 @@ youtube.com##[page-subtype="home"] .badge-style-type-live-now-alternate:upward(y
 ! ホーム配信予定
 youtube.com##[page-subtype="home"] ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-rich-item-renderer)
 ! ホーム配信済み
-youtube.com##[page-subtype="home"] #metadata-line:has-text(に配信済み):upward(ytd-rich-item-renderer)
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(#metadata-line > .inline-metadata-item:has-text(に配信済み))
 ! 動画右ライブ
 youtube.com##ytd-watch-next-secondary-results-renderer .badge-style-type-live-now-alternate:upward(ytd-compact-video-renderer)
 ! 動画右配信予定
 youtube.com##ytd-watch-next-secondary-results-renderer ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-compact-video-renderer)
 ! 動画右配信済み
-youtube.com##ytd-watch-next-secondary-results-renderer #metadata-line:has-text(に配信済み):upward(ytd-compact-video-renderer)
+youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(#metadata-line > .inline-metadata-item:has-text(に配信済み))
 ! 登録チャンネルライブ
 youtube.com##[page-subtype="subscriptions"] .badge-style-type-live-now-alternate:upward(ytd-rich-item-renderer)
 ! 登録チャンネル配信予定のライブ
 youtube.com##[page-subtype="subscriptions"] ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-rich-item-renderer)
 ! 登録チャンネル配信済み
-youtube.com##[page-subtype="subscriptions"] #metadata-line:has-text(に配信済み):upward(ytd-rich-item-renderer)
+youtube.com##[page-subtype="subscriptions"] ytd-rich-item-renderer:has(#metadata-line > .inline-metadata-item:has-text(に配信済み))
 ! 検索結果ライブ
 youtube.com##ytd-search .badge-style-type-live-now-alternate:upward(ytd-video-renderer)
 ! 検索結果配信予定
 youtube.com##ytd-search ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-video-renderer)
 ! 検索結果配信済み
-youtube.com##ytd-search #metadata-line:has-text(に配信済み):upward(ytd-video-renderer)
+youtube.com##ytd-search ytd-video-renderer:has(#metadata-line > .inline-metadata-item:has-text(に配信済み))
 
 ! 動画オーバーレイ前へ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
@@ -283,10 +281,7 @@ youtube.com##button.yt-spec-button-shape-next--segmented-end > .yt-spec-button-s
 ! 動画下クリップ、Thanks、オフライン
 youtube.com##yt-button-view-model:has(button[aria-label="Thanks"])
 youtube.com##yt-button-view-model:has(button[aria-label="クリップ"])
-youtube.com##ytd-download-button-renderer
 ! 動画下共有と保存の文字を非表示
-youtube.com##[aria-label="共有"] > .yt-spec-button-shape-next--button-text-content
-youtube.com##[aria-label="再生リストに保存"] > .yt-spec-button-shape-next--button-text-content
 youtube.com##[aria-label="共有"] > .yt-spec-button-shape-next__button-text-content
 youtube.com##[aria-label="再生リストに保存"] > .yt-spec-button-shape-next__button-text-content
 ! 共有、保存調整
