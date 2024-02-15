@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 6 hours
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20231219
+! Version: 20230215
 
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
@@ -31,6 +31,10 @@ twitter.com##div[aria-label="タイムライン: 自分のリスト"] div[role="
 twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]
 twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]:upward(div[style^="transform"]) +div + div
 
+! コミュニティを探す
+twitter.com##[aria-label="タイムライン: タイムラインを検索"] [data-testid="cellInnerDiv"]:has(h2 > div[style^="-webkit"] > span:has-text(コミュニティを探す))
+twitter.com##[aria-label="タイムライン: タイムラインを検索"] [data-testid="cellInnerDiv"]:is(:has([href^="/i/communities"]),:has([href="/i/communities/suggested"]) + div:has(> div > div:empty)
+
 ! タイムラインのさらに表示
 twitter.com##[data-testid="tweet-text-show-more-link"]
 
@@ -44,6 +48,9 @@ twitter.com##[aria-label="アカウントメニュー"] [data-testid^="UserAvata
 
 ! 検索結果の関連していますか
 twitter.com##[aria-label="タイムライン: タイムラインを検索"] [aria-labelledby][role="group"] span:has-text(このポストは検索内容に関連していますか？):upward(div[style^="transform"])
+
+! 長文ツイート表示
+twitter.com##[data-testid="tweetText"]:style(line-height: normal !important; -webkit-line-clamp: initial !important;)
 
 ! リプ欄その他の返信
 twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(その他の返信):upward(div[style^="transform"])
@@ -67,6 +74,9 @@ twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(/もっと見
 ! 広告を綺麗に消す
 !twitter.com##div[data-testid="cellInnerDiv"]:has(div.css-1dbjc4n > div[class="css-1dbjc4n"] > div[class="css-1dbjc4n"][data-testid="placementTracking"])
 
+! メディア一覧モザイク
+twitter.com##[aria-label$="さんのメディア"] [role="listitem"] > div > div > div > div:first-child:style(filter: none !important)
+twitter.com##[aria-label$="さんのメディア"] [role="listitem"] > div > div > div > div:last-child
 
 ! 雪フィルタ引用(https://raw.githubusercontent.com/Yuki2718/adblock/master/japanese/jp-annoyances.txt)
 ! おすすめユーザー
@@ -279,8 +289,10 @@ youtube.com##button.yt-spec-button-shape-next--segmented-start > .yt-spec-button
 youtube.com##button.yt-spec-button-shape-next--segmented-end:style(width: 46px !important;)
 youtube.com##button.yt-spec-button-shape-next--segmented-end > .yt-spec-button-shape-next__icon:style(margin-left: -3px !important;)
 ! 動画下クリップ、Thanks、オフライン
-youtube.com##yt-button-view-model:has(button[aria-label="Thanks"])
-youtube.com##yt-button-view-model:has(button[aria-label="クリップ"])
+!youtube.com##yt-button-view-model:has(button[aria-label="Thanks"])
+!youtube.com##yt-button-view-model:has(button[aria-label="クリップ"])
+youtube.com##button[aria-label="Thanks"]:upward(yt-button-view-model)
+youtube.com##button[aria-label="クリップ"]:upward(yt-button-view-model)
 ! 動画下共有と保存の文字を非表示
 youtube.com##[aria-label="共有"] > .yt-spec-button-shape-next__button-text-content
 youtube.com##[aria-label="再生リストに保存"] > .yt-spec-button-shape-next__button-text-content
@@ -355,13 +367,11 @@ youtube.com###inline-preview-player > #ytp-caption-window-container
 ! キューに追加
 !youtube.com##ytd-menu-service-item-renderer:has([d="M21,16h-7v-1h7V16z M21,11H9v1h12V11z M21,7H3v1h18V7z M10,15l-7-4v8L10,15z"])
 !youtube.com##ytd-thumbnail-overlay-toggle-button-renderer[aria-label="キューに追加"]
-! 動画右3つ目の再生数が少ない動画
-youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(.inline-metadata-item:has-text(/^\d{1,2} 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
-!youtube.com##ytd-watch-next-secondary-results-renderer #contents:has(ytd-ad-slot-renderer) > :nth-child(4):has(.inline-metadata-item:has-text(/^[1-3]?\d{1,2} 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
-!youtube.com##ytd-watch-next-secondary-results-renderer #contents:not(:has(ytd-ad-slot-renderer)) > :nth-child(3):has(.inline-metadata-item:has-text(/^[1-3]?\d{1,2} 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
-!youtube.com##ytd-watch-next-secondary-results-renderer #contents:has(ytd-reel-shelf-renderer) > :nth-child(4):has(.inline-metadata-item:has-text(/^[1-3]?\d{1,2} 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
-!youtube.com##ytd-watch-next-secondary-results-renderer #contents:not(:has(ytd-reel-shelf-renderer)) > :nth-child(3):has(.inline-metadata-item:has-text(/^[1-3]?\d{1,2} 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
-!youtube.com##ytd-watch-next-secondary-results-renderer #contents:has(ytd-reel-shelf-renderer,ytd-ad-slot-renderer) > :nth-child(5):has(.inline-metadata-item:has-text(/^[1-3]?\d{1,2} 回視聴/)):has(ytd-badge-supported-renderer:has-text(新着))
+
+! 消した跡を埋める
+youtube.com##body:style(overflow-x: hidden !important;)
+youtube.com##ytd-browse:is([page-subtype="home"],[page-subtype="subscriptions"],[page-subtype="channels"]) :is(ytd-rich-grid-row, #contents.ytd-rich-grid-row):style(display: contents !important)
+
 
 ! ログインしていない状態
 ! 動画概要欄のコメント欄
