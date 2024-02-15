@@ -33,7 +33,7 @@ twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i
 
 ! コミュニティを探す
 twitter.com##[aria-label="タイムライン: タイムラインを検索"] [data-testid="cellInnerDiv"]:has(h2 > div[style^="-webkit"] > span:has-text(コミュニティを探す))
-twitter.com##[aria-label="タイムライン: タイムラインを検索"] [data-testid="cellInnerDiv"]:is(:has([href^="/i/communities"]),:has([href="/i/communities/suggested"]) + div:has(> div > div:empty)
+twitter.com##[aria-label="タイムライン: タイムラインを検索"] [data-testid="cellInnerDiv"]:is(:has([href^="/i/communities"]),:has([href="/i/communities/suggested"])) + div:has(> div > div:empty)
 
 ! タイムラインのさらに表示
 twitter.com##[data-testid="tweet-text-show-more-link"]
