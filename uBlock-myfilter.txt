@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 6 hours
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20230215
+! Version: 20240319
 
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
@@ -141,12 +141,7 @@ nicovideo.jp##.PlayerOptionMenuItem.SkipMenuItem
 nicovideo.jp##.PlayerOptionMenuGroup:has(.MarqueeMenuItem)
 nicovideo.jp##.PlayerOptionContainer:style(max-height:524px!important)
 !フッター
-nicovideo.jp##footer
-! ジャンル選択アニメ以外なくす
-www.nicovideo.jp##.RankingGenreListContainer-item:not(:has([href="/ranking/genre/anime?video_ranking_menu"]))
-www.nicovideo.jp##.RankingGenreListContainer:style(background-color:transparent!important)
-www.nicovideo.jp##.VideoTopGenreListContainer-item:not(:has([href="/video_top/genre/anime"]))
-www.nicovideo.jp##.VideoTopGenreListContainer:style(background-color:transparent!important)
+nicovideo.jp##footertant)
 ! 検索結果コミュニティ
 nicovideo.jp##.column.sub > section.relatedInfo.community
 ! トップページ自動再生
@@ -158,6 +153,16 @@ nicovideo.jp##.TopPage .PersonalFrameContainer
 nicovideo.jp##.TagContainer-area.TagContainer-TagEditButtonArea
 ! 一度見た動画の下の赤線
 nicovideo.jp##.NC-VideoPlaybackIndicator
+
+! ジャンル
+! ジャンル選択アニメ・旅行以外なくす
+www.nicovideo.jp##.VideoTopGenreListContainer-item:not(:has([href="/video_top/genre/anime"],[href="/video_top/genre/traveling_outdoor"]))
+www.nicovideo.jp##.RankingGenreListContainer:style(background-color:transparent!important)
+www.nicovideo.jp##.VideoTopGenreListContainer-item:not(:has([href="/video_top/genre/anime"]))
+www.nicovideo.jp##.VideoTopGenreListContainer:style(background-color:transparent!impor
+! ジャンルの隙間
+nicovideo.jp##.VideoIntroductionsChoiceContainer:upward(.BaseLayout-block)
+nicovideo.jp##.Separator:has(+ .RankingVideosContainer)
 ! 注目のタグ
 www.nicovideo.jp##.TrendyTagAreaContainer:upward(.BaseLayout-block)
 ! 新着投稿動画
@@ -171,7 +176,8 @@ www.nicovideo.jp##.NewCommentVideosContainer:upward(.BaseLayout-block)
 ! おすすめ
 www.nicovideo.jp##.RecommendVideosContainer:upward(.BaseLayout-block)
 ! TV放送中のアニメチャンネル
-www.nicovideo.jp##.OnTvAnimeChannelsContainer
+www.nicovideo.jp##.OnTvAnimeChannelsContainer:upward(.BaseLayout-block)
+
 !  ニコニココメントコピペ
 nicovideo.jp##.CommentPanelDataGrid .CommentPanelDataGrid-TableCell:style(user-select: text !important;)
 ! プレミアム機能の途中再生ポップアップ
@@ -252,6 +258,11 @@ youtube.com##ytd-search .badge-style-type-live-now-alternate:upward(ytd-video-re
 youtube.com##ytd-search ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-video-renderer)
 ! 検索結果配信済み
 youtube.com##ytd-search ytd-video-renderer:has(#metadata-line > .inline-metadata-item:has-text(に配信済み))
+! 検索結果サムネイル小さく
+youtube.com##ytd-search [use-bigger-thumbs]:remove-attr(use-bigger-thumbs)
+youtube.com##ytd-search:remove-attr(has-bigger-thumbs)
+! 検索結果の検索結果の他の人はこちらも視聴していますなど
+youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer,ytd-channel-renderer),ytd-secondary-search-container-renderer
 
 ! 動画オーバーレイ前へ次へ
 youtube.com##.ytp-next-button[data-title-no-tooltip="次へ"]
@@ -307,37 +318,36 @@ youtube.com##.ytp-ce-element
 /endscreen.js$script,important,domain=youtube.com
 ! メンバーになる
 youtube.com###sponsor-button
-! チャンネル 自動再生部分
+! チャンネル トレーラー
 youtube.com##[page-subtype="channels"] ytd-channel-video-player-renderer:upward(ytd-item-section-renderer)
 ! チャンネル ライブなど
 youtube.com##[page-subtype="channels"] ytd-channel-featured-content-renderer:upward(ytd-item-section-renderer)
 ! チャンネル メンバー一覧
-youtube.com##[page-subtype="channels"] ytd-grid-channel-renderer:upward(ytd-item-section-renderer)
+youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has(ytd-recognition-shelf-renderer)
 ! チャンネル shortsリスト
-youtube.com##[page-subtype="channels"] ytd-reel-shelf-renderer:upward(ytd-item-section-renderer:not([use-height-hack]))
+youtube.com##[page-subtype="channels"] ytd-item-section-renderer:not([use-height-hack]):has(ytd-reel-shelf-renderer)
 ! チャンネル メンバー限定
-youtube.com##[page-subtype="channels"] .badge-style-type-members-only:upward(ytd-item-section-renderer)
-! チャンネルタブ
-youtube.com###tabsContent > tp-yt-paper-tab:has-text(/コミュニティ|ショート|ストア/)
-youtube.com###tabsContent > ytd-expandable-tab-renderer
+youtube.com##[page-subtype="channels"] ytd-item-section-renderer:has(.badge-style-type-members-only)
 ! チャンネルの最近アップロードされた動画と人気の動画切り替え
 youtube.com##ytd-rich-grid-renderer #header
 !チャット見れない時は消す
 youtube.com##yt-formatted-string#message:has-text(/この動画ではチャットのリプレイを利用できません|このプレミア公開では、チャットのリプレイは無効です/):upward(ytd-live-chat-frame)
+
 ! ホーム上のジャンル選択
 youtube.com##[page-subtype="home"] #header
-! ホーム左のショート
-youtube.com##ytd-guide-entry-renderer > [title="ショート"]
-! 検索結果の検索結果の他の人はこちらも視聴していますなど
-youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer,ytd-channel-renderer),ytd-secondary-search-container-renderer
 ! 音声検索
 youtube.com###voice-search-button
 ! 右上通知
 youtube.com##ytd-notification-topbar-button-renderer
 ! 右上動画投稿
 youtube.com##ytd-topbar-menu-button-renderer[is-icon-button]
-! ホーム一番上の広告(easylistでブロックされない)
-youtube.com##ytd-rich-item-renderer:has(.ytd-in-feed-ad-layout-renderer)
+! ホーム左のショート
+youtube.com##ytd-guide-entry-renderer > [title="ショート"]
+! ホーム左のマイページ
+youtube.com##ytd-guide-collapsible-section-entry-renderer > #header
+! ホーム左のチャンネル・作成した動画
+youtube.com##ytd-guide-collapsible-section-entry-renderer > #section-items > ytd-guide-entry-renderer:first-of-type
+youtube.com##ytd-guide-collapsible-section-entry-renderer > #section-items > ytd-guide-entry-renderer:nth-of-type(3)
 ! ホーム左下の他のサービス
 youtube.com##ytd-guide-section-renderer:has(h3:has-text(/YouTube の他のサービス|探索/))
 youtube.com##ytd-guide-section-renderer:has([title="設定"])
@@ -364,13 +374,11 @@ youtube.com##ytd-thumbnail-overlay-resume-playback-renderer
 youtube.com##.ytp-progress-bar-container #ytp-caption-window-container
 ! ホーム動画プレビューの字幕
 youtube.com###inline-preview-player > #ytp-caption-window-container
-! キューに追加
-!youtube.com##ytd-menu-service-item-renderer:has([d="M21,16h-7v-1h7V16z M21,11H9v1h12V11z M21,7H3v1h18V7z M10,15l-7-4v8L10,15z"])
-!youtube.com##ytd-thumbnail-overlay-toggle-button-renderer[aria-label="キューに追加"]
 
 ! 消した跡を埋める
-youtube.com##body:style(overflow-x: hidden !important;)
 youtube.com##ytd-browse:is([page-subtype="home"],[page-subtype="subscriptions"],[page-subtype="channels"]) :is(ytd-rich-grid-row, #contents.ytd-rich-grid-row):style(display: contents !important)
+youtube.com##ytd-rich-item-renderer[is-slim-grid]:first-of-type:style(margin-left: auto !important;)
+youtube.com##ytd-rich-item-renderer[is-slim-grid]:last-of-type:style(margin-right: auto !important;)
 
 
 ! ログインしていない状態
