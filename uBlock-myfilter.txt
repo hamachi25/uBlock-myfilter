@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 6 hours
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20240405
+! Version: 20240515
 
 ! おすすめ一番上の広告右上メニューボタン
 twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
@@ -26,17 +26,11 @@ twitter.com##[aria-label="ホームタイムライン"]:not(:has([aria-label="�
 twitter.com##[aria-label="ホームタイムライン"]:not(:has([aria-label="タイムライン: トピック"])) div[data-testid="ScrollSnap-prevButtonWrapper"]
 
 ! 新しいリストを見つける
-twitter.com##div[aria-label="タイムライン: 自分のリスト"] h2 > div[style^=-webkit] > span:has-text(新しいリストを見つける):upward(div[style^="transform"])
-twitter.com##div[aria-label="タイムライン: 自分のリスト"] div[role="button"][aria-describedby]:upward(div[style^="transform"])
-twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]
-twitter.com##div[aria-label="タイムライン: 自分のリスト"] a[href="/i/lists/suggested"]:upward(div[style^="transform"]) +div + div
+twitter.com##[aria-label="タイムライン: 自分のリスト"] [data-testid="cellInnerDiv"]:is(:has(h2):has(+div [aria-label="フォロー"][role="button"]),:has([aria-label="フォロー"][role="button"]),:has([href="/i/lists/suggested"]))
 
 ! コミュニティを探す
 twitter.com##[aria-label="タイムライン: タイムラインを検索"] [data-testid="cellInnerDiv"]:has(h2 > div[style^="-webkit"] > span:has-text(コミュニティを探す))
 twitter.com##[aria-label="タイムライン: タイムラインを検索"] [data-testid="cellInnerDiv"]:is(:has([href^="/i/communities"]),:has([href="/i/communities/suggested"]) + div:has(> div > div:empty))
-
-! タイムラインのさらに表示
-twitter.com##[data-testid="tweet-text-show-more-link"]
 
 ! トレンドやおすすめなどのタブ透過をやめる
 twitter.com##[aria-label="ホームタイムライン"] > div:first-child:style(background-color: rgba(255, 255, 255, 1))
@@ -69,10 +63,8 @@ twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/hi
 twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/superfollows"]:upward(1)
 
 ! もっと見つける
-twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(/もっと見つける|その他のツイート/):upward([data-testid="cellInnerDiv"])
-twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(/もっと見つける|その他のツイート/):upward([data-testid="cellInnerDiv"]) ~ div
-! 広告を綺麗に消す
-!twitter.com##div[data-testid="cellInnerDiv"]:has(div.css-1dbjc4n > div[class="css-1dbjc4n"] > div[class="css-1dbjc4n"][data-testid="placementTracking"])
+twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellInnerDiv"]:has(h2:has-text(もっと見つける))
+twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellInnerDiv"]:has(h2:has-text(もっと見つける)) ~ div
 
 ! メディア一覧モザイク
 twitter.com##[aria-label$="さんのメディア"] [role="listitem"] > div > div > div > div:first-child:style(filter: none !important)
@@ -90,11 +82,6 @@ twitter.com##[aria-label$="さんのメディア"] [role="listitem"] > div > div
 !twitter.com##div[aria-label^=タイムライン][aria-label$="さんのポスト"] a[href^="/i/connect_people?"]:upward(div[style^=transform])
 !twitter.com##div[aria-label^=タイムライン][aria-label$="さんのポスト"] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform]:has(> div > div:empty)
 !twitter.com##div[aria-label^=タイムライン][aria-label$="さんのポスト"] a[href^="/i/connect_people?"]:upward(div[style^=transform]) + div[style^=transform] + div[style^=transform]:has(> div > div:empty)
-! おすすめトピック
-!twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div a[href^="/i/topics/picker/home"]
-!twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] > div[class^=css]:only-child > div[class^=css]:only-child:empty
-!twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] div[data-testid=ScrollSnap-SwipeableList]:has(div[aria-label^=トピック「][aria-label$=をフォロー])
-!twitter.com##div[aria-label^=タイムライン][aria-label$=さんのツイート] > div > div[style^=transform] h2 > div[style^=-webkit] > span:has-text(おすすめトピック):upward(div[style^=transform])
 
 
 
