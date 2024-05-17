@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 6 hours
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20240517
+! Version: 20240518
 
 ! おすすめ一番上の広告右上メニューボタン
 x.com,twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
@@ -438,34 +438,10 @@ abema.tv##.c-application-SideNavigation__footer
 ! CMマイリスト
 abema.tv##.com-tv-SlotMyListButtonOnPlayerContainerView
 ! アニメ以外を消す
-abema.tv##[href^="/now-on-air/asia-drama"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/k-world"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/commercial"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/hiphop"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/abema-radio"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/fighting-sports"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/world-sports"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/abema-news"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/news-plus"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/abema-special"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/special-plus"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/drama"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/premierleague"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/boatrace"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/keirin-auto"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/fishing"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/shogi"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/mahjong"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/sumo"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href="/now-on-air/boxing"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/family-anime-"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/80s-anime-"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/90s-anime-"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/00s-anime-"]:upward(.com-tv-LinearChannelList__item)
-abema.tv##[href^="/now-on-air/family-anime-"]:upward(.com-tv-LinearChannelList__item)
-! 高さ調整
-abema.tv##.com-tv-LinearChannelList::before:style(height: calc(20%) !important)
-abema.tv##.com-tv-LinearChannelList::after:style(height: calc(20%) !important)
+abema.tv##.com-tv-LinearChannelList__item:has(:is([href^="/now-on-air/asia-drama"],[href="/now-on-air/k-world"],[href="/now-on-air/commercial"],[href="/now-on-air/hiphop"],[href="/now-on-air/abema-radio"],[href^="/now-on-air/fighting-sports"],[href^="/now-on-air/world-sports"],[href="/now-on-air/abema-news"],[href="/now-on-air/news-plus"],[href="/now-on-air/abema-special"],[href^="/now-on-air/special-plus"],[href^="/now-on-air/drama"],[href^="/now-on-air/premierleague"],[href="/now-on-air/boatrace"],[href="/now-on-air/keirin-auto"],[href="/now-on-air/fishing"],[href^="/now-on-air/shogi"],[href^="/now-on-air/mahjong"],[href="/now-on-air/sumo"],[href="/now-on-air/boxing"],[href^="/now-on-air/family-anime-"],[href^="/now-on-air/80s-anime-"],[href^="/now-on-air/90s-anime-"],[href^="/now-on-air/00s-anime-"],[href="/now-on-air/metrock"],[href^="/now-on-air/asia-"],[href="/now-on-air/baseball-anime"]))
+abema.tv##.com-tv-LinearChannelList::before
+abema.tv##.com-tv-LinearChannelList::after
+abema.tv##.com-tv-LinearChannelList__inner:style(margin-top: 8em!important)
 ! 最初からみる
 abema.tv##.com-tv-LinearFooterChasePlayButton
 ! ロゴ
