@@ -46,9 +46,6 @@ x.com,twitter.com##[aria-label="タイムライン: タイムラインを検索"
 ! 長文ツイート表示
 x.com,twitter.com##[data-testid="tweetText"]:style(line-height: normal !important; -webkit-line-clamp: initial !important;)
 
-! リプ欄その他の返信
-x.com,twitter.com##[aria-label="タイムライン: 会話"] h2:has-text(その他の返信):upward(div[style^="transform"])
-
 ! プロフィールのフォロしている人
 x.com,twitter.com##[aria-label="ホームタイムライン"] div.r-ymttw5 > div.r-1s2bzr4
 x.com,twitter.com##div[data-testid="HoverCard"] > div > div > div.r-bt1l66
@@ -63,8 +60,8 @@ x.com,twitter.com##nav[aria-label="プロフィールタイムライン"] a[href
 x.com,twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/superfollows"]:upward(1)
 
 ! もっと見つける
-x.com,twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellInnerDiv"]:has(h2:has-text(もっと見つける))
-x.com,twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellInnerDiv"]:has(h2:has-text(もっと見つける)) ~ div
+x.com,twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellInnerDiv"]:has(h2:has-text(その他のツイート))
+x.com,twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellInnerDiv"]:has(h2:has-text(その他のツイート)) ~ div
 
 ! メディア一覧モザイク
 x.com,twitter.com##article[data-testid="tweet"] div[aria-labelledby] > div > div > div > div > div:style(filter: none !important)
