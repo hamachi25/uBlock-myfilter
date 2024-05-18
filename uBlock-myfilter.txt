@@ -60,8 +60,8 @@ x.com,twitter.com##nav[aria-label="プロフィールタイムライン"] a[href
 x.com,twitter.com##nav[aria-label="プロフィールタイムライン"] a[href$="/superfollows"]:upward(1)
 
 ! もっと見つける
-x.com,twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellInnerDiv"]:has(h2:has-text(その他のツイート))
-x.com,twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellInnerDiv"]:has(h2:has-text(その他のツイート)) ~ div
+x.com,twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellInnerDiv"]:has(h2:has-text(/もっと見つける|その他のツイート/))
+x.com,twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellInnerDiv"]:has(h2:has-text(/もっと見つける|その他のツイート/)) ~ div
 
 ! メディア一覧モザイク
 x.com,twitter.com##article[data-testid="tweet"] div[aria-labelledby] > div > div > div > div > div:style(filter: none !important)
