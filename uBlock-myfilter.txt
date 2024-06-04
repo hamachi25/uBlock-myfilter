@@ -1,7 +1,7 @@
 ! Title: uBlock-myfilter
 ! Expires: 6 hours
 ! Homepage: https://github.com/chimaha/uBlock-myfilter
-! Version: 20240518
+! Version: 20240604
 
 ! おすすめ一番上の広告右上メニューボタン
 x.com,twitter.com##div[data-testid="eventHero"] + div:has([aria-label="もっと見る"])
@@ -64,8 +64,8 @@ x.com,twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellI
 x.com,twitter.com##[aria-label="タイムライン: 会話"] [data-testid="cellInnerDiv"]:has(h2:has-text(/もっと見つける|その他のツイート/)) ~ div
 
 ! メディア一覧モザイク
-x.com,twitter.com##article[data-testid="tweet"] div[aria-labelledby] > div > div > div > div > div:style(filter: none !important)
-x.com,twitter.com##article[data-testid="tweet"] div[aria-labelledby] > div:not([data-testid]) > div:not([role="button"]) > div:only-child > div > div:nth-child(2):not([data-testid="tweetText"])
+!x.com,twitter.com##article[data-testid="tweet"] div[aria-labelledby] > div > div > div > div > div:style(filter: none !important)
+!x.com,twitter.com##article[data-testid="tweet"] div[aria-labelledby] > div:not([data-testid]) > div:not([role="button"]) > div:only-child > div > div:nth-child(2):not([data-testid="tweetText"])
 x.com,twitter.com##[aria-label$="さんのメディア"] [role="listitem"] > div > div > div > div:first-child:style(filter: none !important)
 x.com,twitter.com##[aria-label$="さんのメディア"] [role="listitem"] > div > div > div > div:last-child
 
